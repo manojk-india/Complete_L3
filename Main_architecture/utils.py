@@ -68,6 +68,7 @@ def get_person_boards(name: str) -> List[str]:
         'L1_Board'
     ].unique().tolist()
 
+# board under L2
 def board_under_L2_board(board: str,person: str = None) -> List[str]:
     """
     Retrieve all L2 boards associated with a given board from CSV data.
