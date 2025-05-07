@@ -22,7 +22,7 @@ from L1_architecture.entry import entrypoint
 # Load environment variables
 load_dotenv()
 
-# Initialize LLM model
+# Initialize LLM model here
 llm = LLM(
     model="sambanova/DeepSeek-R1-Distill-Llama-70B",
     temperature=0.1,
