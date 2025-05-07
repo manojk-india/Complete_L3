@@ -1,0 +1,37 @@
+name,leave_type,start_date,end_date,total_days,sprint
+,,,,,
+Alice,PTO,26-02-2025 00:00,28-02-2025 00:00,3,Sprint 5
+,,,,,
+Alice,optional holiday,12-03-2025 00:00,12-03-2025 00:00,1,Sprint 7
+,,,,,
+Alice,PTO,26-03-2025 00:00,26-03-2025 00:00,1,Sprint 7
+,,,,,
+Alice,sick leave,11-04-2025 00:00,11-04-2025 00:00,1,Sprint 8
+,,,,,
+Alice,PTO,24-04-2025 00:00,25-04-2025 00:00,2,Sprint 9
+,,,,,
+Bob,PTO,05-03-2025 00:00,06-03-2025 00:00,2,Sprint 5
+,,,,,
+Bob,sick leave,13-04-2025 00:00,13-04-2025 00:00,1,Sprint 8
+,,,,,
+Bob,PTO,03-05-2025 00:00,03-05-2025 00:00,1,Sprint 9
+,,,,,
+Hari,vacation,02-03-2025 00:00,04-03-2025 00:00,3,Sprint 5
+,,,,,
+Hari,PTO,14-03-2025 00:00,14-03-2025 00:00,1,Sprint 6
+,,,,,
+Hari,events,25-03-2025 00:00,25-03-2025 00:00,1,Sprint 7
+,,,,,
+Apoorva,PTO,15-04-2025 00:00,16-04-2025 00:00,2,Sprint 8
+,,,,,
+Apoorva,PTO,01-05-2025 00:00,02-05-2025 00:00,2,Sprint 9
+,,,,,
+Pavithra,PTO,24-04-2025 00:00,25-04-2025 00:00,2,Sprint 9
+,,,,,
+Alok,PTO,26-04-2025 00:00,29-04-2025 00:00,4,Sprint 9
+,,,,,
+Alice,PTO,,,3,Sprint 10
+,,,,,
+Alice,PTO,,,2,Sprint 11
+,,,,,
+Hari,PTO,,,1,Sprint 10

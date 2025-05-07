@@ -1,0 +1,50 @@
+Date and Time :2025-04-12 19:03:14.759900
+users original query :how is backlog health looking for CDF board
+data to query  :All issues in the CDF board
+specific need  :Calculate the average story points from the last 2 completed sprints in the CDF board, then compare the total story points of the next 2 future sprints (one at a time) with this average, and classify each future sprint as 'Underutilized', 'Okay Utilization' (±5 from average), or 'Overutilized'
+------------------------------------------------------------------
+Date and Time :2025-04-12 20:12:28.141702
+users original query :How is backlog health looking for ESBNF board 
+data to query  :All issues in ESBNF board
+specific need  :Calculate the average story points from the last 2 completed sprints in the ESBNF board, then compare the total story points of the next 2 future sprints (one at a time) with this average, and classify each future sprint as 'Underutilized', 'Okay Utilization' (±5 from average), or 'Overutilized'
+------------------------------------------------------------------
+Date and Time :2025-04-12 20:25:05.843394
+users original query :How is backlog looking for ESBNF board ?
+data to query  :All issues in ESBNF board
+specific need  :Calculate the total number of issues in the ESBNF board backlog, categorize them by issue type (Story, Bug, Task, Defect), and assess their priority levels (High, Medium, Low, Critical). Additionally, analyze the distribution of issues across current and future sprints, and evaluate the progress by status (To Do, In Progress, Done). Provide insights into the backlog health, including potential bottlenecks, workload distribution, and recommendations for sprint planning.
+------------------------------------------------------------------
+Date and Time :2025-04-12 20:31:59.821084
+users original query :How is backlog health looking for CDF board?
+data to query  :All issues in CDF board
+specific need  :Calculate the average story points from the last 2 completed sprints in the CDF board, then compare the total story points of the next 2 future sprints (one at a time) with this average, and classify each future sprint as 'Underutilized', 'Okay Utilization +- 5 from average story points calculated', or 'Overutilized'
+------------------------------------------------------------------
+Date and Time :2025-04-12 20:36:24.751387
+users original query :How is backloh health looking for CDF board
+data to query  :All issues in CDF board
+specific need  :Calculate the average story points from the last 2 completed sprints in the CDF board, then compare the total story points of the next 2 future sprints (one at a time) with this average, and classify each future sprint as 'Underutilized', 'Okay Utilization +- 5 from average story points calculated', or 'Overutilized'
+------------------------------------------------------------------
+Date and Time :2025-04-12 20:44:10.871092
+users original query :How is backlog health looking for CDF board ?
+data to query  :All issues in CDF board
+specific need  :Calculate the average story points from the last 2 completed sprints in the CDF board, then compare the total story points of the next 2 future sprints (one at a time) with this average, and classify each future sprint as 'Underutilized', 'Okay Utilization +- 5 from average story points calculated', or 'Overutilized'
+------------------------------------------------------------------
+Date and Time :2025-04-12 20:47:44.461105
+users original query :How is backlog health looking for CDF board 
+data to query  :All issues in CDF board
+specific need  :Calculate the average story points from the last 2 completed sprints in the CDF board, then compare the total story points of the next 2 future sprints (one at a time) with this average, and classify each future sprint as 'Underutilized', 'Okay Utilization +- 5 from average story points calculated', or 'Overutilized'
+------------------------------------------------------------------
+Date and Time :2025-04-13 12:04:29.912524
+users original query :What are total number of story points assigned to Alok and Rishika in Sprint 8 and give it to me seperately 
+data to query  :All issues assigned to Alok and Rishika in Sprint 8
+specific need  :Story points assigned to Alok and Rishika separately in Sprint 8
+------------------------------------------------------------------
+Date and Time :2025-04-13 13:12:47.131666
+users original query :Story points assigned to Alok and Apoorva in Sprint 8 seperately 
+data to query  :All issues assigned to Alok and Apoorva in Sprint 8
+specific need  :Story points assigned to Alok and Apoorva separately in Sprint 8
+------------------------------------------------------------------
+Date and Time :2025-04-22 21:56:01.588659
+users original query :No of story points assigned to Hari in sprint 8
+data to query  :All issues assigned to Hari in sprint 8
+specific need  :Number of story points assigned to Hari in sprint 8
+------------------------------------------------------------------
