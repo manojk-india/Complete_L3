@@ -15,6 +15,10 @@ from utils import get_person_boards,board_under_L2_board,write_into_checkpoint_f
 from Main_architecture.crew import wrapper_function
 
 
+# calling the L1 architecture 
+from L1_architecture.entry import entrypoint
+
+
 # Load environment variables
 load_dotenv()
 
@@ -101,7 +105,10 @@ def main_L3_query(query:str):
 
             for j in queries2:
                 # here all ready -- modify and call the architecture built
-                wrapper_function(j)
+                # only constraint is j should contain L1 board name 
+                entrypoint(j)
+
+                # code for taking the outputs and saving it in the output.pdf file 
 
 
     elif( level == "L2"):

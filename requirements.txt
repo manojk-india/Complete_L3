@@ -5,3 +5,7 @@ faiss-cpu
 sentence-transformers
 chainlit
 speechrecognition
+reportlab
+
+
+# python -m pip install --upgrade --force-reinstall reportlab
