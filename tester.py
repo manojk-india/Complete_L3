@@ -1,3 +1,5 @@
+# Have to still research about a good way of presentation of the output
+
 from reportlab.lib.pagesizes import landscape, A4,portrait
 from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Image, Paragraph, PageBreak, KeepInFrame
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle

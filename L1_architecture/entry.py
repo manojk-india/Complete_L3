@@ -26,9 +26,10 @@ async def entrypoint(Query:str) -> str:
 
     # calling the data getter crew to extract the relevant information from the user query
     result=parameter_extracter_crew(Query)
-
+    board_name=result["board_name"].replace(" ","")
+    print("board name is : ",board_name)
     # calling the main API function 
-    get_L1_board_data(result["board_name"],previous_needed_or_not,result["sprint_name"],result["person_name"],idx)
+    get_L1_board_data(board_name,previous_needed_or_not,result["sprint_name"],result["person_name"],idx)
 
     # now we need to add the columns to the dataframe to add the RTB/CTB columns and also FTE/FTC columns
     df=pd.read_csv("generated_files/current.csv")
@@ -51,6 +52,8 @@ async def entrypoint(Query:str) -> str:
     # data we have is result["board_name"],result["sprint_name"] ( can be none ),result["person_name"] ( can be none )
 
     board_name=result["board_name"]
+    #remove space from the board name
+    board_name=board_name.replace(" ","")
 
     # get the current sprint name if not provided in the query
     if (result["sprint_name"]==None):
@@ -62,10 +65,9 @@ async def entrypoint(Query:str) -> str:
             for i in sprint_ids:
                 sprint_name.append(get_sprint_name(board_name, i))
         else:
-            sprint_name=list(current_sprint_name)
+            sprint_name=[current_sprint_name]
     else:
         sprint_name=result["sprint_name"]
-
     # get the membership of the board if not provided in the query
     if (result["person_name"]==None):
         members=get_membership_of_board(board_name)
@@ -75,15 +77,23 @@ async def entrypoint(Query:str) -> str:
     if(idx!=6):
         # PTO not required for JIRA hygiene case
         with open("outputs/output.txt", "a") as f:
-                f.write("\n\n")
-                f.write(" Here is the required PTO data ")
-                f.write("=================================")
-                f.write("\n")
+                flag=0
                 for i in members:
                     for j in sprint_name:
+                        print(i,j)
                         leaves=total_leave_days(i, j)
+                        print("leaves are : ",leaves)
                         if leaves == 0:
                             continue
+                        else:
+                            flag+=1
+                            if flag==1:
+                                f.write("\n")
+                                f.write(" Here is the required PTO data ")
+                                f.write("\n")
+                                f.write("---------------------------------------------")
+                                f.write("\n")
+                            
                         f.write(f"Name: {i} -- Leave days: {leaves} in {j} \n")
                 f.write("\n")
 

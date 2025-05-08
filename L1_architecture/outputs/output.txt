@@ -1,13 +1,4 @@
-Query: Backlog health for Cdf board
-Average velocity from previous sprints: 14.83
-CDF Sprint 10 - Story points: 24.0
-CDF Sprint 10 - Backlog status: Overutilized
-CDF Sprint 11 - Story points: 21.0
-CDF Sprint 11 - Backlog status: Overutilized
-
-
- Here is the required PTO data =================================
-Name: Alice -- Leave days: 3.0 in sprint 10 
-Name: Alice -- Leave days: 2.0 in sprint 11 
-Name: Hari -- Leave days: 1.0 in sprint 10 
+Query: fte FTC utilisation for APS 2 board
+FTE story points: 10.0
+FTC story points: 16.0
 

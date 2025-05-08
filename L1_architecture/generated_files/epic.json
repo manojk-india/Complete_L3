@@ -1,10 +1,10 @@
 {
   "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations,customfield_10010.requestTypePractice",
-  "id": "10012",
-  "self": "https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/issue/10012",
-  "key": "DIS-1",
+  "id": "10039",
+  "self": "https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/issue/10039",
+  "key": "APS-3",
   "fields": {
-    "statuscategorychangedate": "2025-04-16T22:35:31.476+0530",
+    "statuscategorychangedate": "2025-04-17T10:44:05.746+0530",
     "issuetype": {
       "self": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/issuetype/10000",
       "id": "10000",
@@ -15,11 +15,11 @@
       "hierarchyLevel": 1
     },
     "parent": {
-      "id": "10000",
-      "key": "TP-1",
-      "self": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/issue/10000",
+      "id": "10002",
+      "key": "TP-3",
+      "self": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/issue/10002",
       "fields": {
-        "summary": "EPIC1 - Transaction Processing",
+        "summary": "EPIC3 - Transaction Processing",
         "status": {
           "self": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/status/10003",
           "description": "",
@@ -56,17 +56,17 @@
     "sprint": null,
     "customfield_10030": null,
     "project": {
-      "self": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/project/10001",
-      "id": "10001",
-      "key": "DIS",
-      "name": "DIS",
+      "self": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/project/10033",
+      "id": "10033",
+      "key": "APS",
+      "name": "APS",
       "projectTypeKey": "software",
       "simplified": false,
       "avatarUrls": {
-        "48x48": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10401",
-        "24x24": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10401?size=small",
-        "16x16": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10401?size=xsmall",
-        "32x32": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10401?size=medium"
+        "48x48": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10423",
+        "24x24": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10423?size=small",
+        "16x16": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10423?size=xsmall",
+        "32x32": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10423?size=medium"
       }
     },
     "fixVersions": [],
@@ -89,11 +89,11 @@
     "workratio": 0,
     "lastViewed": null,
     "watches": {
-      "self": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/issue/DIS-1/watchers",
+      "self": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/issue/APS-3/watchers",
       "watchCount": 1,
       "isWatching": false
     },
-    "created": "2025-04-16T22:35:30.529+0530",
+    "created": "2025-04-17T10:44:05.214+0530",
     "customfield_10020": null,
     "customfield_10021": null,
     "customfield_10022": null,
@@ -107,17 +107,19 @@
     "customfield_10024": null,
     "customfield_10025": null,
     "customfield_10026": null,
-    "labels": [],
+    "labels": [
+      "['RTB']"
+    ],
     "customfield_10016": null,
-    "customfield_10017": null,
+    "customfield_10017": "teal",
     "customfield_10018": {
       "hasEpicLinkFieldDependency": false,
       "showField": true,
       "data": {
-        "id": 10000,
-        "key": "TP-1",
-        "keyNum": 1,
-        "summary": "EPIC1 - Transaction Processing",
+        "id": 10002,
+        "key": "TP-3",
+        "keyNum": 3,
+        "summary": "EPIC3 - Transaction Processing",
         "projectId": 10002,
         "issueType": {
           "id": "10034",
@@ -125,13 +127,13 @@
         }
       }
     },
-    "customfield_10019": "0|i00013:",
-    "timeestimate": 108000,
-    "aggregatetimeoriginalestimate": 108000,
+    "customfield_10019": "0|i00033:",
+    "timeestimate": 79200,
+    "aggregatetimeoriginalestimate": 79200,
     "versions": [],
     "issuelinks": [],
     "assignee": null,
-    "updated": "2025-04-24T21:35:14.029+0530",
+    "updated": "2025-04-17T10:57:45.596+0530",
     "status": {
       "self": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/status/10003",
       "description": "",
@@ -148,23 +150,27 @@
     },
     "components": [
       {
-        "self": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/component/10000",
-        "id": "10000",
-        "name": "APS1"
+        "self": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/component/10006",
+        "id": "10006",
+        "name": "TES1"
       }
     ],
-    "timeoriginalestimate": 108000,
-    "description": "As a retail banking customer, I want to log in to the mobile banking app using biometric authentication (Face ID or fingerprint), so I can securely access my account without typing my password each time. This should work on both iOS and Android, and fallback to password if biometric fails.\nvalue: Optimize System Stability , Reliability, and Processes, Increase the percentage of Transaction processing Products migrating to more efficient platform and efficiency enhancements.",
+    "timeoriginalestimate": 79200,
+    "description": "Description for feature 3 for APS",
     "customfield_10010": null,
     "customfield_10011": null,
-    "customfield_10012": null,
-    "customfield_10013": null,
+    "customfield_10012": {
+      "self": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/customFieldOption/10016",
+      "value": "To Do",
+      "id": "10016"
+    },
+    "customfield_10013": "ghx-label-11",
     "customfield_10014": null,
     "timetracking": {
-      "originalEstimate": "3d 6h",
-      "remainingEstimate": "3d 6h",
-      "originalEstimateSeconds": 108000,
-      "remainingEstimateSeconds": 108000
+      "originalEstimate": "2d 6h",
+      "remainingEstimate": "2d 6h",
+      "originalEstimateSeconds": 79200,
+      "remainingEstimateSeconds": 79200
     },
     "customfield_10015": null,
     "customfield_10005": null,
@@ -173,10 +179,10 @@
     "customfield_10007": null,
     "customfield_10008": null,
     "customfield_10009": null,
-    "aggregatetimeestimate": 108000,
     "attachment": [],
+    "aggregatetimeestimate": 79200,
     "flagged": false,
-    "summary": "Enable biometric authentication for mobile banking app",
+    "summary": "TASK 3 for APS",
     "creator": {
       "self": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/user?accountId=712020%3Acc03e21d-3190-4e55-90d0-4ffa41861bda",
       "accountId": "712020:cc03e21d-3190-4e55-90d0-4ffa41861bda",
@@ -193,8 +199,7 @@
     },
     "subtasks": [],
     "customfield_10040": "2025-12-30",
-    "customfield_10042": "Given a user has enabled biometric authentication in the app settings,\nWhen they open the mobile banking app,\nThen they should be prompted for biometric verification,\nAnd upon successful authentication, they should be logged in automatically,\nAnd if biometric authentication fails, they should be redirected to the password login screen.",
-    "customfield_10043": "PRD20252 - Claims | RTB - Enhancement/New feature",
+    "customfield_10042": "Acceptance criteria for feature 3 for APS",
     "reporter": {
       "self": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/user?accountId=712020%3Acc03e21d-3190-4e55-90d0-4ffa41861bda",
       "accountId": "712020:cc03e21d-3190-4e55-90d0-4ffa41861bda",
@@ -209,12 +214,13 @@
       "timeZone": "Asia/Calcutta",
       "accountType": "atlassian"
     },
+    "customfield_10043": "RTB",
+    "customfield_10044": 22.0,
     "aggregateprogress": {
       "progress": 0,
-      "total": 108000,
+      "total": 79200,
       "percent": 0
     },
-    "customfield_10044": 30.0,
     "customfield_10001": null,
     "customfield_10002": [],
     "customfield_10003": null,
@@ -225,18 +231,18 @@
     "duedate": null,
     "progress": {
       "progress": 0,
-      "total": 108000,
+      "total": 79200,
       "percent": 0
     },
     "comment": {
       "comments": [],
-      "self": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/issue/10012/comment",
+      "self": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/issue/10039/comment",
       "maxResults": 0,
       "total": 0,
       "startAt": 0
     },
     "votes": {
-      "self": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/issue/DIS-1/votes",
+      "self": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/issue/APS-3/votes",
       "votes": 0,
       "hasVoted": false
     },

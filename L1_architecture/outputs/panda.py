@@ -1,4 +1,18 @@
-Here is the complete pandas code to generate the backlog health report for the CDF board:
+<think>
+Okay, I need to generate a pandas code based on the user's query. The user asked for "fte FTC utilisation for APS 2 board". Let me break this down.
+
+First, I look at the CSV structure provided. The columns include 'project_key' which is the board name, 'employment_type' which can be FTE or FTC, and 'story_points' which is numeric. 
+
+The example code given loads the CSV, calculates FTE and FTC story points, and writes the results to a file. I should follow that structure.
+
+I notice the user's query doesn't specify a sprint, so I don't need to filter by sprint. Also, the note says not to filter data as it's already done, so I can proceed without additional filtering.
+
+I'll start by importing pandas and loading the CSV. Then, I'll calculate the sum of story points for FTE and FTC using boolean indexing. I should handle nulls with fillna(0) to avoid errors.
+
+Finally, I'll write the query and results to outputs/output.txt, ensuring the format matches the example.
+
+I think that's all. Now, I'll write the code accordingly.
+</think>
 
 ```python
 #code start
@@ -7,46 +21,14 @@ import pandas as pd
 # Load current sprint data
 df = pd.read_csv("generated_files/current.csv")
 
-# Load historical data for previous sprints
-df_history = pd.read_csv("generated_files/history.csv")
+# Calculate FTE and FTC story points for APS 2 board
+fte_points = df[df['employment_type'] == 'FTE']['story_points'].fillna(0).sum()
+ftc_points = df[df['employment_type'] == 'FTC']['story_points'].fillna(0).sum()
 
-# Calculate average velocity from previous sprints
-if len(df_history) > 0:
-    avg_velocity = df_history['story_points'].fillna(0).groupby(df_history['sprint']).sum().mean()
-else:
-    avg_velocity = 0
-
-# Identify unique sprints in current data
-unique_sprints = df['sprint'].unique()
-
-# Define utilization thresholds (20% difference from average)
-threshold_percentage = 0.2
-overutilized_threshold = avg_velocity * (1 + threshold_percentage)
-underutilized_threshold = avg_velocity * (1 - threshold_percentage)
-
-# Function to determine utilization status
-def check_utilization(sprint_points, avg_velocity, overutilized_threshold, underutilized_threshold):
-    if sprint_points >= overutilized_threshold:
-        return "Overutilized"
-    elif sprint_points <= underutilized_threshold:
-        return "Underutilized"
-    else:
-        return "Healthy"
-
-# Calculate story points and utilization for each sprint
-utilization_results = {}
-for sprint in unique_sprints:
-    sprint_points = df[df['sprint'] == sprint]['story_points'].fillna(0).sum()
-    utilization_results[sprint] = check_utilization(sprint_points, avg_velocity, overutilized_threshold, underutilized_threshold)
-
-# Save results to output file
+# Output results
 with open("outputs/output.txt", "w") as f:
-    f.write(f"Query: Backlog health for Cdf board\n")
-    f.write(f"Average velocity from previous sprints: {avg_velocity:.2f}\n")
-    for sprint, utilization in utilization_results.items():
-        sprint_points = df[df['sprint'] == sprint]['story_points'].fillna(0).sum()
-        f.write(f"{sprint} - Story points: {sprint_points}\n")
-        f.write(f"{sprint} - Backlog status: {utilization}\n")
-
+    f.write("Query: fte FTC utilisation for APS 2 board\n")
+    f.write(f"FTE story points: {fte_points}\n")
+    f.write(f"FTC story points: {ftc_points}\n")
 #code end
 ```

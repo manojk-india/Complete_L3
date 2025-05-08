@@ -29,7 +29,7 @@ llm = LLM(
     max_tokens=2048
 )
 
-# main function at L3 level
+# main function at L3 level , we have to modify for handling case insensitive queries -- voice input 
 def main_L3_query(query:str):
 
     # board architecture
@@ -142,8 +142,8 @@ def main_L3_query(query:str):
                 write_into_checkpoint_file(["-----------------------------------"])
 
                 for j in queries2:
-                    # here all ready -- modify and call the architecture built
-                    wrapper_function(j)
+                    # here we will get the L2 queries one by one 
+                    pass
 
     else:
         # This is a L3 level query

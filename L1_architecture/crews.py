@@ -29,7 +29,9 @@ agent = Agent(
 )
 
 task = Task(
-    description="""Given a user query {query}, extract the board name, sprint, and person if present""",
+    description="""
+    Given a user query {query}, extract the board name, sprint, and person if present
+    Note: Jeera/Jira is not a board name or person name, it is a tool name.""",
     agent=agent,
     output_pydantic=info,
     expected_output="""extracted parameters

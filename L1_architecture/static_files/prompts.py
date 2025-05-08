@@ -19,4 +19,4 @@ The csv file has the following columns:
 - "sprint_state": one of ["Completed", "Active", "Future"]
 - "story_points": story points (numeric)
 - "requested_by": either "RTB" or "CTB"
-- "employee_type": employee type of assignee (either "FTE" or "FTC")"""
+- "employment_type": employee type of assignee (either "FTE" or "FTC")"""

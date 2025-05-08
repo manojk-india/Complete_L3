@@ -6,6 +6,7 @@ sentence-transformers
 chainlit
 speechrecognition
 reportlab
+fpdf
 
 
 # python -m pip install --upgrade --force-reinstall reportlab -- for force reinstall
