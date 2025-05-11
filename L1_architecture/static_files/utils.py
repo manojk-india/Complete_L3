@@ -7,21 +7,14 @@ import requests
 import json
 import os
 from requests.auth import HTTPBasicAuth
-from crewai import Process, Agent, Task, Crew, LLM
 import pandas as pd
 from datetime import datetime
+from fpdf import FPDF
+import numpy as np
+import ast
+# import ast
 
-def find_present_words_case_insensitive(query):
-    # Convert query to lower case for case-insensitive comparison
-    query_lower = query.lower()
 
-    word_list=["cdf","ebsnf","tes1","tes2","dis1","dis2"]
-    # Collect words that are present in the query (case-insensitive)
-    found = [word for word in word_list if word.lower() in query_lower]
-    if found:
-        return found[0]
-    else:
-        return None
     
 # writing it into checkpoint file for better debugging 
 def write_to_checkpoint_file(data, file_path='checkpoint.txt'):
@@ -31,12 +24,12 @@ def write_to_checkpoint_file(data, file_path='checkpoint.txt'):
 # function that returns the L1 board id for the given board name -- to be done 
 def get_board_id(board_name):
     board_ids = {
-        "cdf": 39,
-        "ebsnf": 38,
-        "tes1": 42,
+        "abc1": 39,
+        "ABS2": 38,
+        "abc5": 42,
         "tes2": 43,
-        "aps1": 40,
-        "aps2": 41
+        "abc3": 40,
+        "abc4": 41
     }
     return board_ids.get(board_name.lower(), None)  # Return None if not found
 
@@ -84,7 +77,7 @@ def get_current_sprint():
 # function that returns the sprint id 
 def get_sprint_id(board_name, sprint_name):
     sprint_ids = {
-        "cdf": {
+        "abc1": {
             "sprint 1": 64,
             "sprint 2": 65,
             "sprint 3": 66,
@@ -96,8 +89,9 @@ def get_sprint_id(board_name, sprint_name):
             "sprint 9": 72,
             "sprint 10": 73,
             "sprint 11": 166,
+            "sprint 12": 199
         },
-        "ebsnf": {
+        "abc2": {
             "sprint 1": 54,
             "sprint 2": 55,
             "sprint 3": 56,
@@ -109,8 +103,9 @@ def get_sprint_id(board_name, sprint_name):
             "sprint 9": 62,
             "sprint 10": 63,
             "sprint 11": 167,
+            "sprint 12": 200
         },
-        "aps1": {
+        "abc3": {
             "sprint 1": 74,
             "sprint 2": 78,
             "sprint 3": 79,
@@ -122,8 +117,9 @@ def get_sprint_id(board_name, sprint_name):
             "sprint 9": 85,
             "sprint 10": 86,
             "sprint 11": 170,
+            "sprint 12": 201
         },
-        "tes1": {
+        "abc5": {
             "sprint 1": 76,
             "sprint 2": 96,
             "sprint 3": 97,
@@ -135,10 +131,10 @@ def get_sprint_id(board_name, sprint_name):
             "sprint 9": 103,
             "sprint 10": 104,
             "sprint 11": 168,
+            "sprint 12": 203
 
-        },
-        
-        "aps2": {
+        },       
+        "abc4": {
             "sprint 1": 75,
             "sprint 2": 87,
             "sprint 3": 88,
@@ -150,6 +146,7 @@ def get_sprint_id(board_name, sprint_name):
             "sprint 9": 94,
             "sprint 10": 95,
             "sprint 11": 171,
+            "sprint 12": 202
         }  # Add other boards and their sprints here
     }
    
@@ -161,7 +158,7 @@ def get_sprint_name(board_name, sprint_id):
     Returns the sprint name for a given board name and sprint ID.
     """
     sprint_ids = {
-        "cdf": {
+        "abc1": {
             "Sprint 1": 64,
             "Sprint 2": 65,
             "Sprint 3": 66,
@@ -173,8 +170,9 @@ def get_sprint_name(board_name, sprint_id):
             "Sprint 9": 72,
             "Sprint 10": 73,
             "Sprint 11": 166,
+            "Sprint 12": 199
         },
-        "ebsnf": {
+        "abc2": {
             "Sprint 1": 54,
             "Sprint 2": 55,
             "Sprint 3": 56,
@@ -186,8 +184,9 @@ def get_sprint_name(board_name, sprint_id):
             "Sprint 9": 62,
             "Sprint 10": 63,
             "Sprint 11": 167,
+            "Sprint 12": 200
         },
-        "aps1": {
+        "abc3": {
             "Sprint 1": 74,
             "Sprint 2": 78,
             "Sprint 3": 79,
@@ -199,8 +198,9 @@ def get_sprint_name(board_name, sprint_id):
             "Sprint 9": 85,
             "Sprint 10": 86,
             "Sprint 11": 170,
+            "Sprint 12": 201
         },
-        "tes1": {
+        "abc5": {
             "Sprint 1": 76,
             "Sprint 2": 96,
             "Sprint 3": 97,
@@ -212,8 +212,9 @@ def get_sprint_name(board_name, sprint_id):
             "Sprint 9": 103,
             "Sprint 10": 104,
             "Sprint 11": 168,
+            "Sprint 12": 203
         },
-        "aps2": {
+        "abc4": {
             "Sprint 1": 75,
             "Sprint 2": 87,
             "Sprint 3": 88,
@@ -225,6 +226,7 @@ def get_sprint_name(board_name, sprint_id):
             "Sprint 9": 94,
             "Sprint 10": 95,
             "Sprint 11": 171,
+            "Sprint 12": 202
         }
     }
 
@@ -239,6 +241,9 @@ def get_sprint_name(board_name, sprint_id):
 # api caller helper function for tool calling
 def api_helper(sprint_id: int, jql:str, output_file: str) -> None:
     url = f"https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/{sprint_id}/issue"
+    write_to_checkpoint_file("api called with: sprint_id - "+str(sprint_id)+" jql - "+str(jql)+" output_file - "+str(output_file))
+    write_to_checkpoint_file("URL is : "+str(url))
+
     
     # Authentication
     email = os.getenv('JIRA_EMAIL')
@@ -296,11 +301,11 @@ def api_helper(sprint_id: int, jql:str, output_file: str) -> None:
 # getting previous sprint ids for the given board name and current sprint id -- mock function for now ..need to feed in data
 def get_previous_sprint_ids(board_name, current_sprint_id):
     dictionary = {
-        "cdf": [64,65,66,67,68,69,70,71,72,73,166],
-        "aps1": [74,78,79,80,81,82,83,84,85,86,170],
-        "aps2": [74,87,88,89,90,91,92,93,94,95,171],	
-        "ebsnf": [54,55,56,57,58,59,60,61,62,63,167],
-        "tes1": [76,96,97,98,99,100,101,102,103,104,168],
+        "abc1": [64,65,66,67,68,69,70,71,72,73,166,199],
+        "abc3": [74,78,79,80,81,82,83,84,85,86,170,201],
+        "abc4": [74,87,88,89,90,91,92,93,94,95,171,202],	
+        "abc2": [54,55,56,57,58,59,60,61,62,63,167,200],
+        "abc5": [76,96,97,98,99,100,101,102,103,104,168,203],
 
         # Add other boards here
     }
@@ -315,11 +320,11 @@ def get_previous_sprint_ids(board_name, current_sprint_id):
 # getting future 2 sprints 
 def get_future_sprint_ids(board_name, current_sprint_id):
     dictionary = {
-        "cdf": [64,65,66,67,68,69,70,71,72,73,166],
-        "aps1": [74,78,79,80,81,82,83,84,85,86,170],
-        "aps2": [74,87,88,89,90,91,92,93,94,95,171],	
-        "ebsnf": [54,55,56,57,58,59,60,61,62,63,167],
-        "tes1": [76,96,97,98,99,100,101,102,103,104,168],
+        "abc1": [64,65,66,67,68,69,70,71,72,73,166,199],
+        "abc3": [74,78,79,80,81,82,83,84,85,86,170,201],
+        "abc4": [74,87,88,89,90,91,92,93,94,95,171,202],	
+        "abc2": [54,55,56,57,58,59,60,61,62,63,167,200],
+        "abc5": [76,96,97,98,99,100,101,102,103,104,168,203],
 
         # Add other boards here
     }
@@ -327,7 +332,7 @@ def get_future_sprint_ids(board_name, current_sprint_id):
     return [dictionary.get(board_name.lower())[idx+1],dictionary.get(board_name.lower())[idx+2]]
     
 
-# coversting json to csv
+# converting json to csv
 def json_to_csv(json_file,csv_file) -> None:
     """
     Convert Jira features JSON to CSV with specified fields
@@ -398,12 +403,13 @@ def embed_query(user_query):
     # This function will take the query and embed it using the LLM model
     # For now, we will just return the query as is
     queries = [
-        "Story points assigned to person x in y board in sprint n",
+        "What is the capacity utilization of person x in y board in sprint n",
         "RTB/CTB utilization of y board in sprint n",
         "RTB/CTB utilization of y person in sprint n",
         "FTE/FTC utilization of y board in sprint n",
         "Backlog health for y board",
-        "JIRA hygiene for x board"
+        "JIRA hygiene for x board",
+        "Story points assigned to person x in y board in sprint n",
     ]
     model = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
     query_embeddings = model.encode(queries, convert_to_tensor=True)
@@ -420,7 +426,10 @@ def embed_query(user_query):
         4: False,
         5: True,
         6: False,
+        7: False
     }
+
+    write_to_checkpoint_file("matched query is : "+str(queries[best_match_idx]))
 
     return queries[best_match_idx], scores[0][best_match_idx].item(),value+1,previous_needed_or_not_dict[value+1]
 
@@ -433,7 +442,7 @@ def get_L1_board_data(board_name, previous_data_needed_or_not, sprint,person,idx
         sprint (str, optional): The name of the sprint. Defaults to None. eg. sprint 1
         person (str, optional): The name of the person. Defaults to None. eg. manoj
     """
-    write_to_checkpoint_file("Crew function called with parameters "+"board_name "+str(board_name)+" sprint_name "+str(sprint)+" person_name "+str(person)+" previous_data_needed_or_not "+str(previous_data_needed_or_not))
+    write_to_checkpoint_file("get_L1_board_data called with parameters "+"board_name "+str(board_name)+" sprint_name "+str(sprint)+" person_name "+str(person)+" previous_data_needed_or_not "+str(previous_data_needed_or_not))
  
 
     if(sprint is None):
@@ -447,15 +456,15 @@ def get_L1_board_data(board_name, previous_data_needed_or_not, sprint,person,idx
     else:
         jql=None
 
-    
     try:
         os.remove("generated_files/current.json")
         os.remove("generated_files/history.json")
         os.remove("generated_files/current.csv")
         os.remove("generated_files/history.csv")
-        print("generated_files removed successfully")
-    except OSError:
-        pass
+        os.remove("generated_files/low_quality_acceptance.csv")
+        os.remove("outputs/acceptance_crieteria_report.pdf")
+    except:
+        print("files not found to delete")
 
     if(idx==5):
         Fut_sprints=get_future_sprint_ids(board_name,sprint_id)
@@ -531,6 +540,8 @@ def add_rtb_ctb_column(df: pd.DataFrame):
     cache = {}  # Initialize an empty dictionary for caching
     df['requested_by'] = df['parent_key'].apply(lambda key: fetch_requested_by(key, cache))
     df.to_csv("generated_files/current.csv", index=False) 
+    write_to_checkpoint_file("added rtb/ctb column to the current.csv file")
+
 
 #FTE/FTC column addition function
 def add_employment_type():
@@ -570,6 +581,8 @@ def add_employment_type():
     df.to_csv(output_path, index=False)
 
     print(f"Updated file saved to {output_path}")
+    write_to_checkpoint_file("added fte/ftc columns to current.csv file")	
+
 
 
 # leave calculater function for the given person and sprint name
@@ -615,15 +628,15 @@ def extract_code_section(input_file, output_file):
 # Required for PTO data integration
 def get_membership_of_board(board:str):
     board_membership={
-    "CDF": ["Alice","Bob","Rishika","Hari","Apoorva"],
-    "EBSNF": ["Apoorva","David","Pavithra","Alok","Peter"],
-    "TES1": ["Sai","Krithika","David"],
+    "abc1": ["Alice","Bob","Rishika","Hari","Apoorva"],
+    "abc2": ["Apoorva","David","Pavithra","Alok","Peter"],
+    "abc5": ["Sai","Krithika","David"],
     "TES2": ["Seetha","Rasheed","Rachin"],	
-    "APS1": ["Nitish","Noor","Khaleel"],
-    "APS2": ["Vikram","Dube","Ashwin"],
+    "abc3": ["Nitish","Noor","Khaleel"],
+    "abc4": ["Vikram","Dube","Ashwin"],
     }
 
-    return board_membership.get(board.upper(),[])
+    return board_membership.get(board.lower(),[])
 
 
 def clear_empty_labels():
@@ -645,3 +658,157 @@ def restore_empty_labels():
     df.loc[df['labels'] == '', 'labels'] = '[]'  # Replace empty string with '[]'
     df.to_csv(file_path, index=False)
     print("Restored empty labels to [].")
+
+# This function will be used when user asks abt some missing column
+def save_rows_with_low_quality_acceptance_crieteria() -> None:
+    """
+    Save rows to a new CSV where the specified column is empty or null.
+
+    Args:
+        csv_input: Path to the input CSV file.
+        column_name: Column name to check for empty/null values.
+        csv_output: Path to save the filtered CSV file.
+    """
+    csv_input="generated_files/current.csv"
+    csv_output="generated_files/low_quality_acceptance.csv"
+
+    df = pd.read_csv(csv_input)
+
+
+    acceptance_issue = df['acceptance_result'].isna() | (df['acceptance_result'] == 'Not Well Documented')
+    new_df=df[acceptance_issue]
+    new_df.to_csv(csv_output, index=False)
+
+
+def process_csv():
+    # Read the CSV file
+    file_path="generated_files/current.csv"
+    output_path="generated_files/current.csv"
+    df = pd.read_csv(file_path)
+
+    # Apply the condition
+    df['quality_check'] = df['acceptance_result'].apply(
+        lambda x: np.nan if str(x).strip() == 'Not Well Documented' else 1
+    )
+
+    # Save the modified CSV
+    df.to_csv(output_path, index=False)
+    print(f"Processed file saved to {output_path}")
+
+
+
+# function for creating PDfs
+def clean_latin1(text):
+    if not isinstance(text, str):
+        return ''
+    replacements = {
+        '\u2018': "'", '\u2019': "'", '\u201c': '"', '\u201d': '"',
+        '\u2013': '-', '\u2014': '-', '\u2026': '...',
+    }
+    for k, v in replacements.items():
+        text = text.replace(k, v)
+    return text.encode('latin-1', 'replace').decode('latin-1')
+
+
+class PDFReport1(FPDF):
+    def header(self):
+        # 1. Red "WELLS FARGO" strip at the very top
+        self.set_y(0)
+        self.set_fill_color(206, 17, 38)  # Wells Fargo red
+        self.rect(0, 0, self.w, 18, 'F')  # Red strip: height 18 units
+
+        self.set_font('helvetica', 'B', 16)
+        self.set_text_color(255, 255, 255)  # White text
+        self.set_xy(0, 3)
+        self.cell(self.w, 12, "WELLS FARGO", border=0, ln=1, align='C')
+
+        # 2. Thin yellow strip immediately below
+        self.set_y(18)
+        self.set_fill_color(255, 205, 0)  # Yellow
+        self.rect(0, 18, self.w, 3, 'F')  # Yellow strip: height 3 units
+
+        self.ln(3)
+        self.set_font('helvetica', 'B', 15)
+        self.set_text_color(0, 0, 0)
+        self.cell(0, 12, "Acceptance_crieteria_Report", ln=1, align='C')
+        self.ln(10)
+
+        self.set_y(40)  # This just ensures the content starts below the strips
+
+    def footer(self):
+        self.set_y(-15)
+        self.set_font('helvetica', 'I', 8)
+        self.cell(0, 10, f'Page {self.page_no()}', 0, 0, 'C')
+
+# acceptance crieteria report PDF 
+def create_acceptance_improvement_report():
+    csv_file="generated_files/current.csv"
+    pdf_file="outputs/acceptance_crieteria_report.pdf"
+    df = pd.read_csv(csv_file)
+
+    pdf = PDFReport1()
+    pdf.set_auto_page_break(auto=True, margin=15)
+    pdf.add_page()
+
+    pdf.set_font('helvetica', '', 11)  # Use built-in font
+
+
+    for idx, row in df.iterrows():
+        pdf.set_font('helvetica', 'B', 12)
+        pdf.cell(0, 10, clean_latin1(f"Feature Key: {row.get('key', '')}"), ln=True)
+        pdf.set_font('helvetica', '', 11)
+
+        pdf.multi_cell(0, 8, clean_latin1(f"Summary: {row.get('summary', '')}"))
+        pdf.ln(1)
+        pdf.multi_cell(0, 8, clean_latin1(f"Description: {row.get('description', '')}"))
+        pdf.ln(1)
+        pdf.multi_cell(0, 8, clean_latin1(f"Acceptance Criteria: {row.get('acceptance_crieteria', '')}"))
+        pdf.ln(5)
+
+        improvement_str = row.get('acceptance_improvement', '{}')
+        try:
+            improvement_dict = ast.literal_eval(improvement_str) if isinstance(improvement_str, str) else {}
+        except Exception:
+            improvement_dict = {}
+
+        strengths = improvement_dict.get('strengths', [])
+        improvement_areas = improvement_dict.get('improvement_areas', [])
+        revised_version = improvement_dict.get('revised_version', '')
+
+        pdf.set_font('helvetica', 'B', 11)
+        pdf.cell(0, 10, clean_latin1('Strengths:'), ln=True)
+        pdf.set_font('helvetica', '', 11)
+        if strengths:
+            for s in strengths:
+                pdf.multi_cell(0, 8, clean_latin1(f"- {s}"))
+        else:
+            pdf.cell(0, 8, 'None', ln=True)
+
+        pdf.ln(2)
+        pdf.set_font('helvetica', 'B', 11)
+        pdf.cell(0, 10, clean_latin1('Improvement Areas:'), ln=True)
+        pdf.set_font('helvetica', '', 11)
+        if improvement_areas:
+            for imp in improvement_areas:
+                pdf.multi_cell(0, 8, clean_latin1(f"- {imp}"))
+        else:
+            pdf.cell(0, 8, 'None', ln=True)
+
+        pdf.ln(2)
+        pdf.set_font('helvetica', 'B', 11)
+        pdf.cell(0, 10, clean_latin1('Revised Version:'), ln=True)
+        pdf.set_font('helvetica', '', 11)
+        if revised_version:
+            pdf.multi_cell(0, 8, clean_latin1(revised_version))
+        else:
+            pdf.cell(0, 8, 'None', ln=True)
+
+        pdf.ln(10)
+        pdf.line(10, pdf.get_y(), 200, pdf.get_y())
+        pdf.ln(10)
+
+    pdf.output(pdf_file)
+
+
+
+

@@ -1,39 +1,64 @@
 use_case_examples = {
     1: """
-**Note: **" For Story points related query, we need to check the current sprint story points from current.csv and compare it with the average of previous sprints from history.csv."
-**Example Query:** "Story points assigned to Hari in CDF board in sprint 3"
+**Note: **" For capacity utilization related query, we need to check the current sprint story points from current.csv and compare it with the average of previous sprints from history.csv also considering the PTO.csv and threshold as done in the code below."
+**Example Query:** "What is the capacity utilization of Hari in CDF board in sprint 7"
 #code start
 import pandas as pd
 
-# Load data
-df = pd.read_csv("generated_files/current.csv")         # current sprint data
-df_history = pd.read_csv("generated_files/history.csv") # previous 6 sprints (or fewer)
+# Constants
+TOTAL_WORKING_DAYS_IN_SPRINT = 10
+TOLERANCE = 0.1  # 10% tolerance for utilization
 
-# Compute total story points for current sprint
+# Load data
+df = pd.read_csv("generated_files/current.csv")         # already filtered for Hari, CDF, sprint 7
+df_history = pd.read_csv("generated_files/history.csv") # already filtered
+df_pto = pd.read_csv("generated_files/PTO.csv")         # PTO data
+
+
+# Compute story points for current sprint
 current_points = df['story_points'].fillna(0).sum()
 
 # Compute average story points from history
-if len(df_history) > 0:
+if not df_history.empty:
     avg_points = df_history['story_points'].fillna(0).groupby(df_history['sprint']).sum().mean()
+    print("avg_points: ",avg_points)
 else:
     avg_points = 0
+#get list of assignees in the current sprint
+assignee= df['assignee'].unique()[0]
+#get the list of sprints in the current sprint
+sprint = df['sprint'].unique()[0]
+#split sprint at the first space and get the rest of the string
+sprint = sprint.split(" ", 1)[1]
+pto_row = df_pto[(df_pto['name'] == assignee) & (df_pto['sprint'] == sprint)]
 
-# Compare utilization
-if avg_points == 0:
-    utilization_status = "No historical data available for comparison."
-elif current_points > avg_points:
-    utilization_status = "Overutilized"
-elif current_points < avg_points:
-    utilization_status = "Underutilized"
+if not pto_row.empty:
+    total_pto_days = pto_row['total_days'].sum()  
+    available_ratio = max(0, (TOTAL_WORKING_DAYS_IN_SPRINT - total_pto_days) / TOTAL_WORKING_DAYS_IN_SPRINT)
+    adjusted_avg_points = avg_points * available_ratio
 else:
-    utilization_status = "Utilization is on par with historical average"
+    adjusted_avg_points = avg_points
 
+
+if adjusted_avg_points == 0:
+        utilization_status = "No historical data available for comparison."
+elif current_points > adjusted_avg_points * (1 + TOLERANCE):
+    utilization_status = "Overutilized"
+elif current_points < adjusted_avg_points * (1 - TOLERANCE):
+    utilization_status = "Underutilized"
+elif abs(current_points - adjusted_avg_points) <= adjusted_avg_points * TOLERANCE:
+    utilization_status = "Utilization is on par with historical average."
+else:
+    utilization_status = "Utilization status could not be determined."
 # Output
 with open("outputs/output.txt", "w") as f:
-    f.write("Query: Story points assigned to Hari in CDF board in sprint 7\n")
-    f.write("Current sprint story points: "+str(current_points))
-    f.write("Average of previous sprints: "+str(avg_points:.2f))
-    f.write(" Capacity utilization status: "+str(utilization_status))
+    f.write(f"Query: Story points assigned to {assignee} in CDF board in sprint {sprint}\n")
+    f.write(f"Current sprint story points: {current_points}\n")
+    f.write(f"Average of previous sprints: {avg_points:.2f}\n")
+    f.write(f"PTO-adjusted average: {adjusted_avg_points:.2f}\n")
+    f.write(f"Capacity utilization status: {utilization_status}\n")
+    f.write(f"Ideal story point range: {adjusted_avg_points-adjusted_avg_points * TOLERANCE:.2f} - {adjusted_avg_points+adjusted_avg_points * TOLERANCE:.2f}\n")
+
 #code end
 
 """,
@@ -163,19 +188,34 @@ with open("outputs/output.txt", "w") as f:
     
     for sprint, utilization in utilization_results.items():
         sprint_points = df[df['sprint'] == sprint]['story_points'].fillna(0).sum()
+        sprint=sprint.split(" ", 1)[1]
         f.write("str(sprint)+" story points:" +str(sprint_points))
         f.write("str(sprint)+" backlog status:"+str(utilization))
+        f.write(" Below you can find low quality acceptance crieteria report ")
 
 #code end
 
 
 """,
-    6: """
-**Use Case: Jira Hygiene for a Board in Current Sprint**
+    7: """
+**Use Case: Story points use case**
 
-**Example Query:** "Jira hygiene for CDF board"
+**Example Query:** "Story points assigned to Hari in CDF board in sprint 9"
 **Correct Code:**
 #code start
+import pandas as pd
+
+# Load data
+df = pd.read_csv("generated_files/current.csv")         # current sprint data
+
+# Compute total story points for in df dataframe
+current_points = df['story_points'].fillna(0).sum()
+
+# Output
+with open("outputs/output.txt", "w") as f:
+    f.write("Query: Story points assigned to Hari in CDF board in sprint 9 is "+str(current_points))
+    f.write("\n")
+
 #code end
 
 """,

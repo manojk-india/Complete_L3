@@ -559,11 +559,28 @@ def clean_latin1(text):
 
 class PDFReport(FPDF):
     def header(self):
-        self.image("wells-image.png", x=10, y=8, w=60)  # Adjust path/size as needed
-        self.ln(20)
-        self.set_font('helvetica', 'B', 14)
-        self.cell(0, 10, 'JIRA Summary Evaluation Report', 0, 1, 'C')
-        self.ln(5)
+        # 1. Red "WELLS FARGO" strip at the very top
+        self.set_y(0)
+        self.set_fill_color(206, 17, 38)  # Wells Fargo red
+        self.rect(0, 0, self.w, 18, 'F')  # Red strip: height 18 units
+
+        self.set_font('helvetica', 'B', 16)
+        self.set_text_color(255, 255, 255)  # White text
+        self.set_xy(0, 3)
+        self.cell(self.w, 12, "WELLS FARGO", border=0, ln=1, align='C')
+
+        # 2. Thin yellow strip immediately below
+        self.set_y(18)
+        self.set_fill_color(255, 205, 0)  # Yellow
+        self.rect(0, 18, self.w, 3, 'F')  # Yellow strip: height 3 units
+
+        self.ln(3)
+        self.set_font('helvetica', 'B', 15)
+        self.set_text_color(0, 0, 0)
+        self.cell(0, 12, "Summary Report", ln=1, align='C')
+        self.ln(10)
+
+        self.set_y(40)  # This just ensures the content starts below the strips
     def footer(self):
         self.set_y(-15)
         self.set_font('helvetica', 'I', 8)
@@ -605,11 +622,28 @@ def create_summary_report(csv_file="data/Final_API.csv", pdf_file="Report/summar
 
 class PDFReport1(FPDF):
     def header(self):
-        self.image("wells-image.png", x=10, y=8, w=60)  # Adjust path/size as needed
-        self.ln(20)
-        self.set_font('helvetica', 'B', 14)
-        self.cell(0, 10, 'Acceptance_crieteria evaluation Report', 0, 1, 'C')
-        self.ln(5)
+        # 1. Red "WELLS FARGO" strip at the very top
+        self.set_y(0)
+        self.set_fill_color(206, 17, 38)  # Wells Fargo red
+        self.rect(0, 0, self.w, 18, 'F')  # Red strip: height 18 units
+
+        self.set_font('helvetica', 'B', 16)
+        self.set_text_color(255, 255, 255)  # White text
+        self.set_xy(0, 3)
+        self.cell(self.w, 12, "WELLS FARGO", border=0, ln=1, align='C')
+
+        # 2. Thin yellow strip immediately below
+        self.set_y(18)
+        self.set_fill_color(255, 205, 0)  # Yellow
+        self.rect(0, 18, self.w, 3, 'F')  # Yellow strip: height 3 units
+
+        self.ln(3)
+        self.set_font('helvetica', 'B', 15)
+        self.set_text_color(0, 0, 0)
+        self.cell(0, 12, "Acceptance criteria Report", ln=1, align='C')
+        self.ln(10)
+
+        self.set_y(40)  # This just ensures the content starts below the strips
     def footer(self):
         self.set_y(-15)
         self.set_font('helvetica', 'I', 8)

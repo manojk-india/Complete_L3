@@ -9,12 +9,13 @@ import pandas as pd
 # custom imports 
 from static_files.utils import *
 from crews import *
-from static_files.hygiene import visualize_missing_data
+from static_files.hygiene import *
 
 # main entry point file which will be used by chainLit
-async def entrypoint(Query:str) -> str:
+def entrypoint(Query:str) -> str:
     # loading the environment variables from the .env file
     load_dotenv()
+    write_to_checkpoint_file("---------------------------------------------------------------------------------------")
 
     # classify the user query as some predefined categories
     sim_query,sim,idx,previous_needed_or_not=embed_query(Query)
@@ -26,6 +27,7 @@ async def entrypoint(Query:str) -> str:
 
     # calling the data getter crew to extract the relevant information from the user query
     result=parameter_extracter_crew(Query)
+
     board_name=result["board_name"].replace(" ","")
     print("board name is : ",board_name)
     # calling the main API function 
@@ -43,10 +45,6 @@ async def entrypoint(Query:str) -> str:
         pandas_query_crew(Query,idx)
 
     clear_empty_labels()
-
-    # creating the JIRA hygiene dashboard -- common for all the L1 level queries
-    visualize_missing_data('generated_files/current.csv', 'outputs/jira_hygiene_dashboard.png')
-
 
     # Now integrating the PTO data according to the query
     # data we have is result["board_name"],result["sprint_name"] ( can be none ),result["person_name"] ( can be none )
@@ -73,6 +71,8 @@ async def entrypoint(Query:str) -> str:
         members=get_membership_of_board(board_name)
     else:
         members=[result["person_name"]]
+    write_to_checkpoint_file("sprint name(for pto data):" +str(sprint_name))
+    write_to_checkpoint_file("members:" +str(members))
 
     if(idx!=6):
         # PTO not required for JIRA hygiene case
@@ -96,11 +96,40 @@ async def entrypoint(Query:str) -> str:
                             
                         f.write(f"Name: {i} -- Leave days: {leaves} in {j} \n")
                 f.write("\n")
-
     else:
         with open("outputs/output.txt", "w") as f:
-           pass
-    return "success"
+           f.write(" Below you can find low quality acceptance crieteria report ")
+
+
+    # Higher number of outputs for Backlog health and JIRA hygiene queries
+
+    if(idx==5 or idx==6):
+        # queries related to backlog health and JIRA hygiene
+        process_evaluations()
+
+        # what are the rows that lack good quality acceptance_crieteria
+        save_rows_with_low_quality_acceptance_crieteria()
+
+        # flagging low quality acceptance crieteria rows
+        process_csv()
+        
+        visualize_missing_data_with_low_quality_acceptance('generated_files/current.csv')
+
+        # PDF report creation
+        create_acceptance_improvement_report()
+    else:
+        visualize_missing_data('generated_files/current.csv')
+
+
+# entrypoint("No of story points assigned to Hari in abc1") -- working fine 
+
+# entrypoint("Jira Hygiene of abc1 board")
+
+# entrypoint("RTB/CTB utilization of abc1 board in sprint 9") -- working good 
+
+# entrypoint("FTE/FTC utilization of abc1 board in sprint 9")
+
+entrypoint("Backlog health of abc2 board")
 
 
 

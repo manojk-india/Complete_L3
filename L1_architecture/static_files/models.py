@@ -6,3 +6,10 @@ class info(BaseModel):
     board_name: str
     person_name: Optional[str]
     sprint_name: Optional[str]
+
+
+class Evaluated_metrics(BaseModel):
+    classification: str
+    strengths: list[str]
+    improvement_areas: list[str]
+    revised_version: str

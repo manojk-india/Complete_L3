@@ -1,4 +1,0 @@
-Query: fte FTC utilisation for APS 2 board
-FTE story points: 10.0
-FTC story points: 16.0
-

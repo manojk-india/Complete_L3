@@ -10,10 +10,20 @@ from vector_db.db import *
 load_dotenv()
 
 # Initialize LLM model from sambanova 
+# llm = LLM(
+#     model="sambanova/DeepSeek-R1-Distill-Llama-70B",
+#     temperature=0.2,
+#     max_tokens=2048
+# )
+
+# llm=LLM(
+#     model="ollama/mistral:7b-instruct-q4_K_M",
+#     base_url="http://localhost:11434"
+# )
+
 llm = LLM(
-    model="sambanova/DeepSeek-R1-Distill-Llama-70B",
-    temperature=0.2,
-    max_tokens=2048
+    model="gemini/gemini-2.0-flash",
+    temperature=0.7,
 )
 
 
@@ -100,4 +110,135 @@ def pandas_query_crew(query,idx):
         f.write(str(result))
     extract_code_section( "outputs/panda.py","outputs/output.py")
     os.system("python outputs/output.py")
+    write_to_checkpoint_file("pandas query crew called")
 
+
+################################################----STORY READINESS CREW-----###########################################################
+
+# Define the evaluation agent
+criteria_evaluator = Agent(
+    role="Acceptance Criteria Quality Evaluator",
+    goal="Evaluate if acceptance criteria is well-documented and understandable by non-technical users",
+    backstory="""You are an expert in User Story quality assessment with deep knowledge of 
+    acceptance criteria best practices. You specialize in evaluating the clarity, 
+    completeness and accessibility of Given/When/Then formatted requirements.""",
+    llm=llm,
+    verbose=True,
+)
+
+# Define the evaluation task with a detailed prompt
+evaluation_task = Task(
+    description="""
+    Note: Just classify ..no function calling is required 
+    Evaluate the quality of the following acceptance criteria 
+    
+
+    {acceptance_criteria}
+    
+    By understanding acceptance crieteria and analyzing it do the following 
+    #) classification : Well Documented or Not Well Documented
+    #) strengths : ["strength1", "strength2"...],
+    #) improvement_areas: ["area1", "area2"...],
+    #) revised_version: "Proper acceptance crieteria without missing anything in Given When Then format"
+
+    While classifying it as well documented or not consider th below 
+    First of all check whether it is in Given When Then format or not...if not directly classify it as Not Well Documented
+    Then even if it is Given When Then format .....check whether its written in a wells understandable way and then classify accordingly 
+    
+    Provide specific feedback on strengths and areas for improvement.
+
+    Even if you feel the acceptance crieteria is okay just classify it as well documneted . only classify it as poor only if you feel it is very poor
+
+    Note : Dont miss out any parameters mentionedd at all.....
+    """,
+    agent=criteria_evaluator,
+    expected_output="""
+        "classification": Well Documented or Not Well Documented
+        "strengths": ["strength1", "strength2"...],
+        "improvement_areas": ["area1", "area2"...],
+        "revised_version": "Proper acceptance crieteria without missing anything in Given When Then format"
+    """,
+    output_pydantic=Evaluated_metrics
+)
+
+
+
+# Create the crew
+acceptance_criteria_crew = Crew(
+    agents=[criteria_evaluator],
+    tasks=[evaluation_task],
+    verbose=True
+)
+
+# Function to evaluate acceptance criteria
+def evaluate_acceptance_criteria(acceptance_criteria):
+    result=acceptance_criteria_crew.kickoff(inputs={"acceptance_criteria": acceptance_criteria})
+    return result["classification"], result["strengths"], result["improvement_areas"], result["revised_version"]
+
+
+
+
+
+# validation function for acceptance criteria 
+def process_evaluations():
+    """
+    Process each row in the CSV file to evaluate acceptance criteria and summaries.
+    
+    Args:
+        csv_file: Path to the input CSV file
+        output_csv: Path to save the output CSV file
+    """
+    csv_file="generated_files/current.csv"
+    output_csv="generated_files/current.csv"
+    # Load the CSV file with proper error handling
+    try:
+        df = pd.read_csv(csv_file)
+        print(f"Successfully loaded CSV with {len(df)} rows")
+    except FileNotFoundError:
+        print(f"Error: File '{csv_file}' not found. Please check the file path.")
+        return
+    except Exception as e:
+        print(f"Error loading CSV: {str(e)}")
+        return
+    
+    # Create empty result columns
+    df["acceptance_result"] = ""
+    df["acceptance_improvement"] = None
+    
+    # Process each row
+    total_rows = len(df)
+    for index, row in df.iterrows():
+        try:
+            # Progress indicator
+            if index % 10 == 0:
+                print(f"Processing row {index}/{total_rows}...")
+            
+            # Skip if required columns are missing
+            if pd.isna(row.get('acceptance_crieteria', None)):
+                continue
+                
+            # Evaluate acceptance criteria if present
+            if not pd.isna(row.get('acceptance_crieteria', None)):
+                acceptance_result = evaluate_acceptance_criteria(row['acceptance_crieteria'])
+                df.at[index, "acceptance_result"] = acceptance_result[0]
+                df.at[index, "acceptance_improvement"] = {
+                    'strengths': acceptance_result[1],
+                    'improvement_areas': acceptance_result[2],
+                    'revised_version': acceptance_result[3]
+                }
+                
+        except Exception as e:
+            print(f"Error processing row {index}: {str(e)}")
+    
+    # Save to new CSV
+    try:
+        df.to_csv(output_csv, index=False)
+        print(f"Successfully saved results to {output_csv}")
+        return output_csv
+    except Exception as e:
+        print(f"Error saving CSV: {str(e)}")
+        return None
+    
+
+
+    
