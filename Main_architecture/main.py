@@ -23,10 +23,15 @@ from L1_architecture.entry import entrypoint
 load_dotenv()
 
 # Initialize LLM model here
+# llm = LLM(
+#     model="sambanova/DeepSeek-R1-Distill-Llama-70B",
+#     temperature=0.1,
+#     max_tokens=2048
+# )
+
 llm = LLM(
-    model="sambanova/DeepSeek-R1-Distill-Llama-70B",
-    temperature=0.1,
-    max_tokens=2048
+    model="gemini/gemini-2.0-flash",
+    temperature=0.7,
 )
 
 # main function at L3 level , we have to modify for handling case insensitive queries -- voice input 
