@@ -17,7 +17,7 @@ import ast
 
     
 # writing it into checkpoint file for better debugging 
-def write_to_checkpoint_file(data, file_path='checkpoint.txt'):
+def write_to_checkpoint_file(data, file_path='./L1_architecture/checkpoint.txt'):
     with open(file_path, 'a') as file:
         file.write(data + '\n')
 
@@ -457,23 +457,23 @@ def get_L1_board_data(board_name, previous_data_needed_or_not, sprint,person,idx
         jql=None
 
     try:
-        os.remove("generated_files/current.json")
-        os.remove("generated_files/history.json")
-        os.remove("generated_files/current.csv")
-        os.remove("generated_files/history.csv")
-        os.remove("generated_files/low_quality_acceptance.csv")
-        os.remove("outputs/acceptance_crieteria_report.pdf")
+        os.remove("./L1_architecture/generated_files/current.json")
+        os.remove("./L1_architecture/generated_files/history.json")
+        os.remove("./L1_architecture/generated_files/current.csv")
+        os.remove("./L1_architecture/generated_files/history.csv")
+        os.remove("./L1_architecture/generated_files/low_quality_acceptance.csv")
+        os.remove("./L1_architecture/outputs/acceptance_crieteria_report.pdf")
     except:
         print("files not found to delete")
 
     if(idx==5):
         Fut_sprints=get_future_sprint_ids(board_name,sprint_id)
         for i in Fut_sprints:
-            api_helper(i,jql,"generated_files/current.json")
-        json_to_csv("generated_files/current.json","generated_files/current.csv")
+            api_helper(i,jql,"./L1_architecture/generated_files/current.json")
+        json_to_csv("./L1_architecture/generated_files/current.json","./L1_architecture/generated_files/current.csv")
     else:
-        api_helper(sprint_id,jql,"generated_files/current.json")
-        json_to_csv("generated_files/current.json","generated_files/current.csv")
+        api_helper(sprint_id,jql,"./L1_architecture/generated_files/current.json")
+        json_to_csv("./L1_architecture/generated_files/current.json","./L1_architecture/generated_files/current.csv")
 
     # If previous data is needed 
     if previous_data_needed_or_not:
@@ -481,11 +481,11 @@ def get_L1_board_data(board_name, previous_data_needed_or_not, sprint,person,idx
         sprint_ids = get_previous_sprint_ids(board_name, sprint_id)
         len_of_historical_sprints=len(sprint_ids)
         for i in sprint_ids:
-            api_helper(i,jql,"generated_files/history.json") 
-        json_to_csv("generated_files/history.json","generated_files/history.csv")
+            api_helper(i,jql,"./L1_architecture/generated_files/history.json") 
+        json_to_csv("./L1_architecture/generated_files/history.json","./L1_architecture/generated_files/history.csv")
 
         # getting the historical data average story points for the last 6 sprints
-        df = pd.read_csv("generated_files/history.csv")
+        df = pd.read_csv("./L1_architecture/generated_files/history.csv")
         total_sp=(df['story_points'].sum())/len_of_historical_sprints
 
         return total_sp
@@ -514,7 +514,7 @@ def fetch_requested_by(parent_key: str, cache: dict) -> str:
     if response.status_code == 200:
         data = response.json()
 
-        with open("generated_files/epic.json", 'w') as f:
+        with open("L1_architecture/generated_files/epic.json", 'w') as f:
             json.dump(data, f, indent=2)
 
         requested_by = data.get("fields", {}).get("customfield_10043", "Unknown")
@@ -539,14 +539,14 @@ def add_rtb_ctb_column(df: pd.DataFrame):
     """
     cache = {}  # Initialize an empty dictionary for caching
     df['requested_by'] = df['parent_key'].apply(lambda key: fetch_requested_by(key, cache))
-    df.to_csv("generated_files/current.csv", index=False) 
+    df.to_csv("./L1_architecture/generated_files/current.csv", index=False) 
     write_to_checkpoint_file("added rtb/ctb column to the current.csv file")
 
 
 #FTE/FTC column addition function
 def add_employment_type():
-    csv_path = "generated_files/current.csv"
-    output_path = "generated_files/current.csv"
+    csv_path = "./L1_architecture/generated_files/current.csv"
+    output_path = "./L1_architecture/generated_files/current.csv"
     # Define the employment type mapping
     employment_type = {
         "Alice": "FTC",
@@ -587,7 +587,7 @@ def add_employment_type():
 
 # leave calculater function for the given person and sprint name
 def total_leave_days(name, sprint):
-    csv_path='generated_files/PTO.csv'
+    csv_path='./L1_architecture/generated_files/PTO.csv'
     # Get today's date in YYYY-MM-DD format
     today = datetime.now().date()
     
@@ -643,7 +643,7 @@ def clear_empty_labels():
     """
     Clears rows in the 'labels' column where the value is an empty list ([]).
     """
-    file_path = "generated_files/current.csv"
+    file_path = "./L1_architecture/generated_files/current.csv"
     df = pd.read_csv(file_path)
     df.loc[df['labels'] == '[]', 'labels'] = ''  # Replace '[]' with an empty string
     df.to_csv(file_path, index=False)
@@ -653,7 +653,7 @@ def restore_empty_labels():
     """
     Restores rows in the 'labels' column where the value was cleared (empty string) back to an empty list ([]).
     """
-    file_path = "generated_files/current.csv"
+    file_path = "./L1_architecture/generated_files/current.csv"
     df = pd.read_csv(file_path)
     df.loc[df['labels'] == '', 'labels'] = '[]'  # Replace empty string with '[]'
     df.to_csv(file_path, index=False)
@@ -669,8 +669,8 @@ def save_rows_with_low_quality_acceptance_crieteria() -> None:
         column_name: Column name to check for empty/null values.
         csv_output: Path to save the filtered CSV file.
     """
-    csv_input="generated_files/current.csv"
-    csv_output="generated_files/low_quality_acceptance.csv"
+    csv_input="./L1_architecture/generated_files/current.csv"
+    csv_output="./L1_architecture/generated_files/low_quality_acceptance.csv"
 
     df = pd.read_csv(csv_input)
 
@@ -682,8 +682,8 @@ def save_rows_with_low_quality_acceptance_crieteria() -> None:
 
 def process_csv():
     # Read the CSV file
-    file_path="generated_files/current.csv"
-    output_path="generated_files/current.csv"
+    file_path="./L1_architecture/generated_files/current.csv"
+    output_path="./L1_architecture/generated_files/current.csv"
     df = pd.read_csv(file_path)
 
     # Apply the condition
@@ -742,8 +742,8 @@ class PDFReport1(FPDF):
 
 # acceptance crieteria report PDF 
 def create_acceptance_improvement_report():
-    csv_file="generated_files/current.csv"
-    pdf_file="outputs/acceptance_crieteria_report.pdf"
+    csv_file="./L1_architecture/generated_files/current.csv"
+    pdf_file="./L1_architecture/outputs/acceptance_crieteria_report.pdf"
     df = pd.read_csv(csv_file)
 
     pdf = PDFReport1()

@@ -10,9 +10,9 @@ TOTAL_WORKING_DAYS_IN_SPRINT = 10
 TOLERANCE = 0.1  # 10% tolerance for utilization
 
 # Load data
-df = pd.read_csv("generated_files/current.csv")         # already filtered for Hari, CDF, sprint 7
-df_history = pd.read_csv("generated_files/history.csv") # already filtered
-df_pto = pd.read_csv("generated_files/PTO.csv")         # PTO data
+df = pd.read_csv("./L1_architecture/generated_files/current.csv")         # already filtered for Hari, CDF, sprint 7
+df_history = pd.read_csv("./L1_architecture/generated_files/history.csv") # already filtered
+df_pto = pd.read_csv("./L1_architecture/generated_files/PTO.csv")         # PTO data
 
 
 # Compute story points for current sprint
@@ -51,7 +51,7 @@ elif abs(current_points - adjusted_avg_points) <= adjusted_avg_points * TOLERANC
 else:
     utilization_status = "Utilization status could not be determined."
 # Output
-with open("outputs/output.txt", "w") as f:
+with open("./L1_architecture/outputs/output.txt", "w") as f:
     f.write(f"Query: Story points assigned to {assignee} in CDF board in sprint {sprint}\n")
     f.write(f"Current sprint story points: {current_points}\n")
     f.write(f"Average of previous sprints: {avg_points:.2f}\n")
@@ -71,7 +71,7 @@ with open("outputs/output.txt", "w") as f:
 import pandas as pd
 
 # Load current sprint data
-df = pd.read_csv("generated_files/current.csv")
+df = pd.read_csv("./L1_architecture/generated_files/current.csv")
 
 # Calculate RTB and CTB story points
 # data is already filtered for the required board and sprint. So no need to filter again
@@ -79,7 +79,7 @@ rtb_points = df[df['requested_by'] == 'RTB']['story_points'].fillna(0).sum()
 ctb_points = df[df['requested_by'] == 'CTB']['story_points'].fillna(0).sum()
 
 # Output
-with open("outputs/output.txt", "w") as f:
+with open("./L1_architecture/outputs/output.txt", "w") as f:
     f.write("Query: RTB/CTB utilization of CDF board in sprint 7\n")
     f.write("RTB story points: "+str(rtb_points))
     f.write("CTB story points: "+str(ctb_points))
@@ -95,7 +95,7 @@ with open("outputs/output.txt", "w") as f:
 import pandas as pd
 
 # Load current sprint data
-df = pd.read_csv("generated_files/current.csv")
+df = pd.read_csv("./L1_architecture/generated_files/current.csv")
 
 # Calculate RTB and CTB story points
 # data is already filtered for the required board, person and sprint. So no need to filter again
@@ -103,7 +103,7 @@ rtb_points = df[df['requested_by'] == 'RTB']['story_points'].fillna(0).sum()
 ctb_points = df[df['requested_by'] == 'CTB']['story_points'].fillna(0).sum()
 
 # Output
-with open("outputs/output.txt", "w") as f:
+with open("./L1_architecture/outputs/output.txt", "w") as f:
     f.write("Query: RTB/CTB utilization of CDF board in sprint 7\n")
     f.write("RTB story points: "+str(rtb_points))
     f.write("CTB story points: "+str(ctb_points))
@@ -121,14 +121,14 @@ with open("outputs/output.txt", "w") as f:
 import pandas as pd
 
 # Load current sprint data
-df = pd.read_csv("generated_files/current.csv")
+df = pd.read_csv("./L1_architecture/generated_files/current.csv")
 
 # Calculate FTE and FTC story points for the current sprint
 fte_points = df[df['work_type'] == 'FTE']['story_points'].fillna(0).sum()
 ftc_points = df[df['work_type'] == 'FTC']['story_points'].fillna(0).sum()
 
 # Output results
-with open("outputs/output.txt", "w") as f:
+with open("./L1_architecture/outputs/output.txt", "w") as f:
     f.write("Query: FTE/FTC utilization of CDF board in sprint 3\n")
     f.write("FTE story points: "+str(fte_points))
     f.write("FTC story points: "+str(ftc_points))
@@ -147,7 +147,7 @@ with open("outputs/output.txt", "w") as f:
 import pandas as pd
 
 # Load current sprint data (multiple sprints in current.csv)
-df = pd.read_csv("generated_files/current.csv")
+df = pd.read_csv("./L1_architecture/generated_files/current.csv")
 
 # Load historical data for previous sprints
 df_history = pd.read_csv("generated_files/history.csv")
@@ -182,7 +182,7 @@ for sprint in unique_sprints:
     utilization_results[sprint] = check_utilization(sprint_points, avg_velocity, overutilized_threshold, underutilized_threshold)
 
 # Output results
-with open("outputs/output.txt", "w") as f:
+with open("./L1_architecture/outputs/output.txt", "w") as f:
     f.write(f"Query: Backlog health for CDF board \n")
     f.write(f"Average velocity from previous sprints: "+str(avg_velocity:.2f))
     
@@ -206,13 +206,13 @@ with open("outputs/output.txt", "w") as f:
 import pandas as pd
 
 # Load data
-df = pd.read_csv("generated_files/current.csv")         # current sprint data
+df = pd.read_csv("./L1_architecture/generated_files/current.csv")         # current sprint data
 
 # Compute total story points for in df dataframe
 current_points = df['story_points'].fillna(0).sum()
 
 # Output
-with open("outputs/output.txt", "w") as f:
+with open("./L1_architecture/outputs/output.txt", "w") as f:
     f.write("Query: Story points assigned to Hari in CDF board in sprint 9 is "+str(current_points))
     f.write("\n")
 

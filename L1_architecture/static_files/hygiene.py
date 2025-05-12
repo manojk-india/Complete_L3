@@ -6,7 +6,7 @@ from matplotlib import patheffects
 import numpy as np
 # from static_files.utils import write_to_checkpoint_file
 
-def visualize_missing_data(csv_file_path, output_image_path='outputs/jira_hygiene_dashboard.png'):
+def visualize_missing_data(csv_file_path, output_image_path='./L1_architecture/outputs/jira_hygiene_dashboard.png'):
     """
     Creates a beautiful, modern visualization of missing values in specified columns.
     """
@@ -153,7 +153,7 @@ def visualize_missing_data(csv_file_path, output_image_path='outputs/jira_hygien
 
 
 
-def visualize_missing_data_with_low_quality_acceptance(csv_file_path, output_image_path='outputs/jira_hygiene_dashboard.png'):
+def visualize_missing_data_with_low_quality_acceptance(csv_file_path, output_image_path='./L1_architecture/outputs/jira_hygiene_dashboard.png'):
     """
     Creates a beautiful, modern visualization of missing values in specified columns.
     """
