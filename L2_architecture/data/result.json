@@ -38,7 +38,7 @@
             },
             "priority": {
               "self": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/priority/3",
-              "iconUrl": "https://wellsfargo-jira-test.atlassian.net/images/icons/priorities/medium.svg",
+              "iconUrl": "https://wellsfargo-jira-test.atlassian.net/images/icons/priorities/medium_new.svg",
               "name": "Medium",
               "id": "3"
             },
@@ -101,7 +101,7 @@
         "customfield_10022": null,
         "priority": {
           "self": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/priority/3",
-          "iconUrl": "https://wellsfargo-jira-test.atlassian.net/images/icons/priorities/medium.svg",
+          "iconUrl": "https://wellsfargo-jira-test.atlassian.net/images/icons/priorities/medium_new.svg",
           "name": "Medium",
           "id": "3"
         },
@@ -288,7 +288,7 @@
             },
             "priority": {
               "self": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/priority/3",
-              "iconUrl": "https://wellsfargo-jira-test.atlassian.net/images/icons/priorities/medium.svg",
+              "iconUrl": "https://wellsfargo-jira-test.atlassian.net/images/icons/priorities/medium_new.svg",
               "name": "Medium",
               "id": "3"
             },
@@ -339,7 +339,7 @@
         "customfield_10029": null,
         "resolutiondate": null,
         "workratio": 0,
-        "lastViewed": "2025-04-24T22:53:06.739+0530",
+        "lastViewed": null,
         "watches": {
           "self": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/issue/DIS-2/watchers",
           "watchCount": 1,
@@ -351,7 +351,7 @@
         "customfield_10022": null,
         "priority": {
           "self": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/priority/3",
-          "iconUrl": "https://wellsfargo-jira-test.atlassian.net/images/icons/priorities/medium.svg",
+          "iconUrl": "https://wellsfargo-jira-test.atlassian.net/images/icons/priorities/medium_new.svg",
           "name": "Medium",
           "id": "3"
         },
@@ -540,7 +540,7 @@
             },
             "priority": {
               "self": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/priority/3",
-              "iconUrl": "https://wellsfargo-jira-test.atlassian.net/images/icons/priorities/medium.svg",
+              "iconUrl": "https://wellsfargo-jira-test.atlassian.net/images/icons/priorities/medium_new.svg",
               "name": "Medium",
               "id": "3"
             },
@@ -591,7 +591,7 @@
         "customfield_10029": null,
         "resolutiondate": null,
         "workratio": 0,
-        "lastViewed": "2025-04-24T22:53:22.032+0530",
+        "lastViewed": null,
         "watches": {
           "self": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/issue/DIS-3/watchers",
           "watchCount": 1,
@@ -603,7 +603,7 @@
         "customfield_10022": null,
         "priority": {
           "self": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/priority/3",
-          "iconUrl": "https://wellsfargo-jira-test.atlassian.net/images/icons/priorities/medium.svg",
+          "iconUrl": "https://wellsfargo-jira-test.atlassian.net/images/icons/priorities/medium_new.svg",
           "name": "Medium",
           "id": "3"
         },
@@ -792,7 +792,7 @@
             },
             "priority": {
               "self": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/priority/3",
-              "iconUrl": "https://wellsfargo-jira-test.atlassian.net/images/icons/priorities/medium.svg",
+              "iconUrl": "https://wellsfargo-jira-test.atlassian.net/images/icons/priorities/medium_new.svg",
               "name": "Medium",
               "id": "3"
             },
@@ -843,19 +843,19 @@
         "customfield_10029": null,
         "resolutiondate": null,
         "workratio": 0,
+        "lastViewed": null,
         "watches": {
           "self": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/issue/DIS-4/watchers",
           "watchCount": 1,
           "isWatching": false
         },
-        "lastViewed": "2025-04-24T22:53:55.717+0530",
         "created": "2025-04-16T22:35:32.724+0530",
         "customfield_10020": null,
         "customfield_10021": null,
         "customfield_10022": null,
         "priority": {
           "self": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/priority/3",
-          "iconUrl": "https://wellsfargo-jira-test.atlassian.net/images/icons/priorities/medium.svg",
+          "iconUrl": "https://wellsfargo-jira-test.atlassian.net/images/icons/priorities/medium_new.svg",
           "name": "Medium",
           "id": "3"
         },
@@ -1038,7 +1038,7 @@
             },
             "priority": {
               "self": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/priority/3",
-              "iconUrl": "https://wellsfargo-jira-test.atlassian.net/images/icons/priorities/medium.svg",
+              "iconUrl": "https://wellsfargo-jira-test.atlassian.net/images/icons/priorities/medium_new.svg",
               "name": "Medium",
               "id": "3"
             },
@@ -1089,7 +1089,7 @@
         "customfield_10029": null,
         "resolutiondate": null,
         "workratio": 0,
-        "lastViewed": "2025-04-24T22:53:34.127+0530",
+        "lastViewed": null,
         "watches": {
           "self": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/issue/DIS-5/watchers",
           "watchCount": 1,
@@ -1101,7 +1101,7 @@
         "customfield_10022": null,
         "priority": {
           "self": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/priority/3",
-          "iconUrl": "https://wellsfargo-jira-test.atlassian.net/images/icons/priorities/medium.svg",
+          "iconUrl": "https://wellsfargo-jira-test.atlassian.net/images/icons/priorities/medium_new.svg",
           "name": "Medium",
           "id": "3"
         },
@@ -1290,7 +1290,7 @@
             },
             "priority": {
               "self": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/priority/3",
-              "iconUrl": "https://wellsfargo-jira-test.atlassian.net/images/icons/priorities/medium.svg",
+              "iconUrl": "https://wellsfargo-jira-test.atlassian.net/images/icons/priorities/medium_new.svg",
               "name": "Medium",
               "id": "3"
             },
@@ -1341,7 +1341,7 @@
         "customfield_10029": null,
         "resolutiondate": null,
         "workratio": 0,
-        "lastViewed": "2025-04-24T22:54:12.365+0530",
+        "lastViewed": null,
         "watches": {
           "self": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/issue/DIS-6/watchers",
           "watchCount": 1,
@@ -1353,7 +1353,7 @@
         "customfield_10022": null,
         "priority": {
           "self": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/priority/3",
-          "iconUrl": "https://wellsfargo-jira-test.atlassian.net/images/icons/priorities/medium.svg",
+          "iconUrl": "https://wellsfargo-jira-test.atlassian.net/images/icons/priorities/medium_new.svg",
           "name": "Medium",
           "id": "3"
         },
@@ -1542,7 +1542,7 @@
             },
             "priority": {
               "self": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/priority/3",
-              "iconUrl": "https://wellsfargo-jira-test.atlassian.net/images/icons/priorities/medium.svg",
+              "iconUrl": "https://wellsfargo-jira-test.atlassian.net/images/icons/priorities/medium_new.svg",
               "name": "Medium",
               "id": "3"
             },
@@ -1593,7 +1593,7 @@
         "customfield_10029": null,
         "resolutiondate": null,
         "workratio": 0,
-        "lastViewed": "2025-04-24T22:53:44.110+0530",
+        "lastViewed": null,
         "watches": {
           "self": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/issue/DIS-7/watchers",
           "watchCount": 1,
@@ -1605,7 +1605,7 @@
         "customfield_10022": null,
         "priority": {
           "self": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/priority/3",
-          "iconUrl": "https://wellsfargo-jira-test.atlassian.net/images/icons/priorities/medium.svg",
+          "iconUrl": "https://wellsfargo-jira-test.atlassian.net/images/icons/priorities/medium_new.svg",
           "name": "Medium",
           "id": "3"
         },

@@ -13,7 +13,7 @@ from datetime import datetime
 import matplotlib.pyplot as plt
 import numpy as np
 
-from crew import *
+from L2_architecture.crew import *
 
 import pandas as pd
 from fpdf import FPDF
@@ -43,8 +43,9 @@ def get_board_features(
     }
 
     board_id = id_dict[board_name]
-    email = "manokalyan2004@gmail.com"
+    email = os.getenv('JIRA_EMAIL')
     api_token = os.getenv('JIRA_API_TOKEN')
+    print(email, api_token)
 
     base_url = f"https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/board/{board_id}/issue"
     headers = {"Accept": "application/json"}
@@ -84,7 +85,7 @@ def get_board_features(
             
         start_at += max_results
 
-    with open('data/result.json', 'w') as f:
+    with open('L2_architecture/data/result.json', 'w') as f:
         json.dump({"features": all_issues}, f, indent=2)
 
     return {"features": all_issues}
@@ -99,7 +100,7 @@ def json_to_csv() -> None:
         json_file: Path to input JSON file
         csv_file: Path to output CSV file
     """
-    json_file="data/result.json"
+    json_file="L2_architecture/data/result.json"	
 
     # Define CSV field headers
     field_names = [
@@ -151,7 +152,7 @@ def json_to_csv() -> None:
         rows.append(row)
 
     # Write to CSV
-    with open("data/API.csv", 'w', newline='', encoding='utf-8') as f:
+    with open("L2_architecture/data/API.csv", 'w', newline='', encoding='utf-8') as f:	
         writer = csv.DictWriter(f, fieldnames=field_names)
         writer.writeheader()
         writer.writerows(rows)
@@ -192,8 +193,8 @@ def filter_rows_with_missing_values_or_low_quality_data() -> None:
         csv_input: Path to the original CSV file
         csv_output: Path to save the filtered CSV file
     """
-    csv_input="data/Final_API.csv"
-    csv_output="data/Not-Good-issues.csv"
+    csv_input="L2_architecture/data/Final_API.csv"
+    csv_output="L2_architecture/data/Not-Good-issues.csv"
     df = pd.read_csv(csv_input)
     
     # Condition for missing values in any column
@@ -238,8 +239,8 @@ def save_rows_with_empty_column_and_low_quality_data(column_name: str) -> None:
         column_name: Column name to check for empty/null values.
         csv_output: Path to save the filtered CSV file.
     """
-    csv_input="data/Final_API.csv"
-    csv_output="data/user_specific_need.csv"
+    csv_input="L2_architecture/data/Final_API.csv"
+    csv_output="L2_architecture/data/user_specific_need.csv"
 
     df = pd.read_csv(csv_input)
 
@@ -254,7 +255,7 @@ def save_rows_with_empty_column_and_low_quality_data(column_name: str) -> None:
         new_df.to_csv(csv_output, index=False)
 
     elif(column_name=="Over Due Features"):
-        df2 = pd.read_csv("data/overdue.csv")
+        df2 = pd.read_csv("L2_architecture/data/overdue.csv")
         df2.to_csv(csv_output, index=False)
     else:
         # Treat empty strings as NaN for the specified column
@@ -279,8 +280,8 @@ def save_overdue_tasks() -> int:
     Returns:
         Number of overdue tasks found
     """
-    csv_input="data/Final_API.csv"
-    csv_output="data/overdue.csv"
+    csv_input="L2_architecture/data/Final_API.csv"
+    csv_output="L2_architecture/data/overdue.csv"
     # Read the CSV file
     df = pd.read_csv(csv_input)
     
@@ -314,8 +315,8 @@ def process_evaluations():
         csv_file: Path to the input CSV file
         output_csv: Path to save the output CSV file
     """
-    csv_file="data/API.csv"
-    output_csv="data/Final_API.csv"
+    csv_file="L2_architecture/data/API.csv"
+    output_csv="L2_architecture/data/Final_API.csv"
     # Load the CSV file with proper error handling
     try:
         df = pd.read_csv(csv_file)
@@ -384,7 +385,7 @@ def count_separate_issues() -> dict:
     Returns:
         Dictionary with separate counts for acceptance and summary issues.
     """
-    csv_file="data/Final_API.csv"
+    csv_file="L2_architecture/data/Final_API.csv"
     df = pd.read_csv(csv_file)
     
     # Treat empty strings as NaN for accurate missing detection
@@ -408,7 +409,7 @@ def count_separate_issues() -> dict:
 
 
 # Dashboard for missing value data 
-def create_missing_values_dashboard(missing_counts: dict, output_file: str = 'Report/missing_values_dashboard.png'):
+def create_missing_values_dashboard(missing_counts: dict, output_file: str = 'L2_architecture/Report/missing_values_dashboard.png'):
     """
     Creates a professional dashboard visualizing missing values percentages
     
@@ -478,7 +479,7 @@ def create_missing_values_dashboard(missing_counts: dict, output_file: str = 'Re
 
 
 # Dashboard for low quality data
-def create_Bad_values_dashboard(missing_counts: dict, output_file: str = 'Report/Bad_values_dashboard.png'):
+def create_Bad_values_dashboard(missing_counts: dict, output_file: str = 'L2_architecture/Report/Bad_values_dashboard.png'):
     """
     Creates a professional dashboard visualizing missing values percentages
     
@@ -587,7 +588,7 @@ class PDFReport(FPDF):
         self.cell(0, 10, f'Page {self.page_no()}', 0, 0, 'C')
 
 # summary report PDF
-def create_summary_report(csv_file="data/Final_API.csv", pdf_file="Report/summary_report.pdf"):
+def create_summary_report(csv_file="L2_architecture/data/Final_API.csv", pdf_file="L2_architecture/Report/summary_report.pdf"):
     df = pd.read_csv(csv_file)
 
     pdf = PDFReport()
@@ -649,8 +650,8 @@ class PDFReport1(FPDF):
         self.set_font('helvetica', 'I', 8)
         self.cell(0, 10, f'Page {self.page_no()}', 0, 0, 'C')
 
-# acceptance crieteria report PDF 
-def create_acceptance_improvement_report(csv_file="data/user_specific_need.csv", pdf_file="Report/acceptance_report.pdf"):
+# acceptance criteria report PDF
+def create_acceptance_improvement_report(csv_file="L2_architecture/data/user_specific_need.csv", pdf_file="L2_architecture/Report/acceptance_report.pdf"):
     df = pd.read_csv(csv_file)
 
     pdf = PDFReport1()
@@ -779,8 +780,8 @@ def process_csv_and_check_okr() -> None:
         Processed DataFrame
     """
 
-    csv_input="data/Final_API.csv"
-    csv_output="data/Final_API.csv"
+    csv_input="L2_architecture/data/Final_API.csv"
+    csv_output="L2_architecture/data/Final_API.csv"
     # Read CSV file
     df = pd.read_csv(csv_input)
     
@@ -810,8 +811,8 @@ def process_csv_and_check_okr() -> None:
 
 
 def count_requested_by_percentage():
-    csv_path='data/API.csv'
-    output_file='Report/outputr.txt'
+    csv_path='L2_architecture/data/API.csv'
+    output_file='L2_architecture/Report/output.txt'
     df = pd.read_csv(csv_path)
     total_count = len(df)
     counts = df['Requested_by'].value_counts()

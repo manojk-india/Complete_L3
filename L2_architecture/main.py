@@ -1,9 +1,9 @@
 # imports ...
-from utils import *
-
+from L2_architecture.utils import *
+from L2_architecture.utils import embed_query
 
 # user query entry point 
-async def feature_Readiness(query_user):
+def feature_Readiness(query_user):
     def find_board_in_string(board_names, text):
         """
         Returns the first board name found in text, or None if none found.
@@ -18,6 +18,7 @@ async def feature_Readiness(query_user):
     # GuardRail
     if not query:
         print("Board Not found.")
+        return
 
 
 
@@ -33,12 +34,12 @@ async def feature_Readiness(query_user):
     # OKR check in description column
     process_csv_and_check_okr()
 
-    df=pd.read_csv("data/Final_API.csv")
+    df=pd.read_csv("L2_architecture/data/Final_API.csv")
     num_false = (df['OKR'] == "Not Good").sum()
 
 
     # #Now we have to check all missing parameters
-    missing_value=count_empty_values("data/API.csv")
+    missing_value=count_empty_values("L2_architecture/data/API.csv")
 
     # # This creates a dashboard with any parameters we give == only concebtrating for missing values
     create_missing_values_dashboard(missing_value)
@@ -66,7 +67,7 @@ async def feature_Readiness(query_user):
 
 
 # function for RTB/CTb case
-async def RTB_CTB_query(query_user):
+def RTB_CTB_query(query_user):
     def find_board_in_string(board_names, text):
         """
         Returns the first board name found in text, or None if none found.
@@ -91,7 +92,7 @@ async def RTB_CTB_query(query_user):
     json_to_csv()
 
     # For creating missing value dashboard 
-    missing_value=count_empty_values("data/API.csv")
+    missing_value=count_empty_values("L2_architecture/data/API.csv")
     create_missing_values_dashboard(missing_value)
 
     # now py static py script for counting RTB/CTB values and storing in Report/output.txt 
@@ -100,19 +101,23 @@ async def RTB_CTB_query(query_user):
 
 
 # Now this is the main entry point 
-async def L2_entry_point(query_user):
+def L2_entry_point(query_user):
     """
     Main entry point for the L2 architecture.
     """
     # Check if the query is related to feature readiness or RTB/CTB
     value=embed_query(query_user)
-
-    if( value == 1):
+    print("Value: ",value)
+    if( value[2] == 2):
         # Feature Readiness
-        await feature_Readiness(query_user)
+        print("if entered")
+        feature_Readiness(query_user)
+        print("if executed")
     else:
         # RTB/CTB
-        await RTB_CTB_query(query_user)
+        print("else entered")
+        RTB_CTB_query(query_user)
+        print("else executed")
 
 
 
