@@ -433,6 +433,17 @@ def embed_query(user_query):
 
     return queries[best_match_idx], scores[0][best_match_idx].item(),value+1,previous_needed_or_not_dict[value+1]
 
+def delete_files(file_list):
+    for file_path in file_list:
+        try:
+            os.remove(file_path)
+            print(f"Deleted: {file_path}")
+        except FileNotFoundError:
+            print(f"File not found (skipped): {file_path}")
+        except Exception as e:
+            print(f"Error deleting {file_path}: {e}")
+
+
 # main function for API calling
 def get_L1_board_data(board_name, previous_data_needed_or_not, sprint,person,idx):
     """ pass the board name ,previous_data_needed_or_not , sprint name and the person name to the tool to get the L1 board data 
@@ -456,15 +467,16 @@ def get_L1_board_data(board_name, previous_data_needed_or_not, sprint,person,idx
     else:
         jql=None
 
-    try:
-        os.remove("./L1_architecture/generated_files/current.json")
-        os.remove("./L1_architecture/generated_files/history.json")
-        os.remove("./L1_architecture/generated_files/current.csv")
-        os.remove("./L1_architecture/generated_files/history.csv")
-        os.remove("./L1_architecture/generated_files/low_quality_acceptance.csv")
-        os.remove("./L1_architecture/outputs/acceptance_crieteria_report.pdf")
-    except:
-        print("files not found to delete")
+    delete_files(["./L1_architecture/generated_files/current.json",
+    "./L1_architecture/generated_files/history.json",
+    "./L1_architecture/generated_files/current.csv",
+    "./L1_architecture/generated_files/history.csv",
+    "./L1_architecture/generated_files/low_quality_acceptance.csv",
+    "./L1_architecture/outputs/acceptance_crieteria_report.pdf",
+    "./L1_architecture/outputs/jira_hygiene_dashboard.png",
+    "L1_architecture/outputs/output.py",
+    "L1_architecture/outputs/output.txt",
+    "L1_architecture/outputs/panda.py"])
 
     if(idx==5):
         Fut_sprints=get_future_sprint_ids(board_name,sprint_id)
@@ -622,7 +634,7 @@ def extract_code_section(input_file, output_file):
     with open(output_file, "w", encoding="utf-8") as file:
         file.writelines(extracted_lines)
     print(f"Extracted code section saved to {output_file}")
-    # os.remove(input_file)
+    # input_file)
 
 
 # Required for PTO data integration
@@ -711,6 +723,9 @@ def clean_latin1(text):
 
 
 class PDFReport1(FPDF):
+    def __init__(self, orientation='L'):  # Add this constructor
+        super().__init__(orientation=orientation)  # Pass orientation to parent
+
     def header(self):
         # 1. Red "WELLS FARGO" strip at the very top
         self.set_y(0)
@@ -746,7 +761,7 @@ def create_acceptance_improvement_report():
     pdf_file="./L1_architecture/outputs/acceptance_crieteria_report.pdf"
     df = pd.read_csv(csv_file)
 
-    pdf = PDFReport1()
+    pdf = PDFReport1(orientation='L')
     pdf.set_auto_page_break(auto=True, margin=15)
     pdf.add_page()
 
@@ -755,7 +770,7 @@ def create_acceptance_improvement_report():
 
     for idx, row in df.iterrows():
         pdf.set_font('helvetica', 'B', 12)
-        pdf.cell(0, 10, clean_latin1(f"Feature Key: {row.get('key', '')}"), ln=True)
+        pdf.cell(0, 10, clean_latin1(f"Issue key: {row.get('key', '')}"), ln=True)
         pdf.set_font('helvetica', '', 11)
 
         pdf.multi_cell(0, 8, clean_latin1(f"Summary: {row.get('summary', '')}"))

@@ -1,6 +1,7 @@
 # imports ...
 from L2_architecture.utils import *
 from L2_architecture.utils import embed_query
+from Main_architecture.utils import delete_files
 
 # user query entry point 
 def feature_Readiness(query_user):
@@ -105,6 +106,12 @@ def L2_entry_point(query_user):
     """
     Main entry point for the L2 architecture.
     """
+    delete_files(["L2_architecture/data/API.csv","L2_architecture/data/Final_API.csv","L2_architecture/data/Not-Good-issues.csv",
+                  "L2_architecture/data/overdue.csv","L2_architecture/data/result.json","L2_architecture/data/user_specific_need.csv",
+                  "L2_architecture/Report/acceptance_report.pdf","L2_architecture/Report/Bad_values_dashboard.png",
+                  "L2_architecture/Report/missing_values_dashboard.png","L2_architecture/Report/output.txt","L2_architecture/Report/summary_report.pdf"
+                  ])
+
     # Check if the query is related to feature readiness or RTB/CTB
     value=embed_query(query_user)
     if( value[2] == 2):

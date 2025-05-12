@@ -1,9 +1,4 @@
-from Main_architecture.pdf_creator import *
+from L2_architecture.utils import *
 
-# Example call
-create_pdf(
-    "outputs/final.pdf",
-    "L1_architecture/outputs/jira_hygiene_dashboard.png",
-    "L1_architecture/outputs/output.txt",
-    "L1_architecture/generated_files/current.csv"
-)
+
+process_csv_and_add_missing_columns()

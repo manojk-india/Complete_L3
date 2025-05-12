@@ -121,17 +121,5 @@ def entrypoint(Query:str) -> str:
         visualize_missing_data('./L1_architecture/generated_files/current.csv')
 
 
-# entrypoint("No of story points assigned to Hari in abc1") -- working fine 
-
-# entrypoint("Jira Hygiene of abc1 board")
-
-# entrypoint("RTB/CTB utilization of abc1 board in sprint 9") -- working good 
-
-# entrypoint("FTE/FTC utilization of abc1 board in sprint 9")
-
-# entrypoint("Backlog health of abc2 board")
-
-
-
 
 

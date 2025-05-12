@@ -1,0 +1,54 @@
+boards of intrest are : ['ABC3']
+name indentified is : []
+time period is : False
+Multiplied queries are : 
+Give me RTB/CTB ratio for ABC3 board
+-----------------------------------
+------------------------------------------------------------------------------------------------ Operation over 
+boards of intrest are : ['ABC3']
+name indentified is : []
+time period is : False
+Multiplied queries are : 
+Give me RTB/CTB ratio for ABC3 board
+-----------------------------------
+------------------------------------------------------------------------------------------------ Operation over 
+boards of intrest are : ['ABC3']
+name indentified is : []
+time period is : False
+Multiplied queries are : 
+Give me RTB/CTB ratio for ABC3 board
+-----------------------------------
+------------------------------------------------------------------------------------------------ Operation over 
+boards of intrest are : ['ABC3']
+name indentified is : []
+time period is : False
+Multiplied queries are : 
+Give me RTB/CTB ratio for ABC3 board
+-----------------------------------
+------------------------------------------------------------------------------------------------ Operation over 
+boards of intrest are : ['ABC3']
+name indentified is : []
+time period is : False
+Multiplied queries are : 
+Give me JIRA hygiene for ABC3 board
+-----------------------------------
+boards of intrest are : ['ABC3']
+name indentified is : []
+time period is : False
+Multiplied queries are : 
+Give me JIRA hygiene for ABC3 board
+-----------------------------------
+boards of intrest are : ['ABC3']
+name indentified is : []
+time period is : False
+Multiplied queries are : 
+Give me JIRA hygiene for ABC3 board
+-----------------------------------
+------------------------------------------------------------------------------------------------ Operation over 
+boards of intrest are : ['ABC3']
+name indentified is : []
+time period is : False
+Multiplied queries are : 
+Give me JIRA hygiene for ABC3 board
+-----------------------------------
+------------------------------------------------------------------------------------------------ Operation over 

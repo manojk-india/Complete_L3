@@ -1,7 +1,7 @@
 Action items :
 
-    2) Now we have to think how to put the outputs together == > 
+    1) L2 how to show out put and integrate , test
 
-        2) How will you put pdf inside pdf 
+    2) test L3 level queries
 
     3) Building a frontend 

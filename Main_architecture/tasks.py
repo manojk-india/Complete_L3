@@ -1,6 +1,6 @@
 from crewai import Crew, Process,Agent,Task,LLM
-from models import queries,info,going_down_or_not,where_should_we_go
-from agents import English_expert,Jira_expert
+from Main_architecture.models import queries,info,going_down_or_not,where_should_we_go
+from Main_architecture.agents import English_expert,Jira_expert
        
 
 Splitter1=Task(

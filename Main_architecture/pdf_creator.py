@@ -11,7 +11,7 @@ from PyPDF2 import PdfReader, PdfWriter,PdfMerger
 
 def create_pdf(pdf_path, image_path, text_path, csv_path):
     # Step 1: Generate a new PDF in memory or temp file
-    temp_pdf_path = "temp_generated.pdf"
+    temp_pdf_path = "outputs/temp_generated.pdf"
     doc = SimpleDocTemplate(temp_pdf_path, pagesize=landscape(A4))
     story = []
     styles = getSampleStyleSheet()
@@ -58,7 +58,7 @@ def create_pdf(pdf_path, image_path, text_path, csv_path):
     # --- Page 2: CSV Table Summary ---
     df = pd.read_csv(csv_path)
     cols_to_remove = {'acceptance_crieteria', 'issue_type', 'parent_key', 
-                      'project_key','description','components','reporter','labels','sprint_status'}
+                      'project_key','description','components','reporter','labels','sprint_status','acceptance_result','acceptance_improvement','quality_check'}
     df = df.drop(columns=[c for c in df.columns if c in cols_to_remove], errors='ignore')
 
     data = [df.columns.tolist()] + df.values.tolist()
@@ -111,6 +111,7 @@ def merge_pdfs(pdf_path1, pdf_path2, output_path):
     # Add the two PDFs
     merger.append(pdf_path1)
     merger.append(pdf_path2)
+
     
     # Write out the merged PDF
     with open(output_path, 'wb') as f_out:

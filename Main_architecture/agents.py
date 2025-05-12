@@ -5,11 +5,16 @@ from dotenv import load_dotenv
 # Load environment variables
 load_dotenv()
 
-# Initialize LLM model
+# # Initialize LLM model
+# llm = LLM(
+#     model="sambanova/DeepSeek-R1-Distill-Llama-70B",
+#     temperature=0.1,
+#     max_tokens=2048
+# )
+
 llm = LLM(
-    model="sambanova/DeepSeek-R1-Distill-Llama-70B",
-    temperature=0.1,
-    max_tokens=2048
+    model="gemini/gemini-2.0-flash",
+    temperature=0.7,
 )
 
 

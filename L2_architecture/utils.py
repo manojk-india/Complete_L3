@@ -115,7 +115,8 @@ def json_to_csv() -> None:
         "Requested_by",
         "timeestimate",
         "Due_date",
-        "status"
+        "status",
+        "value_statement"
     ]
 
     # Read JSON data
@@ -147,7 +148,8 @@ def json_to_csv() -> None:
             "Requested_by": requested_by,
             "timeestimate": fields.get('timeestimate', ''),
             "Due_date": fields.get('customfield_10040', ''),
-            "status": fields.get('statusCategory', {}).get('name', '')
+            "status": fields.get('statusCategory', {}).get('name', ''),
+            "value_statement": fields.get('customfield_10058','')
         }
         rows.append(row)
 
@@ -850,3 +852,59 @@ def embed_query(user_query):
     value = best_match_idx.item()
 
     return queries[best_match_idx], scores[0][best_match_idx].item(),value+1
+
+
+
+
+def process_csv_and_add_missing_columns():
+    # Read the CSV file into a DataFrame
+    csv_path="L2_architecture/data/Final_API.csv"
+    df = pd.read_csv(csv_path)
+    
+    # Get today's date for Due_date comparison
+    today = datetime.now().date()
+    
+    # Columns to check for missing values or specific conditions
+    columns_to_check = [
+        'key', 'parent_id', 'summary', 'description', 'Acceptance_crieteria',
+        'labels', 'components', 'parent_key', 'Requested_by', 'timeestimate',
+        'Due_date', 'status', 'Acceptance_result', 'Acceptance_improvement',
+        'summary_result', 'summary_suggestion', 'OKR'
+    ]
+    
+    def check_row(row):
+        missing_cols = []
+        
+        # Check for missing values (NaN or empty strings)
+        for col in columns_to_check:
+            value = row[col]
+            if pd.isna(value) or (isinstance(value, str) and value.strip() == ''):
+                missing_cols.append(col)
+        
+        # Check specific conditions for certain columns
+        if row['OKR'] == 'Not Good':
+            missing_cols.append('OKR')
+        if row['Acceptance_result'] == 'Not Well Documented':
+            missing_cols.append('Acceptance_result')
+        if row['summary_result'] == 'Needs Improvement':
+            missing_cols.append('summary_result')
+        
+        # Check Due_date validity and if it's in the past
+        due_date_str = row['Due_date']
+        if isinstance(due_date_str, str) and due_date_str.strip() != '':
+            try:
+                due_date = datetime.strptime(due_date_str, '%Y-%m-%d').date()
+                if due_date < today:
+                    missing_cols.append('Due_date')
+            except ValueError:
+                # Handle invalid date format
+                missing_cols.append('Due_date')
+        else:
+            # Handle empty or non-string Due_date
+            missing_cols.append('Due_date')
+        
+        return ', '.join(missing_cols) if missing_cols else 'No issues'
+    
+    # Apply the check_row function to each row
+    df['Missing_Columns'] = df.apply(check_row, axis=1)
+    df.to_csv(csv_path)

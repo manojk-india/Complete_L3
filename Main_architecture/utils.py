@@ -2,6 +2,7 @@
 from typing import List
 import pandas as pd
 from datetime import datetime, timedelta
+import os
 
 # in hold -- not used upto now
 def get_previous_sprints(today=None):
@@ -124,3 +125,13 @@ def write_into_checkpoint_file(data: list[str]) -> None:
     with open("main_checkpoints.txt", "a") as f:
         for item in data:
             f.write(item + "\n")
+
+def delete_files(file_list):
+    for file_path in file_list:
+        try:
+            os.remove(file_path)
+            print(f"Deleted: {file_path}")
+        except FileNotFoundError:
+            print(f"File not found (skipped): {file_path}")
+        except Exception as e:
+            print(f"Error deleting {file_path}: {e}")

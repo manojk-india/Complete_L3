@@ -8,11 +8,11 @@ import os
 
 
 # importing custom objects 
-from prompt import prompt1,prompt2,prompt3,prompt4,prompt5
-from agents import English_expert,Jira_expert
-from tasks import Splitter1,Splitter2,Multiplier,should_go_down_or_not,should_we_go_to_L1_or_L2
-from utils import get_person_boards,board_under_L2_board,write_into_checkpoint_file
-from Main_architecture.crew import wrapper_function
+from Main_architecture.prompt import prompt2,prompt3,prompt4,prompt5
+from Main_architecture.agents import English_expert,Jira_expert
+from Main_architecture.tasks import Splitter1,Splitter2,Multiplier,should_go_down_or_not,should_we_go_to_L1_or_L2
+from Main_architecture.pdf_creator import *
+from Main_architecture.utils import *
 
 
 # calling the L1 architecture 
@@ -41,8 +41,11 @@ def main_L3_query(query:str):
     with open("outputs/output.txt", mode="w") as file:
         pass
 
+    delete_files(["outputs/final.pdf","outputs/final2.pdf","outputs/temp.pdf"])
+
+
     # board architecture
-    L1=["abc1","abc2","abc3","abc4","abc5","abc6"]
+    L1=["ABC1","ABC2","ABC3","ABC4","ABC5","ABC5"]
     L2=["DEF1","DEF2","DEF3"]
     L3=["GHI"]
 
@@ -102,18 +105,25 @@ def main_L3_query(query:str):
 
             with open("L1_architecture/outputs/output.txt", mode="r") as file:
                 output = file.read()
-                file.write("------------------------------------------------------------------------")
 
             with open("outputs/output.txt", mode="a") as file:
+                file.write(f"{j}")
                 file.write(output)
+                file.write("------------------------------------------------------------------------")
 
-            
+            try:
+                create_pdf("outputs/temp.pdf",
+                            "L1_architecture/outputs/jira_hygiene_dashboard.png",
+                            "L1_architecture/outputs/output.txt",
+                            "L1_architecture/generated_files/current.csv")
+            except Exception as e:
+                print(e)
 
-
-
-
-            # code for taking the outputs and saving it in the output.pdf file 
-
+            if os.path.exists("L1_architecture/outputs/acceptance_crieteria_report.pdf"):
+                merge_pdfs("outputs/temp.pdf","L1_architecture/outputs/acceptance_crieteria_report.pdf", "outputs/final.pdf")
+                os.remove("outputs/temp.pdf")
+                os.rename("outputs/final.pdf","outputs/temp.pdf")
+    
 
     elif( level == "L2"):
         should_go_down_or_not_flag=go_down_or_not(prompt4,query)
@@ -164,7 +174,7 @@ def main_L3_query(query:str):
 
         for j in queries2:
             # here all ready -- modify and call the architecture built
-            wrapper_function(j)
+            pass
 
 
 
