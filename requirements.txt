@@ -7,6 +7,8 @@ chainlit
 speechrecognition
 reportlab
 fpdf
+pyPDF2
 
 
 # python -m pip install --upgrade --force-reinstall reportlab -- for force reinstall
+# python -m pip install PyPDF2

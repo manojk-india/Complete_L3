@@ -37,9 +37,9 @@ def get_board_features(
     max_results: int = 100
 ) -> Dict:
     id_dict = {
-        "APS": 34,
-        "DIS": 2,
-        "TES": 35
+        "DEF2": 34,
+        "DEF1": 2,
+        "DEF3": 35
     }
 
     board_id = id_dict[board_name]

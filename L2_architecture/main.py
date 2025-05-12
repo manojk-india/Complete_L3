@@ -13,7 +13,7 @@ def feature_Readiness(query_user):
                 return board
         return None
 
-    query=find_board_in_string(["APS", "DIS", "TES"],query_user)
+    query=find_board_in_string(["DEF2", "DEF1", "DEF3"],query_user)
 
     # GuardRail
     if not query:
@@ -77,7 +77,7 @@ def RTB_CTB_query(query_user):
                 return board
         return None
 
-    query=find_board_in_string(["APS", "DIS", "TES"],query_user)
+    query=find_board_in_string(["DEF1", "DEF2", "DEF3"],query_user)
 
     # GuardRail
     if not query:
@@ -107,17 +107,12 @@ def L2_entry_point(query_user):
     """
     # Check if the query is related to feature readiness or RTB/CTB
     value=embed_query(query_user)
-    print("Value: ",value)
     if( value[2] == 2):
         # Feature Readiness
-        print("if entered")
         feature_Readiness(query_user)
-        print("if executed")
     else:
         # RTB/CTB
-        print("else entered")
         RTB_CTB_query(query_user)
-        print("else executed")
 
 
 

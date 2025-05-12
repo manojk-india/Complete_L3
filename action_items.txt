@@ -1,11 +1,7 @@
 Action items :
 
-    1) One problem is that we will running all the files like L1 main function or L2 from our root directory , but they are built to be run from
-       their root directory ( we copied that folder structure ) -- so im encountering FileNotFound error -- need to give absolute path
-
     2) Now we have to think how to put the outputs together == > 
 
-        1) Do we need query decomposer
         2) How will you put pdf inside pdf 
 
     3) Building a frontend 

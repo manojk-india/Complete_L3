@@ -2,71 +2,6 @@
 
 
 
-prompt1="""
-<QueryDecompositionInstructions>
-<Objective>
-Split compound queries containing "and" into individual atomic queries while preserving:
-1. Single subject per query
-2. Clear board/project associations
-3. Respect "respectively" indicators
-</Objective>
-
-<Rules>
-1. Split on both sides of "and" in subjects (people) and objects (boards)
-2. Handle "respectively" by pairing order (first subject with first object)
-3. Never combine entities - each gets separate query
-4. Preserve exact metric wording ("story points")
-</Rules>
-
-<Examples>
-Original: "Total story points for Uma and Manoj in CDF board"
-Decomposed:
-1. Total story points assigned to Uma in CDF board
-2. Total story points assigned to Manoj in CDF board
-
-Original: "Story points for Uma and Manoj in CDF and EBSNF boards respectively"
-Decomposed:
-1. Story points assigned to Uma in CDF board
-2. Story points assigned to Manoj in EBSNF board
-
-Original: "Total tasks completed by Alice, Bob and Charlie in Q3"
-Decomposed:
-1. Total tasks completed by Alice in Q3
-2. Total tasks completed by Bob in Q3  
-3. Total tasks completed by Charlie in Q3
-
-original: "Jira hygiene for boards under APS "
-1. Jira hygiene for boards under APS
-
-original: "FTE/FTC utilization for APS and TES boards"
-Decomposed:
-1. FTE/FTC utilization for APS board
-2. FTE/FTC utilization for TES board
-
-original: "RTB/CTB utilization for APS and TES boards"
-Decomposed:
-1. RTB/CTB utilization for APS board
-2. RTB/CTB utilization for TES board
-
-
-</Examples>
-
-<OutputFormat>
-Return numbered list with exact decomposed queries. 
-Include brief explanations in parentheses when splitting multi-board "respectively" cases.
-</OutputFormat>
-
-<ValidationCheck>
-Before finalizing, verify:
-✅ No combined subjects/objects remain
-✅ All original entities are accounted for
-✅ "Respectively" pairings are preserved
-✅ Metrics remain identical across splits
-</ValidationCheck>
-</QueryDecompositionInstructions>
-
-"""
-
 prompt2="""
 <JiraQueryParser>
 <Objective>
@@ -80,8 +15,7 @@ Output format: JSON with keys "boards", "names", "has_time_period"
 
 <ExtractionRules>
 1. **Boards**:
-   - Match terms after "board" (e.g., "CDF board" → "CDF")
-   - Include known board prefixes (e.g., "EBSNF", "KAN")
+   - Match terms after "board" (e.g., "abc1 board" → "abc1")
    - Case-insensitive matching
 
 2. **Names**:
@@ -98,8 +32,8 @@ Output format: JSON with keys "boards", "names", "has_time_period"
 </ExtractionRules>
 
 <Examples>
-Query: "Total story points for Uma in CDF board"
-Output: {"boards": ["CDF"], "names": ["Uma"], "has_time_period": false}
+Query: "Total story points for Uma in abc1 board"
+Output: {"boards": ["abc1"], "names": ["Uma"], "has_time_period": false}
 
 Query: "Issues assigned to Manoj during sprint 8"
 Output: {"boards": [], "names": ["Manoj"], "has_time_period": true}
