@@ -7,9 +7,9 @@ from dotenv import load_dotenv
 import pandas as pd
 
 # custom imports 
-from static_files.utils import *
-from crews import *
-from static_files.hygiene import *
+from L1_architecture.static_files.utils import *
+from L1_architecture.crews import *
+from L1_architecture.static_files.hygiene import *
 
 # main entry point file which will be used by chainLit
 def entrypoint(Query:str) -> str:
@@ -34,7 +34,7 @@ def entrypoint(Query:str) -> str:
     get_L1_board_data(board_name,previous_needed_or_not,result["sprint_name"],result["person_name"],idx)
 
     # now we need to add the columns to the dataframe to add the RTB/CTB columns and also FTE/FTC columns
-    df=pd.read_csv("generated_files/current.csv")
+    df=pd.read_csv("./L1_architecture/generated_files/current.csv")
     add_rtb_ctb_column(df)
     add_employment_type()
 
@@ -76,7 +76,7 @@ def entrypoint(Query:str) -> str:
 
     if(idx!=6):
         # PTO not required for JIRA hygiene case
-        with open("outputs/output.txt", "a") as f:
+        with open("./L1_architecture/outputs/output.txt", "a") as f:
                 flag=0
                 for i in members:
                     for j in sprint_name:
@@ -97,7 +97,7 @@ def entrypoint(Query:str) -> str:
                         f.write(f"Name: {i} -- Leave days: {leaves} in {j} \n")
                 f.write("\n")
     else:
-        with open("outputs/output.txt", "w") as f:
+        with open("./L1_architecture/outputs/output.txt", "w") as f:
            f.write(" Below you can find low quality acceptance crieteria report ")
 
 
@@ -113,12 +113,12 @@ def entrypoint(Query:str) -> str:
         # flagging low quality acceptance crieteria rows
         process_csv()
         
-        visualize_missing_data_with_low_quality_acceptance('generated_files/current.csv')
+        visualize_missing_data_with_low_quality_acceptance('./L1_architecture/generated_files/current.csv')
 
         # PDF report creation
         create_acceptance_improvement_report()
     else:
-        visualize_missing_data('generated_files/current.csv')
+        visualize_missing_data('./L1_architecture/generated_files/current.csv')
 
 
 # entrypoint("No of story points assigned to Hari in abc1") -- working fine 
@@ -129,7 +129,7 @@ def entrypoint(Query:str) -> str:
 
 # entrypoint("FTE/FTC utilization of abc1 board in sprint 9")
 
-entrypoint("Backlog health of abc2 board")
+# entrypoint("Backlog health of abc2 board")
 
 
 

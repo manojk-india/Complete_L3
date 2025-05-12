@@ -1,11 +1,11 @@
 from crewai import Agent, Task, Crew, LLM
 from crewai.tools import tool
 from dotenv import load_dotenv
-from static_files.utils import *
-from static_files.models import *
-from static_files.prompts import *
+from L1_architecture.static_files.utils import *
+from L1_architecture.static_files.models import *
+from L1_architecture.static_files.prompts import *
 import pandas as pd
-from vector_db.db import *
+from L1_architecture.vector_db.db import *
 
 load_dotenv()
 
@@ -73,9 +73,9 @@ pandas_agent = Agent(
 
 query_task = Task(
             description="""Convert the user query User Query given in {prompt2} into a pandas code by understanding the csv file structure, example provided and the rules provided.
-              and saving it into a text file named outputs/output.txt""",
+              and saving it into a text file named L1_architecture/outputs/output.txt""",
             agent=pandas_agent,
-            expected_output="A pandas code to query out specific need of the user and saving it into a text file named outputs/output.txt",
+            expected_output="A pandas code to query out specific need of the user and saving it into a text file named L1_architecture/outputs/output.txt",
         )
 
 def pandas_query_crew(query,idx):
@@ -88,7 +88,7 @@ def pandas_query_crew(query,idx):
         **Rules:**
         1. Do not filter the data for the required board(project_key), person, and sprint, as the data is already filtered.
         2. Write code using the above rules and the example provided. Code should be executable without errors and should look like the example provided.
-        3. Always start with `df = pd.read_csv("generated_files/current.csv")`
+        3. Always start with `df = pd.read_csv("./L1_architecture/generated_files/current.csv")`
         4. Never create new DataFrames - only use `df`
         5. For counts: Use vectorized operations like `.sum()` or `len(df)`
         6. For separate results (e.g., RTB/CTB), calculate in one code block
@@ -106,10 +106,10 @@ def pandas_query_crew(query,idx):
             """
     crew = Crew(agents=[pandas_agent], tasks=[query_task])
     result = crew.kickoff(inputs={"prompt2": prompt2})
-    with open("outputs/panda.py", "w") as f:
+    with open("./L1_architecture/outputs/panda.py", "w") as f:
         f.write(str(result))
-    extract_code_section( "outputs/panda.py","outputs/output.py")
-    os.system("python outputs/output.py")
+    extract_code_section( "./L1_architecture/outputs/panda.py","./L1_architecture/outputs/output.py")
+    os.system("python ./L1_architecture/outputs/output.py")
     write_to_checkpoint_file("pandas query crew called")
 
 
@@ -188,8 +188,8 @@ def process_evaluations():
         csv_file: Path to the input CSV file
         output_csv: Path to save the output CSV file
     """
-    csv_file="generated_files/current.csv"
-    output_csv="generated_files/current.csv"
+    csv_file="./L1_architecture/generated_files/current.csv"
+    output_csv="./L1_architecture/generated_files/current.csv"
     # Load the CSV file with proper error handling
     try:
         df = pd.read_csv(csv_file)

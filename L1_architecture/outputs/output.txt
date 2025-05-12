@@ -1,0 +1,4 @@
+Query: FTE/FTC utilization of abc1 board in sprint 9
+FTE story points: 10.0
+FTC story points: 14.0
+
