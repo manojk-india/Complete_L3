@@ -210,16 +210,17 @@ def main_L3_query(query:str):
 
             boards=L2
             queries2=query_multiplier(boards,[],query,prompt3)
+            t=None
             for j in queries2:
                 t=L2_entry_point(j)
 
                 with open("L2_architecture/Report/output.txt", mode="r") as file:
                         output = file.read()
 
-                with open("outputs/output.txt", mode="a") as file:
-                    file.write(f"{j}")
-                    file.write(output)
-                    file.write("\n")
+                # with open("outputs/output.txt", mode="a") as file:
+                #     file.write(f"{j}")
+                #     file.write(output)
+                #     file.write("\n")
 
 
                 if(t=="feature_readiness"):
@@ -230,7 +231,15 @@ def main_L3_query(query:str):
                 else:
                     create_and_append_pdf_RTBCTB("L2_architecture/Report/output.txt","L2_architecture/Report/missing_values_dashboard.png"
                         ,"L2_architecture/data/API.csv", "outputs/temp.pdf")
-
+                    with open("outputs/output.txt", mode="a") as file:
+                        file.write(f"{j}")
+                        file.write(output)
+                        file.write("\n")
+            if t and t=="feature_readiness":
+                with open("outputs/output.txt", mode="a") as file:
+                    file.write("You can find the feature readiness report below.")
+                    
+                    file.write("\n")
 
         else:
             # we have to go down to L1 level 

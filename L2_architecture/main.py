@@ -28,6 +28,9 @@ def feature_Readiness(query_user):
 
     # # convert the aquired json to csv here and stored in data/API.csv
     json_to_csv()
+    
+        
+
 
     # # now checking acceptance_crieteria and summary and suggesting better changes and ading those to csv file itself 
     process_evaluations()
@@ -69,8 +72,8 @@ def feature_Readiness(query_user):
     create_acceptance_improvement_report()
     create_summary_report()
 
-    with open("L2_architecture/Report/output.txt",mode="w"):
-        print(f"Feature readiness report for {query} board")
+    with open("L2_architecture/Report/output.txt",mode="w") as f:
+        f.write(f"Feature readiness report for {query} board\n")
 
 
 # function for RTB/CTb case

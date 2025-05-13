@@ -128,19 +128,20 @@ def merge_pdfs(pdf_path1, pdf_path2, output_path):
     print(f"Merged PDF saved to: {output_path}")
 
 
-
-def draw_separator_page(whats_next:str):
+def draw_separator_page(title):
     from reportlab.pdfgen import canvas
+    from reportlab.lib.pagesizes import A4
+    from reportlab.lib.units import inch
+
     buffer = BytesIO()
     c = canvas.Canvas(buffer, pagesize=landscape(A4))
-    c.setFont("Helvetica-Bold", 16)
-    c.drawCentredString(420, 300, f"--- NEXT : {whats_next} ---")
+    width, height = landscape(A4)
+    c.setFont("Helvetica-Bold", 18)
+    c.drawCentredString(width / 2, height / 2, title)
     c.showPage()
     c.save()
     buffer.seek(0)
-    return buffer.read()
-
-
+    return buffer.getvalue()
 def create_structured_pdf_feature(output_pdf_path, text_path, image1_path, image2_path, dataframe_csv_path, pdf1_path, pdf2_path):
     temp_pdf = "temp_main_content.pdf"
     doc = SimpleDocTemplate(temp_pdf, pagesize=landscape(A4), rightMargin=40, leftMargin=40, topMargin=30, bottomMargin=30)
@@ -151,9 +152,22 @@ def create_structured_pdf_feature(output_pdf_path, text_path, image1_path, image
     # -------- Page 1: Text and Two Images -------- #
     with open(text_path, encoding="utf-8") as f:
         text_content = f.read()
+        print(text_content)
 
-    text_style = ParagraphStyle(
-        'TextStyle',
+    # Create header style
+    header_style = ParagraphStyle(
+        'HeaderStyle',
+        parent=styles['Heading2'],
+        fontSize=14,
+        leading=18,
+        textColor=colors.darkblue,
+        alignment=TA_LEFT,
+        spaceAfter=12
+    )
+
+    # Create content style
+    content_style = ParagraphStyle(
+        'ContentStyle',
         parent=styles['Normal'],
         fontSize=11,
         leading=14,
@@ -161,16 +175,31 @@ def create_structured_pdf_feature(output_pdf_path, text_path, image1_path, image
         alignment=TA_LEFT
     )
 
-    text_para = Paragraph(f"<b>Summary:</b><br/><br/>{text_content}", text_style)
-    text_frame = KeepInFrame(page_width - 100, page_height - 150, [text_para], hAlign='LEFT')
-    story.append(text_frame)
+    # Add bold header
+    # header_para = Paragraph("<b>ANALYSIS SUMMARY</b>", header_style)
+    
+    # Add content with proper formatting
+    content_para = Paragraph(text_content.replace('\n', '<br/>'), header_style)
+    
+    # Create frame for content
+    content_frame = KeepInFrame(
+        page_width - 100, 
+        page_height - 200, 
+        [content_para], 
+        hAlign='LEFT'
+    )
 
+    # Add elements to story
+    # story.append(header_para)
+    story.append(content_frame)
+    story.append(Spacer(1, 20))
+
+    # -------- Load Image with Border -------- #
     def load_image_with_border(path, max_width, max_height):
         pil_img = PILImage.open(path)
         orig_width, orig_height = pil_img.size
         aspect_ratio = orig_width / orig_height
 
-        # Calculate scaled dimensions preserving aspect ratio
         if orig_width > orig_height:
             scaled_width = min(max_width, orig_width)
             scaled_height = scaled_width / aspect_ratio
@@ -208,9 +237,6 @@ def create_structured_pdf_feature(output_pdf_path, text_path, image1_path, image
         ('GRID', (0, 0), (-1, -1), 0.5, colors.grey),
     ]))
 
-    story.append(Spacer(1, 20))
-    story.append(text_frame)
-    story.append(Spacer(1, 20))
     story.append(combined_table)
     story.append(PageBreak())
 
@@ -263,6 +289,7 @@ def create_structured_pdf_feature(output_pdf_path, text_path, image1_path, image
         writer.write(f)
 
     os.remove(temp_pdf)
+
 
 # # Example usage:
 # create_structured_pdf("outputs/check.pdf","L2_architecture/Report/output.txt", "L2_architecture/Report/missing_values_dashboard.png", 

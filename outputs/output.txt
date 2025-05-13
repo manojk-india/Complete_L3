@@ -1,3 +1,0 @@
-Feature hygiene for GHI in board DEF1 board
-Feature hygiene for GHI in board DEF2 board
-Feature hygiene for GHI in board DEF3 board

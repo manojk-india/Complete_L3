@@ -19,8 +19,8 @@ def draw_separator_page(title):
     from reportlab.lib.units import inch
 
     buffer = BytesIO()
-    c = canvas.Canvas(buffer, pagesize=A4)
-    width, height = A4
+    c = canvas.Canvas(buffer, pagesize=landscape(A4))
+    width, height = landscape(A4)
     c.setFont("Helvetica-Bold", 18)
     c.drawCentredString(width / 2, height / 2, title)
     c.showPage()
@@ -61,10 +61,10 @@ def create_structured_pdf_feature(output_pdf_path, text_path, image1_path, image
     )
 
     # Add bold header
-    header_para = Paragraph("<b>ANALYSIS SUMMARY</b>", header_style)
+    # header_para = Paragraph("<b>ANALYSIS SUMMARY</b>", header_style)
     
     # Add content with proper formatting
-    content_para = Paragraph(text_content.replace('\n', '<br/>'), content_style)
+    content_para = Paragraph(text_content.replace('\n', '<br/>'), header_style)
     
     # Create frame for content
     content_frame = KeepInFrame(
@@ -75,7 +75,7 @@ def create_structured_pdf_feature(output_pdf_path, text_path, image1_path, image
     )
 
     # Add elements to story
-    story.append(header_para)
+    # story.append(header_para)
     story.append(content_frame)
     story.append(Spacer(1, 20))
 
