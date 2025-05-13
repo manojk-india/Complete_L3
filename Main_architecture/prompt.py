@@ -167,56 +167,58 @@ Query: "Boards under APS with high CTB"
 
 
 prompt5="""
-<HierarchyRouter level="L3">
-note: No function calling is required here 
-<Objective>
-Determine if L3 board queries require data aggregation at L1 or L2 based on:
-1. Metric/entity type (story points vs features)
-2. Explicit hierarchy indicators ("boards under")
-3. Operational vs strategic terminology
-</Objective>
+Objective:
+Determine whether a query about an L3 board requires data aggregation from L1 or L2 based on:
 
-<DecisionMatrix>
-| Trigger Type           | Examples                          | Target Level | Rationale                     |
-|------------------------|-----------------------------------|--------------|-------------------------------|
-| L1 Metrics             | "story points", "FTE/FTC",        | L1 level     | Granular work tracking        |
-|                        | "backlog health", "sprint data"   |              |                               |
-| L2 Entities            | "features", "epics",              | L2 level     | Product management scope      |
-|                        | "RTB/CTB classification"          |              |                               |
-| Hierarchy Expansion    | "boards under", "child boards",   | L1 level     | Requires drilling down        |
-|                        | "L1 boards" in query              |              |                               |
-| Strategic Terms        | "hygiene", "maturity",            | L2 level     | High-level analysis           |
-|                        | "portfolio view"                  |              |                               |
-</DecisionMatrix>
+1. The type of metric or entity used (e.g., "story points" vs "features")
+2. Presence of explicit hierarchy indicators (e.g., "boards under")
+3. Whether the terminology is operational or strategic in nature
 
-<ValidationFlow>
-1. Check for explicit hierarchy terms → Set level
-2. Match metric/entity type → Set level
-3. Confirm with L3-L2-L1 ontology → Final decision
-4. Handle conflicts: L1 triggers > L2 triggers
-</ValidationFlow>
+Trigger Types and Logic:
 
-<Examples>
-Query: "JIRA hygiene for transaction processing"
-→ {"level": "L2 level", "reason": "Strategic term 'hygiene'"}
+L1 Metrics
+Examples include: story points, FTE/FTC, backlog health, sprint data
+Target Level: L1
+Rationale: These are used for granular work tracking
+
+L2 Entities
+Examples include: features, epics, RTB/CTB classification, feature hygiene, feature readiness
+Target Level: L2
+Rationale: These fall under the scope of product management
+
+Hierarchy Expansion
+Examples include:child boards, L1 boards
+Target Level: L1
+Rationale: These require drilling down into the hierarchy
+
+Strategic Terms
+Examples include: feature hygiene, maturity, portfolio view
+Target Level: L2
+Rationale: These terms are typically used in high-level or strategic discussions
+
+Validation Flow:
+
+1. Check for explicit hierarchy terms and set level accordingly
+2. Match the metric or entity type and assign a level
+3. Confirm the result using the L3-L2-L1 structure
+4. In case of conflicting triggers, prioritize L1 triggers over L2 triggers
+
+Examples:
+
+Query: "Feature hygiene for transaction processing"
+Result: Level = L2, Reason = L2 entity "feature hygiene"
 
 Query: "Number of features assigned to transaction processing"
-→ {"level": "L2 level", "reason": "L2 entity 'features'"}
+Result: Level = L2, Reason = L2 entity "features"
 
 Query: "Story points for Uma in transaction processing"
-→ {"level": "L1 level", "reason": "L1 metric 'story points'"}
+Result: Level = L1, Reason = L1 metric "story points"
 
 Query: "RTB/CTB of L1 boards under transaction processing"
-→ {"level": "L1 level", "reason": "Hierarchy term 'L1 boards under'"}
-</Examples>
+Result: Level = L1, Reason = Hierarchy term "L1 boards under"
 
-<OutputSchema>
-{
-  "level": "L1"|"L2",
-  "reason": string,
-}
-</OutputSchema>
-</HierarchyRouter>
+Query: "Feature hygiene for board under GHI board"
+Result: Level = L2, Reason = L2 strategic term "feature hygiene"
 
 """
 

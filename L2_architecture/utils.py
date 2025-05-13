@@ -649,7 +649,7 @@ class PDFReport1(FPDF):
         self.ln(3)
         self.set_font('helvetica', 'B', 15)
         self.set_text_color(0, 0, 0)
-        self.cell(0, 12, "Acceptance criteria Report", ln=1, align='C')
+        self.cell(0, 12, "Summary Report", ln=1, align='C')
         self.ln(10)
 
         self.set_y(40)  # This just ensures the content starts below the strips
@@ -659,7 +659,7 @@ class PDFReport1(FPDF):
         self.cell(0, 10, f'Page {self.page_no()}', 0, 0, 'C')
 
 # acceptance criteria report PDF
-def create_acceptance_improvement_report(csv_file="L2_architecture/data/user_specific_need.csv", pdf_file="L2_architecture/Report/acceptance_report.pdf"):
+def create_acceptance_improvement_report(csv_file="L2_architecture/data/Final_API.csv", pdf_file="L2_architecture/Report/acceptance_report.pdf"):
     df = pd.read_csv(csv_file)
 
     pdf = PDFReport1(orientation='L')
@@ -875,7 +875,7 @@ def process_csv_and_add_missing_columns():
         'key', 'parent_id', 'summary', 'description', 'Acceptance_crieteria',
         'labels', 'components', 'parent_key', 'Requested_by', 'timeestimate',
         'Due_date', 'status', 'Acceptance_result', 'Acceptance_improvement',
-        'summary_result', 'summary_suggestion', 'OKR', 'value'
+        'summary_result', 'summary_suggestion', 'OKR', 'value_statement'
     ]
     
     def check_row(row):

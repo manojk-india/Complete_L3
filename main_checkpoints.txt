@@ -1,0 +1,11 @@
+Inside main L3 condition. Where should we go to L1 or L2 level: L1 level
+Going down to L1 from L3 level
+Inside main L3 condition. Where should we go to L1 or L2 level: L2 level
+Going down to L2 from L3 level
+Inside main L3 condition. Where should we go to L1 or L2 level: L2 level
+Going down to L2 from L3 level
+Inside main L3 condition. Where should we go to L1 or L2 level: L2 level
+Going down to L2 from L3 level
+Inside main L3 condition. Where should we go to L1 or L2 level: L2 level
+Going down to L2 from L3 level
+------------------------------------------------------------------------------------------------ Operation over 

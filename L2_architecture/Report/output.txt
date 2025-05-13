@@ -1,7 +1,0 @@
-Requested_by Count and Percentage Report
-----------------------------------------
-RTB Count: 4
-CTB Count: 3
-RTB Percentage: 57.14%
-CTB Percentage: 42.86%
-Total Issues: 7

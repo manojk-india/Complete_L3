@@ -45,7 +45,7 @@ task = Task(
     agent=agent,
     output_pydantic=info,
     expected_output="""extracted parameters
-    1) board_name: eg cdf 
+    1) board_name: eg ABC1 
     2) person_name: eg Hari or None
     3) sprint_name: eg sprint 8 or None
     """

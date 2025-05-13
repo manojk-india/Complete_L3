@@ -82,20 +82,20 @@ def board_under_L2_board(board: str,person: str = None) -> List[str]:
         List of unique L2 board names (empty list if no matches)
     """
     assignees={
-    "CDF": ["Alice","Bob","Rishika","Hari","Apoorva"],
-    "EBSNF": ["Apoorva","David","Pavithra","Alok","Peter"],
-    "TES1": ["Sai","Krithika","David"],
-    "TES2": ["Seetha","Rasheed","Rachin"],	
-    "APS1": ["Nitish","Noor","Khaleel"],
-    "APS2": ["Vikram","Dube","Ashwin"],
+    "ABC1": ["Alice","Bob","Rishika","Hari","Apoorva"],
+    "ABC2": ["Apoorva","David","Pavithra","Alok","Peter"],
+    "ABC5": ["Sai","Krithika","David"],
+    "ABC6": ["Seetha","Rasheed","Rachin"],	
+    "ABC3": ["Nitish","Noor","Khaleel"],
+    "ABC4": ["Vikram","Dube","Ashwin"],
     }   
 
-    if(board=="APS"):
-        Boards = ["APS1","APS2"]
-    elif(board=="TES"):
-        Boards = ["TES1","TES2"]
+    if(board=="DEF2"):
+        Boards = ["ABC3","ABC4"]
+    elif(board=="DEF3"):
+        Boards = ["ABC5","ABC6"]
     else:
-        Boards = ["CDF","EBSNF"]
+        Boards = ["ABC1","ABC2"]
 
     if ( person is None):
         return Boards

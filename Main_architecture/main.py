@@ -59,7 +59,7 @@ def main_L3_query(query:str):
         level="L2"
     else:
         level="L1"
-
+    # write_into_checkpoint_file("LEVEL:"+level)
 
     def info_extractor(prompt,query):
         crew=Crew(agents=[English_expert],tasks=[Splitter2],processes=Process.sequential)
@@ -95,7 +95,7 @@ def main_L3_query(query:str):
             # len of board is for sure 1 no other option then number of people might be 0
             queries2=[query]
 
-        write_into_checkpoint_file(["boards of intrest are : "+str(boards),"name indentified is : "+str(name),"time period is : "+str(time_period)])
+        write_into_checkpoint_file([" Inside main l1 condition. boards of interest are : "+str(boards),"name identified is : "+str(name),"time period is : "+str(time_period)])
         write_into_checkpoint_file(["Multiplied queries are : "])
         write_into_checkpoint_file(queries2)
         write_into_checkpoint_file(["-----------------------------------"])
@@ -131,7 +131,7 @@ def main_L3_query(query:str):
     elif( level == "L2"):
         should_go_down_or_not_flag=go_down_or_not(prompt4,query)
 
-        write_into_checkpoint_file(["Should we go down or not : "+str(should_go_down_or_not_flag)])
+        write_into_checkpoint_file([" Inside main L2 condition. Should we go down or not : "+str(should_go_down_or_not_flag)])
 
 
         # staying in the L2 level 
@@ -145,7 +145,7 @@ def main_L3_query(query:str):
             with open("outputs/output.txt", mode="a") as file:
                 file.write(f"{j}")
                 file.write(output)
-                file.write("------------------------------------------------------------------------")
+                file.write("\n")
 
 
             if(t=="feature_readiness"):
@@ -161,9 +161,12 @@ def main_L3_query(query:str):
             board,name,time_period=info_extractor(prompt2,query)
 
             # function call to find boards under the L2 board
-            boards=board_under_L2_board(board[0],name[0])
+            if name:
+                boards=board_under_L2_board(board[0],name[0])
+            else:
+                boards=board_under_L2_board(board[0],None)
 
-            write_into_checkpoint_file(["Intrest boards under L2 board  : "+str(boards),"Name of the person is : "+str(name),"time period is : "+str(time_period)])
+            write_into_checkpoint_file(["Interest boards under L2 board  : "+str(boards),"Name of the person is : "+str(name),"time period is : "+str(time_period)])
 
 
             queries2=query_multiplier(boards,name,query,prompt3)
@@ -181,8 +184,7 @@ def main_L3_query(query:str):
                 with open("outputs/output.txt", mode="a") as file:
                     file.write(f"{j}")
                     file.write(output)
-                    file.write("------------------------------------------------------------------------")
-
+                    file.write("\n")
                 try:
                     create_pdf("outputs/temp.pdf",
                                 "L1_architecture/outputs/jira_hygiene_dashboard.png",
@@ -200,23 +202,67 @@ def main_L3_query(query:str):
     else:
         # This is a L3 level query
         where_to_go=L1_or_L2(prompt5,query)
-        write_into_checkpoint_file(["Where should we go to L1 or L2 level: "+str(where_to_go)])
-
+        write_into_checkpoint_file(["Inside main L3 condition. Where should we go to L1 or L2 level: "+str(where_to_go)])
+        print("where to go : ",where_to_go)
         if where_to_go=="L2 level": 
             # now we have boards , query and name =[]...
+            write_into_checkpoint_file(["Going down to L2 from L3 level"])
+
             boards=L2
+            queries2=query_multiplier(boards,[],query,prompt3)
+            for j in queries2:
+                t=L2_entry_point(j)
+
+                with open("L2_architecture/Report/output.txt", mode="r") as file:
+                        output = file.read()
+
+                with open("outputs/output.txt", mode="a") as file:
+                    file.write(f"{j}")
+                    file.write(output)
+                    file.write("\n")
+
+
+                if(t=="feature_readiness"):
+                    create_structured_pdf_feature("outputs/temp.pdf","L2_architecture/Report/output.txt", "L2_architecture/Report/missing_values_dashboard.png", 
+                    "L2_architecture/Report/Bad_values_dashboard.png",
+                    "L2_architecture/data/Final_API.csv", "L2_architecture/Report/acceptance_report.pdf", 
+                    "L2_architecture/Report/summary_report.pdf")
+                else:
+                    create_and_append_pdf_RTBCTB("L2_architecture/Report/output.txt","L2_architecture/Report/missing_values_dashboard.png"
+                        ,"L2_architecture/data/API.csv", "outputs/temp.pdf")
+
+
         else:
             # we have to go down to L1 level 
+            write_into_checkpoint_file(["Going down to L1 from L3 level"])
             boards=L1
+            queries2=query_multiplier(boards,[],query,prompt3)
+            for j in queries2:
+                entrypoint(j) 
+                with open("L1_architecture/outputs/output.txt", mode="r") as file:
+                    output = file.read()
 
-        queries2=query_multiplier(boards,[],query,prompt3)
-        write_into_checkpoint_file(["Multiplied queries are : "])
-        write_into_checkpoint_file(queries2)
-        write_into_checkpoint_file(["-----------------------------------"])
+                with open("outputs/output.txt", mode="a") as file:
+                    file.write(f"{j}")
+                    file.write(output)
+                    file.write("\n")
+                try:
+                    create_pdf("outputs/temp.pdf",
+                                "L1_architecture/outputs/jira_hygiene_dashboard.png",
+                                "L1_architecture/outputs/output.txt",
+                                "L1_architecture/generated_files/current.csv")
+                except Exception as e:
+                    print(e)
 
-        for j in queries2:
-            # here all ready -- modify and call the architecture built
-            pass
+                if os.path.exists("L1_architecture/outputs/acceptance_crieteria_report.pdf"):
+                    merge_pdfs("outputs/temp.pdf","L1_architecture/outputs/acceptance_crieteria_report.pdf", "outputs/final.pdf")
+                    os.remove("outputs/temp.pdf")
+                    os.rename("outputs/final.pdf","outputs/temp.pdf")
+
+
+        
+
+        
 
 
 
