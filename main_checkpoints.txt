@@ -17,3 +17,34 @@ Going down to L2 from L3 level
 ------------------------------------------------------------------------------------------------ Operation over 
 Inside main L3 condition. Where should we go to L1 or L2 level: L2 level
 Going down to L2 from L3 level
+------------------------------------------------------------------------------------------------ Operation over 
+Inside main L3 condition. Where should we go to L1 or L2 level: L2 level
+Going down to L2 from L3 level
+Inside main L3 condition. Where should we go to L1 or L2 level: L2 level
+Going down to L2 from L3 level
+------------------------------------------------------------------------------------------------ Operation over 
+Inside main L3 condition. Where should we go to L1 or L2 level: L2 level
+Going down to L2 from L3 level
+------------------------------------------------------------------------------------------------ Operation over 
+Inside main L3 condition. Where should we go to L1 or L2 level: L2 level
+Going down to L2 from L3 level
+Inside main L3 condition. Where should we go to L1 or L2 level: L2 level
+Going down to L2 from L3 level
+------------------------------------------------------------------------------------------------ Operation over 
+Inside main L3 condition. Where should we go to L1 or L2 level: L2 level
+Going down to L2 from L3 level
+------------------------------------------------------------------------------------------------ Operation over 
+Inside main L3 condition. Where should we go to L1 or L2 level: L2 level
+Going down to L2 from L3 level
+------------------------------------------------------------------------------------------------ Operation over 
+Inside main L3 condition. Where should we go to L1 or L2 level: L2 level
+Going down to L2 from L3 level
+Multiplied queries are : 
+Take the ['DEF1', 'DEF2', 'DEF3'] ,[] of the person and RTB/CTB classification for GHI
+------------------------------------------------------------------------------------------------ Operation over 
+Inside main L3 condition. Where should we go to L1 or L2 level: L2 level
+Going down to L2 from L3 level
+Multiplied queries are : 
+Feature hygiene for GHI in DEF1 board
+Feature hygiene for GHI in DEF2 board
+Feature hygiene for GHI in DEF3 board

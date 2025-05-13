@@ -14,6 +14,7 @@ from reportlab.platypus import (
 )
 import tempfile
 from reportlab.pdfgen import canvas
+from reportlab.lib.units import inch
 
 
 # creating pdf for L1 level here 
@@ -319,7 +320,7 @@ def create_and_append_pdf_RTBCTB(text_file_path, image_path, csv_file_path, outp
     c.drawText(text_object)
 
     # Draw image below text
-    img = Image.open(image_path)
+    img = PILImage.open(image_path) 
     img_width, img_height = img.size
     aspect = img_height / img_width
 

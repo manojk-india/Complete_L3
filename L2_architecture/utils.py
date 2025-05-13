@@ -818,7 +818,7 @@ def process_csv_and_check_okr() -> None:
 
 
 
-def count_requested_by_percentage():
+def count_requested_by_percentage(query):
     csv_path='L2_architecture/data/API.csv'
     output_file='L2_architecture/Report/output.txt'
     df = pd.read_csv(csv_path)
@@ -832,7 +832,7 @@ def count_requested_by_percentage():
     ctb_percent = percentages.get('CTB', 0.0)
     
     with open(output_file, 'w') as f:
-        f.write('Requested_by Count and Percentage Report\n')
+        f.write(query + '\n')
         f.write('----------------------------------------\n')
         f.write('RTB Count: ' + str(rtb_count) + '\n')
         f.write('CTB Count: ' + str(ctb_count) + '\n')

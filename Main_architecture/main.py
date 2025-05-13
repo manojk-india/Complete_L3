@@ -36,7 +36,7 @@ llm = LLM(
 )
 
 # main function at L3 level , we have to modify for handling case insensitive queries -- voice input 
-async def main_L3_query(query:str):
+def main_L3_query(query:str):
 
     # clearing the output file
     with open("outputs/output.txt", mode="w") as file:
@@ -210,6 +210,8 @@ async def main_L3_query(query:str):
 
             boards=L2
             queries2=query_multiplier(boards,[],query,prompt3)
+            write_into_checkpoint_file(["Multiplied queries are : "])
+            write_into_checkpoint_file(queries2)
             t=None
             for j in queries2:
                 t=L2_entry_point(j)
@@ -232,9 +234,8 @@ async def main_L3_query(query:str):
                     create_and_append_pdf_RTBCTB("L2_architecture/Report/output.txt","L2_architecture/Report/missing_values_dashboard.png"
                         ,"L2_architecture/data/API.csv", "outputs/temp.pdf")
                     with open("outputs/output.txt", mode="a") as file:
-                        file.write(f"{j}")
                         file.write(output)
-                        file.write("\n")
+                        
             if t and t=="feature_readiness":
                 with open("outputs/output.txt", mode="a") as file:
                     file.write("You can find the feature readiness report below.")

@@ -106,7 +106,7 @@ def RTB_CTB_query(query_user):
     create_missing_values_dashboard(missing_value)
 
     # now py static py script for counting RTB/CTB values and storing in Report/output.txt 
-    count_requested_by_percentage()
+    count_requested_by_percentage(query_user)
 
 
 
