@@ -41,7 +41,7 @@ async def start():
      
 @cl.step(type="tool")
 async def processing(message):
-    main_L3_query(message)
+    await main_L3_query(message)
     return " process completed successfully "
 
 @cl.step(type="tool")
