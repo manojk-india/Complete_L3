@@ -36,7 +36,7 @@ llm = LLM(
 )
 
 # main function at L3 level , we have to modify for handling case insensitive queries -- voice input 
-def main_L3_query(query:str):
+async def main_L3_query(query:str):
 
     # clearing the output file
     with open("outputs/output.txt", mode="w") as file:

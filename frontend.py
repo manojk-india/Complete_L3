@@ -169,36 +169,61 @@ async def process_audio():
 
 
 
+# @cl.on_message
+# async def process_message(message):
+#     """Main message processing handler"""
+    
+#     await processing(message.content)
+
+#     # await asyncio.sleep(3)
+
 @cl.on_message
 async def process_message(message):
     """Main message processing handler"""
-    
-    await processing(message.content)
+    try:
+        # Process the message
+        await processing(message.content)
+        await asyncio.sleep(1)  # Small delay to ensure files are written
 
-    await asyncio.sleep(3)
+        # Check if output text file exists and has content
+        output_text_path = "outputs/output.txt"
+        if os.path.exists(output_text_path) and os.path.getsize(output_text_path) > 0:
+            with open(output_text_path, "r", encoding='utf-8') as f:
+                content = f.read()
+            
+            # Create message for text content
+            msg = cl.Message(content="Analysis Results:")
+            await msg.send()
+            
+            # Stream the content
+            display_msg = cl.Message(content="")
+            await display_msg.send()
+            
+            for char in content:
+                display_msg.content += char
+                await display_msg.update()
+                await asyncio.sleep(0.01)
 
-    with open("outputs/output.txt", "r") as f:
-        content = f.read()
+        # Check if PDF file exists
+        pdf_path = "outputs/temp.pdf"
+        if os.path.exists(pdf_path) and os.path.getsize(pdf_path) > 0:
+            await cl.Message(
+                content="Here's your detailed report:",
+                elements=[
+                    cl.File(
+                        name="analysis_report.pdf",
+                        path=pdf_path,
+                        display="inline"
+                    )
+                ]
+            ).send()
+        else:
+            await cl.Message(content="⚠️ No PDF report was generated").send()
 
-     # Create an empty message
-    msg = cl.Message(content="")
-    await msg.send()
-
-    # Stream character by character
-    for char in content:
-        msg.content += char
-        await msg.update()
-        await asyncio.sleep(0.01)  # Adjust typing speed here
-    
-    await asyncio.sleep(1)
-    
-        
-    output_file = "outputs/temp.pdf"
-
-    await cl.Message(
-        content="Download report here!.",
-        elements=[cl.File(name=os.path.basename(output_file), path=output_file)]
-    ).send()
+    except Exception as e:
+        await cl.Message(
+            content=f"❌ Error processing your request: {str(e)}"
+        ).send()
 
 
     

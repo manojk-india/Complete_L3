@@ -833,12 +833,15 @@ def count_requested_by_percentage(query):
     
     with open(output_file, 'w') as f:
         f.write(query + '\n')
-        f.write('----------------------------------------\n')
         f.write('RTB Count: ' + str(rtb_count) + '\n')
         f.write('CTB Count: ' + str(ctb_count) + '\n')
         f.write('RTB Percentage: ' + str(rtb_percent) + '%\n')
         f.write('CTB Percentage: ' + str(ctb_percent) + '%\n')
         f.write('Total Issues: ' + str(total_count) + '\n')
+        f.write('\n')
+        f.write('----------------------------------------\n')
+        f.write('\n')
+
     
     return 'Report saved to ' + output_file
 
