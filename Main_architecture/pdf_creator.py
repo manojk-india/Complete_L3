@@ -161,8 +161,9 @@ def create_structured_pdf_feature(output_pdf_path, text_path, image1_path, image
         alignment=TA_LEFT
     )
 
-    text_para = Paragraph(f"<b>Summary:</b><br/><br/>{text_content.replace(chr(10), '<br/>')}", text_style)
-    text_frame = KeepInFrame(page_width - 100, 80, [text_para], hAlign='LEFT')
+    text_para = Paragraph(f"<b>Summary:</b><br/><br/>{text_content}", text_style)
+    text_frame = KeepInFrame(page_width - 100, page_height - 150, [text_para], hAlign='LEFT')
+    story.append(text_frame)
 
     def load_image_with_border(path, max_width, max_height):
         pil_img = PILImage.open(path)
