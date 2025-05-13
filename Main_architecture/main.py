@@ -17,6 +17,7 @@ from Main_architecture.utils import *
 
 # calling the L1 architecture 
 from L1_architecture.entry import entrypoint
+from L2_architecture.main import *
 
 
 # Load environment variables
@@ -41,7 +42,9 @@ def main_L3_query(query:str):
     with open("outputs/output.txt", mode="w") as file:
         pass
 
+    # temp will be our final file 
     delete_files(["outputs/final.pdf","outputs/final2.pdf","outputs/temp.pdf"])
+
 
 
     # board architecture
@@ -133,8 +136,26 @@ def main_L3_query(query:str):
 
         # staying in the L2 level 
         if not should_go_down_or_not_flag:
-            # changing the architecture and calling it here -- here sprint is not relevant
-            pass
+            # changing the architecture and calling it here -- here sprint is not relevant -- RTB/CTB and feature readiness
+            t=L2_entry_point(query)
+
+            with open("L2_architecture/Report/output.txt", mode="r") as file:
+                    output = file.read()
+
+            with open("outputs/output.txt", mode="a") as file:
+                file.write(f"{j}")
+                file.write(output)
+                file.write("------------------------------------------------------------------------")
+
+
+            if(t=="feature_readiness"):
+                create_structured_pdf_feature("outputs/temp.pdf","L2_architecture/Report/output.txt", "L2_architecture/Report/missing_values_dashboard.png", 
+                  "L2_architecture/Report/Bad_values_dashboard.png",
+                  "L2_architecture/data/Final_API.csv", "L2_architecture/Report/acceptance_report.pdf", 
+                  "L2_architecture/Report/summary_report.pdf")
+            else:
+                create_and_append_pdf_RTBCTB("L2_architecture/Report/output.txt","L2_architecture/Report/missing_values_dashboard.png"
+                      ,"L2_architecture/data/API.csv", "outputs/temp.pdf")
         else:
             # going down to L1 level
             board,name,time_period=info_extractor(prompt2,query)
@@ -153,7 +174,28 @@ def main_L3_query(query:str):
 
             for j in queries2:
                 # here we will get the L2 queries one by one 
-                pass
+                entrypoint(j) 
+                with open("L1_architecture/outputs/output.txt", mode="r") as file:
+                    output = file.read()
+
+                with open("outputs/output.txt", mode="a") as file:
+                    file.write(f"{j}")
+                    file.write(output)
+                    file.write("------------------------------------------------------------------------")
+
+                try:
+                    create_pdf("outputs/temp.pdf",
+                                "L1_architecture/outputs/jira_hygiene_dashboard.png",
+                                "L1_architecture/outputs/output.txt",
+                                "L1_architecture/generated_files/current.csv")
+                except Exception as e:
+                    print(e)
+
+                if os.path.exists("L1_architecture/outputs/acceptance_crieteria_report.pdf"):
+                    merge_pdfs("outputs/temp.pdf","L1_architecture/outputs/acceptance_crieteria_report.pdf", "outputs/final.pdf")
+                    os.remove("outputs/temp.pdf")
+                    os.rename("outputs/final.pdf","outputs/temp.pdf")
+
 
     else:
         # This is a L3 level query

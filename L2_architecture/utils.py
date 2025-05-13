@@ -561,6 +561,9 @@ def clean_latin1(text):
     return text.encode('latin-1', 'replace').decode('latin-1')
 
 class PDFReport(FPDF):
+    def __init__(self, orientation='L'):  # Add this constructor
+        super().__init__(orientation=orientation)  # Pass orientation to parent
+
     def header(self):
         # 1. Red "WELLS FARGO" strip at the very top
         self.set_y(0)
@@ -593,7 +596,7 @@ class PDFReport(FPDF):
 def create_summary_report(csv_file="L2_architecture/data/Final_API.csv", pdf_file="L2_architecture/Report/summary_report.pdf"):
     df = pd.read_csv(csv_file)
 
-    pdf = PDFReport()
+    pdf = PDFReport1(orientation='L')
     pdf.set_auto_page_break(auto=True, margin=15)
     pdf.add_page()
     pdf.set_font('helvetica', '', 11)
@@ -624,6 +627,9 @@ def create_summary_report(csv_file="L2_architecture/data/Final_API.csv", pdf_fil
     pdf.output(pdf_file)
 
 class PDFReport1(FPDF):
+    def __init__(self, orientation='L'):  # Add this constructor
+        super().__init__(orientation=orientation)  # Pass orientation to parent
+
     def header(self):
         # 1. Red "WELLS FARGO" strip at the very top
         self.set_y(0)
@@ -656,7 +662,7 @@ class PDFReport1(FPDF):
 def create_acceptance_improvement_report(csv_file="L2_architecture/data/user_specific_need.csv", pdf_file="L2_architecture/Report/acceptance_report.pdf"):
     df = pd.read_csv(csv_file)
 
-    pdf = PDFReport1()
+    pdf = PDFReport1(orientation='L')
     pdf.set_auto_page_break(auto=True, margin=15)
     pdf.add_page()
     pdf.set_font('helvetica', '', 11)  # Use built-in font
@@ -869,7 +875,7 @@ def process_csv_and_add_missing_columns():
         'key', 'parent_id', 'summary', 'description', 'Acceptance_crieteria',
         'labels', 'components', 'parent_key', 'Requested_by', 'timeestimate',
         'Due_date', 'status', 'Acceptance_result', 'Acceptance_improvement',
-        'summary_result', 'summary_suggestion', 'OKR'
+        'summary_result', 'summary_suggestion', 'OKR', 'value'
     ]
     
     def check_row(row):

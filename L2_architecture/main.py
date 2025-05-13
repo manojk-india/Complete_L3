@@ -61,10 +61,16 @@ def feature_Readiness(query_user):
     # Filtering out all the Not-Good features both missing and bad quality of acceptance crieteria == Not-Good-issues
     filter_rows_with_missing_values_or_low_quality_data()
 
+    # adding extra column for displayinmg dataframe in a pdf
+    process_csv_and_add_missing_columns()
+
 
     # not waiting for any actions here..creating acceptance crieteria and summaryb reports 
     create_acceptance_improvement_report()
     create_summary_report()
+
+    with open("L2_architecture/Report/output.txt",mode="w"):
+        print(f"Feature readiness report for {query} board")
 
 
 # function for RTB/CTb case
@@ -102,7 +108,7 @@ def RTB_CTB_query(query_user):
 
 
 # Now this is the main entry point 
-def L2_entry_point(query_user):
+def L2_entry_point(query_user) -> str:
     """
     Main entry point for the L2 architecture.
     """
@@ -117,9 +123,13 @@ def L2_entry_point(query_user):
     if( value[2] == 2):
         # Feature Readiness
         feature_Readiness(query_user)
+        return "feature_readiness"
     else:
         # RTB/CTB
         RTB_CTB_query(query_user)
+        return "RTB/CTB"
+
+    
 
 
 
