@@ -189,7 +189,6 @@ async def main_L3_query(query:str):
                     output = file.read()
 
                 with open("outputs/output.txt", mode="a") as file:
-                    file.write(f"{j}")
                     file.write(output)
                     file.write("\n")
                 try:

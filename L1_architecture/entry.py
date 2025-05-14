@@ -88,14 +88,14 @@ def entrypoint(Query:str) -> str:
                         else:
                             flag+=1
                             if flag==1:
-                                f.write("\n")
+                                f.write("\n\n")
                                 f.write(" Here is the required PTO data ")
-                                f.write("\n")
-                                f.write("---------------------------------------------")
                                 f.write("\n")
                             
                         f.write(f"Name: {i} -- Leave days: {leaves} in {j} \n")
-                f.write("\n")
+                f.write("\n\n")
+                f.write("---------------------------------------------")
+                f.write("\n\n")
     else:
         with open("./L1_architecture/outputs/output.txt", "w") as f:
            f.write(" Below you can find low quality acceptance crieteria report ")

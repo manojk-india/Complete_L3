@@ -649,7 +649,7 @@ class PDFReport1(FPDF):
         self.ln(3)
         self.set_font('helvetica', 'B', 15)
         self.set_text_color(0, 0, 0)
-        self.cell(0, 12, "Summary Report", ln=1, align='C')
+        self.cell(0, 12, "Acceptance Criteria Report", ln=1, align='C')
         self.ln(10)
 
         self.set_y(40)  # This just ensures the content starts below the strips

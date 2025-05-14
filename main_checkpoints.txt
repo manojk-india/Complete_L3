@@ -20,3 +20,22 @@ Multiplied queries are :
 Feature hygiene for DEF1 under GHI
 Feature hygiene for DEF2 under GHI
 Feature hygiene for DEF3 under GHI
+------------------------------------------------------------------------------------------------ Operation over 
+ Inside main L2 condition. Should we go down or not : True
+Interest boards under L2 board  : ['ABC1', 'ABC2']
+Name of the person is : []
+time period is : False
+Multiplied queries are
+RTB/CTB classification for boards under ABC1 board
+RTB/CTB classification for boards under ABC2 board
+-----------------------------------
+------------------------------------------------------------------------------------------------ Operation over 
+ Inside main L2 condition. Should we go down or not : True
+Interest boards under L2 board  : ['ABC1', 'ABC2']
+Name of the person is : []
+time period is : False
+Multiplied queries are
+RTB/CTB classification for ABC1 board
+RTB/CTB classification for ABC2 board
+-----------------------------------
+------------------------------------------------------------------------------------------------ Operation over 

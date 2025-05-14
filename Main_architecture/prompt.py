@@ -107,7 +107,19 @@ Output:
 
 Note: If the original query already contains a board reference, it will be replaced with each board from the input list.
 
-Input:  
+Input:
+  Original: "RTB/CTB classification for boards under DEF1 board"  
+  Boards: ["ABC1","ABC2"]	  
+  Names: []
+Output:
+{
+  "queries": [
+    "RTB/CTB classification for ABC1 board",
+    "RTB/CTB classification for ABC2 board"
+  ]
+}
+Note: The original query contains "boards under DEF1 board", so it will be replaced with each board from the input list.
+Input:
   Original: "no of story points assigned to Uma in CDF board"  
   Boards: ["CDF"]  
   Names: ["Uma"]

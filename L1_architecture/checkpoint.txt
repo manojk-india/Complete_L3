@@ -171,3 +171,59 @@ added fte/ftc columns to current.csv file
 sprint name(for pto data):['sprint 10']
 members:['Alice', 'Bob', 'Rishika', 'Hari', 'Apoorva']
 ---------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
+matched query is : RTB/CTB utilization of y board in sprint n
+2025-05-14 10:30:13.327359
+user query is : RTB/CTB classification for boards under ABC1 board
+sim_query is : RTB/CTB utilization of y board in sprint n
+previous_needed_or_not is : False
+get_L1_board_data called with parameters board_name ABC1 sprint_name None person_name None previous_data_needed_or_not False
+api called with: sprint_id - 73 jql - None output_file - ./L1_architecture/generated_files/current.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/73/issue
+added rtb/ctb column to the current.csv file
+added fte/ftc columns to current.csv file
+pandas query crew called
+sprint name(for pto data):['sprint 10']
+members:['Alice', 'Bob', 'Rishika', 'Hari', 'Apoorva']
+---------------------------------------------------------------------------------------
+matched query is : RTB/CTB utilization of y board in sprint n
+2025-05-14 10:30:36.747080
+user query is : RTB/CTB classification for boards under ABC2 board
+sim_query is : RTB/CTB utilization of y board in sprint n
+previous_needed_or_not is : False
+get_L1_board_data called with parameters board_name ABC2 sprint_name None person_name None previous_data_needed_or_not False
+api called with: sprint_id - 63 jql - None output_file - ./L1_architecture/generated_files/current.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/63/issue
+added rtb/ctb column to the current.csv file
+added fte/ftc columns to current.csv file
+pandas query crew called
+sprint name(for pto data):['sprint 10']
+members:['Apoorva', 'David', 'Pavithra', 'Alok', 'Peter']
+---------------------------------------------------------------------------------------
+matched query is : RTB/CTB utilization of y board in sprint n
+2025-05-14 10:42:34.501209
+user query is : RTB/CTB classification for ABC1 board
+sim_query is : RTB/CTB utilization of y board in sprint n
+previous_needed_or_not is : False
+get_L1_board_data called with parameters board_name ABC1 sprint_name None person_name None previous_data_needed_or_not False
+api called with: sprint_id - 73 jql - None output_file - ./L1_architecture/generated_files/current.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/73/issue
+added rtb/ctb column to the current.csv file
+added fte/ftc columns to current.csv file
+pandas query crew called
+sprint name(for pto data):['sprint 10']
+members:['Alice', 'Bob', 'Rishika', 'Hari', 'Apoorva']
+---------------------------------------------------------------------------------------
+matched query is : RTB/CTB utilization of y board in sprint n
+2025-05-14 10:43:15.172734
+user query is : RTB/CTB classification for ABC2 board
+sim_query is : RTB/CTB utilization of y board in sprint n
+previous_needed_or_not is : False
+get_L1_board_data called with parameters board_name ABC2 sprint_name None person_name None previous_data_needed_or_not False
+api called with: sprint_id - 63 jql - None output_file - ./L1_architecture/generated_files/current.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/63/issue
+added rtb/ctb column to the current.csv file
+added fte/ftc columns to current.csv file
+pandas query crew called
+sprint name(for pto data):['sprint 10']
+members:['Apoorva', 'David', 'Pavithra', 'Alok', 'Peter']
