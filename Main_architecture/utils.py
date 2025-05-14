@@ -61,8 +61,8 @@ def get_person_boards(name: str) -> List[str]:
     """
 
     # Read CSV data
-    df = pd.read_csv("generated_files/members.csv")
-    
+    df = pd.read_csv("Main_architecture/generated_files/members.csv")
+
     # Filter and extract boards (case-insensitive match)
     return df.loc[
         df['name'].str.lower() == name.strip().lower(),

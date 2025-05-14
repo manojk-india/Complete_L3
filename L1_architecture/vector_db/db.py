@@ -150,7 +150,7 @@ import pandas as pd
 df = pd.read_csv("./L1_architecture/generated_files/current.csv")
 
 # Load historical data for previous sprints
-df_history = pd.read_csv("generated_files/history.csv")
+df_history = pd.read_csv("./L1_architecture/generated_files/history.csv")
 
 # Calculate average velocity from previous sprints (average of total story points completed per sprint)
 if len(df_history) > 0:
