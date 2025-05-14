@@ -1,3 +1,4 @@
-pls/
+__pycache__
+.chainlit/
+.vscode/
 .env
-env1/
