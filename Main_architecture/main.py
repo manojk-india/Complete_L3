@@ -142,20 +142,27 @@ async def main_L3_query(query:str):
             with open("L2_architecture/Report/output.txt", mode="r") as file:
                     output = file.read()
 
-            with open("outputs/output.txt", mode="a") as file:
-                file.write(f"{j}")
-                file.write(output)
-                file.write("\n")
+            # with open("outputs/output.txt", mode="a") as file:
+            #     file.write(f"{j}")
+            #     file.write(output)
+            #     file.write("\n")
 
 
             if(t=="feature_readiness"):
+                write_into_checkpoint_file([" classified as Feature readiness."])
                 create_structured_pdf_feature("outputs/temp.pdf","L2_architecture/Report/output.txt", "L2_architecture/Report/missing_values_dashboard.png", 
                   "L2_architecture/Report/Bad_values_dashboard.png",
                   "L2_architecture/data/Final_API.csv", "L2_architecture/Report/acceptance_report.pdf", 
                   "L2_architecture/Report/summary_report.pdf")
+                with open("outputs/output.txt", mode="a") as file:
+                    file.write("You can find the feature readiness report below.")
+                    file.write("\n")
             else:
+                write_into_checkpoint_file([" classified as RTB/CTB."])
                 create_and_append_pdf_RTBCTB("L2_architecture/Report/output.txt","L2_architecture/Report/missing_values_dashboard.png"
                       ,"L2_architecture/data/API.csv", "outputs/temp.pdf")
+                with open("outputs/output.txt", mode="a") as file:
+                        file.write(output)
         else:
             # going down to L1 level
             board,name,time_period=info_extractor(prompt2,query)

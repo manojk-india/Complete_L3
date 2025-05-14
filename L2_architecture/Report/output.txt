@@ -1,1 +1,0 @@
-Feature readiness report for DEF3 board
