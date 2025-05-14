@@ -27,15 +27,23 @@ class UIConfig:
     default_placeholder: str = "Enter your JIRA query here... 💡"
 
 
-@cl.on_chat_start
-async def start():
-    """Initialize the chat interface"""
-   
-    welcome_message="Please enter your prompt! "
-    await cl.Message(
-        content=welcome_message,
-        author="Assistant"
-    ).send() 
+@cl.set_starters
+async def set_starters():
+    return [
+        cl.Starter(
+            label="Feature readiness for DEF1 board",
+            message="Feature readiness for DEF1 board"
+        ),
+
+        cl.Starter(
+            label="what is the capacity utilization for Noor in ABC3 board",
+            message="what is the capacity utilization for Noor in ABC3 board",
+            ),
+        cl.Starter(
+            label="What is the RTB/CTB classification of boards under GHI board",
+            message="What is the RTB/CTB classification of boards under GHI board",
+            ),
+        ]
 
 
      
@@ -183,6 +191,7 @@ async def process_message(message):
     
         # Process the message
     await processing(message.content)
+    
     await asyncio.sleep(1)  # Small delay to ensure files are written
 
     # Check if output text file exists and has content

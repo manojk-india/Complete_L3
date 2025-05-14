@@ -105,6 +105,20 @@ Output:
   ]
 }
 
+Input:
+ Original: " What is the capacity utilization of Noor ?"
+ Boards:["ABC1"]
+ Names:["Noor"]
+
+ Output:
+{
+  "queries": [
+   "What is the capacity utilization of Noor in ABC1 board"
+  ]
+}
+
+
+
 Note: If the original query already contains a board reference, it will be replaced with each board from the input list.
 
 Input:

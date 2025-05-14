@@ -1,10 +1,10 @@
 {
   "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations,customfield_10010.requestTypePractice",
-  "id": "10018",
-  "self": "https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/issue/10018",
-  "key": "DIS-7",
+  "id": "10037",
+  "self": "https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/issue/10037",
+  "key": "APS-1",
   "fields": {
-    "statuscategorychangedate": "2025-04-16T22:35:34.957+0530",
+    "statuscategorychangedate": "2025-04-17T10:44:04.456+0530",
     "issuetype": {
       "self": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/issuetype/10000",
       "id": "10000",
@@ -15,11 +15,11 @@
       "hierarchyLevel": 1
     },
     "parent": {
-      "id": "10001",
-      "key": "TP-2",
-      "self": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/issue/10001",
+      "id": "10004",
+      "key": "TP-5",
+      "self": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/issue/10004",
       "fields": {
-        "summary": "EPIC2-TP",
+        "summary": "EPIC5 - Transaction Processing",
         "status": {
           "self": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/status/10003",
           "description": "",
@@ -56,17 +56,17 @@
     "sprint": null,
     "customfield_10030": null,
     "project": {
-      "self": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/project/10001",
-      "id": "10001",
-      "key": "DIS",
-      "name": "DIS",
+      "self": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/project/10033",
+      "id": "10033",
+      "key": "APS",
+      "name": "APS",
       "projectTypeKey": "software",
       "simplified": false,
       "avatarUrls": {
-        "48x48": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10401",
-        "24x24": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10401?size=small",
-        "16x16": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10401?size=xsmall",
-        "32x32": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10401?size=medium"
+        "48x48": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10423",
+        "24x24": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10423?size=small",
+        "16x16": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10423?size=xsmall",
+        "32x32": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10423?size=medium"
       }
     },
     "fixVersions": [],
@@ -89,11 +89,11 @@
     "workratio": 0,
     "lastViewed": null,
     "watches": {
-      "self": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/issue/DIS-7/watchers",
+      "self": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/issue/APS-1/watchers",
       "watchCount": 1,
       "isWatching": false
     },
-    "created": "2025-04-16T22:35:34.440+0530",
+    "created": "2025-04-17T10:44:03.650+0530",
     "customfield_10020": null,
     "customfield_10021": null,
     "customfield_10022": null,
@@ -106,20 +106,20 @@
     "customfield_10023": null,
     "customfield_10024": null,
     "customfield_10025": null,
-    "customfield_10026": null,
     "labels": [
-      "['RTB']"
+      "['CTB']"
     ],
+    "customfield_10026": null,
     "customfield_10016": null,
-    "customfield_10017": null,
+    "customfield_10017": "purple",
     "customfield_10018": {
       "hasEpicLinkFieldDependency": false,
       "showField": true,
       "data": {
-        "id": 10001,
-        "key": "TP-2",
-        "keyNum": 2,
-        "summary": "EPIC2-TP",
+        "id": 10004,
+        "key": "TP-5",
+        "keyNum": 5,
+        "summary": "EPIC5 - Transaction Processing",
         "projectId": 10002,
         "issueType": {
           "id": "10034",
@@ -127,13 +127,13 @@
         }
       }
     },
-    "customfield_10019": "0|i0002f:",
-    "timeestimate": 36000,
-    "aggregatetimeoriginalestimate": 36000,
+    "customfield_10019": "0|i0002n:",
+    "timeestimate": 100800,
+    "aggregatetimeoriginalestimate": 100800,
     "versions": [],
     "issuelinks": [],
     "assignee": null,
-    "updated": "2025-05-12T23:59:19.366+0530",
+    "updated": "2025-04-17T10:45:31.539+0530",
     "status": {
       "self": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/status/10003",
       "description": "",
@@ -150,24 +150,28 @@
     },
     "components": [
       {
-        "self": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/component/10005",
-        "id": "10005",
-        "name": "EBSNF"
+        "self": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/component/10006",
+        "id": "10006",
+        "name": "TES1"
       }
     ],
-    "timeoriginalestimate": 36000,
-    "description": "Retail banking users should be able to schedule automatic payments for recurring bills (e.g., utilities, insurance premiums). This feature should support adding/editing/deleting schedules and send reminders 1 day before the scheduled payment.\n\nvalue: SME Risk and ensure sustainable system function\u00a0expertise.",
+    "timeoriginalestimate": 100800,
+    "description": "Description for feature 1 for APS",
     "customfield_10010": null,
     "customfield_10011": null,
-    "customfield_10012": null,
-    "customfield_10013": null,
-    "customfield_10058": "val",
+    "customfield_10012": {
+      "self": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/customFieldOption/10016",
+      "value": "To Do",
+      "id": "10016"
+    },
+    "customfield_10013": "ghx-label-7",
     "customfield_10014": null,
+    "customfield_10058": null,
     "timetracking": {
-      "originalEstimate": "1d 2h",
-      "remainingEstimate": "1d 2h",
-      "originalEstimateSeconds": 36000,
-      "remainingEstimateSeconds": 36000
+      "originalEstimate": "3d 4h",
+      "remainingEstimate": "3d 4h",
+      "originalEstimateSeconds": 100800,
+      "remainingEstimateSeconds": 100800
     },
     "customfield_10015": null,
     "customfield_10005": null,
@@ -176,10 +180,10 @@
     "customfield_10007": null,
     "customfield_10008": null,
     "customfield_10009": null,
-    "aggregatetimeestimate": 36000,
+    "aggregatetimeestimate": 100800,
     "attachment": [],
     "flagged": false,
-    "summary": "Introduce scheduled payments for recurring bills",
+    "summary": "TASK 1 for APS",
     "creator": {
       "self": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/user?accountId=712020%3Acc03e21d-3190-4e55-90d0-4ffa41861bda",
       "accountId": "712020:cc03e21d-3190-4e55-90d0-4ffa41861bda",
@@ -195,8 +199,9 @@
       "accountType": "atlassian"
     },
     "subtasks": [],
-    "customfield_10040": "2025-07-17",
-    "customfield_10042": "Given a user has set up a scheduled bill payment,\nWhen the scheduled date arrives,\nThen the system should automatically process the payment using the saved funding account,\nAnd an SMS and email confirmation should be sent,\nAnd if the account has insufficient balance, the user should be notified and the transaction retried once in 24 hours.",
+    "customfield_10040": "1970-12-30",
+    "customfield_10042": "Acceptance criteria for feature 1 for APS",
+    "customfield_10043": "CTB",
     "reporter": {
       "self": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/user?accountId=712020%3Acc03e21d-3190-4e55-90d0-4ffa41861bda",
       "accountId": "712020:cc03e21d-3190-4e55-90d0-4ffa41861bda",
@@ -211,13 +216,12 @@
       "timeZone": "Asia/Calcutta",
       "accountType": "atlassian"
     },
-    "customfield_10043": "PRD20782 - Claims and recovery | RTB - Enhancement",
     "aggregateprogress": {
       "progress": 0,
-      "total": 36000,
+      "total": 100800,
       "percent": 0
     },
-    "customfield_10044": 10.0,
+    "customfield_10044": 28.0,
     "customfield_10001": null,
     "customfield_10002": [],
     "customfield_10003": null,
@@ -228,20 +232,20 @@
     "duedate": null,
     "progress": {
       "progress": 0,
-      "total": 36000,
+      "total": 100800,
       "percent": 0
+    },
+    "votes": {
+      "self": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/issue/APS-1/votes",
+      "votes": 0,
+      "hasVoted": false
     },
     "comment": {
       "comments": [],
-      "self": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/issue/10018/comment",
+      "self": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/issue/10037/comment",
       "maxResults": 0,
       "total": 0,
       "startAt": 0
-    },
-    "votes": {
-      "self": "https://wellsfargo-jira-test.atlassian.net/rest/api/2/issue/DIS-7/votes",
-      "votes": 0,
-      "hasVoted": false
     },
     "worklog": {
       "startAt": 0,

@@ -1,80 +1,54 @@
-Inside main L3 condition. Where should we go to L1 or L2 level: L2 level
-Going down to L2 from L3 level
+ Inside main l1 condition. boards of interest are : ['ABC3']
+name identified is : ['Noor']
+time period is : False
 Multiplied queries are : 
-RTB/CTB classification for DEF1 board
-RTB/CTB classification for DEF2 board
-RTB/CTB classification for DEF3 board
------------------------------------------------------------------------------------------------- Operation over 
- Inside main L2 condition. Should we go down or not : False
- Inside main L2 condition. Should we go down or not : False
- classified as RTB/CTB.
- Inside main L2 condition. Should we go down or not : False
- classified as RTB/CTB.
------------------------------------------------------------------------------------------------- Operation over 
- Inside main L2 condition. Should we go down or not : False
- classified as Feature readiness.
------------------------------------------------------------------------------------------------- Operation over 
-Inside main L3 condition. Where should we go to L1 or L2 level: L2 level
-Going down to L2 from L3 level
+How is the capacity utilization of Noor ?
+
+-----------------------------------
+ Inside main l1 condition. boards of interest are : ['ABC3']
+name identified is : ['Noor']
+time period is : False
 Multiplied queries are : 
-Feature hygiene for DEF1 under GHI
-Feature hygiene for DEF2 under GHI
-Feature hygiene for DEF3 under GHI
------------------------------------------------------------------------------------------------- Operation over 
- Inside main L2 condition. Should we go down or not : True
-Interest boards under L2 board  : ['ABC1', 'ABC2']
-Name of the person is : []
-time period is : False
-Multiplied queries are
-RTB/CTB classification for boards under ABC1 board
-RTB/CTB classification for boards under ABC2 board
------------------------------------
------------------------------------------------------------------------------------------------- Operation over 
- Inside main L2 condition. Should we go down or not : True
-Interest boards under L2 board  : ['ABC1', 'ABC2']
-Name of the person is : []
-time period is : False
-Multiplied queries are
-RTB/CTB classification for ABC1 board
-RTB/CTB classification for ABC2 board
------------------------------------
------------------------------------------------------------------------------------------------- Operation over 
- Inside main L2 condition. Should we go down or not : True
-Interest boards under L2 board  : ['ABC1', 'ABC2']
-Name of the person is : []
-time period is : False
-Multiplied queries are
-RTB/CTB classification for ABC1 board
-RTB/CTB classification for ABC2 board
+How is the capacity utilization of Noor in ABC3 board?
+
+
+
+
 -----------------------------------
 ------------------------------------------------------------------------------------------------ Operation over 
  Inside main l1 condition. boards of interest are : ['ABC3']
-name identified is : []
+name identified is : ['Noor']
 time period is : False
 Multiplied queries are : 
-backlog health of ABC3 board
+How is the capacity utilization of Noor in ABC3 board?
+
 -----------------------------------
 ------------------------------------------------------------------------------------------------ Operation over 
  Inside main l1 condition. boards of interest are : ['ABC3']
-name identified is : []
+name identified is : ['Noor']
 time period is : False
 Multiplied queries are : 
-backlog health for ABC3 board
+capacity utilization of Noor in ABC3 board?
+
+
 -----------------------------------
 ------------------------------------------------------------------------------------------------ Operation over 
- Inside main l1 condition. boards of interest are : ['ABC1', 'ABC2']
-name identified is : ['Apoorva']
+ Inside main l1 condition. boards of interest are : ['ABC3']
+name identified is : ['Noor']
 time period is : False
 Multiplied queries are : 
-Capacity utilization of Apoorva in ABC1 board
-Capacity utilization of Apoorva in ABC2 board
+What is the capacity utilization of Noor in ABC3 board ?
 -----------------------------------
------------------------------------------------------------------------------------------------- Operation over 
- Inside main l1 condition. boards of interest are : ['ABC1', 'ABC2']
-name identified is : ['Apoorva']
+ Inside main l1 condition. boards of interest are : ['ABC3']
+name identified is : ['Noor']
 time period is : False
 Multiplied queries are : 
-Capacity utilization of Apoorva in ABC1 board
-Capacity utilization of Apoorva in ABC2 board
+What is the capacity utilization of Noor in ABC3 board?
+-----------------------------------
+ Inside main l1 condition. boards of interest are : ['ABC3']
+name identified is : ['Noor']
+time period is : False
+Multiplied queries are : 
+What is the capacity of Noor in ABC3 board ?
 -----------------------------------
 ------------------------------------------------------------------------------------------------ Operation over 

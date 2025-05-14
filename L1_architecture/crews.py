@@ -83,6 +83,7 @@ def pandas_query_crew(query,idx):
     prompt2 = f"""
         You are a Pandas code generation expert. Use this CSV structure:
         {df_structure_main}
+
         {example_code}
         **Note** : "DO NOT filter the data for the required board, person and sprint, as the data is already filtered."
         **Rules:**

@@ -1,8 +1,6 @@
-Capacity utilization of Apoorva in ABC1 board
-
----------------------------------------------
-
-------------------------------------------------------------------------Capacity utilization of Apoorva in ABC2 board
+Query: What is the capacity of Noor in ABC3 board ?
+Noor's capacity in ABC3 board: 5.0
+What is the capacity of Noor in ABC3 board ?
 
 ---------------------------------------------
 
