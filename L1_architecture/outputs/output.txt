@@ -1,5 +1,4 @@
-Query: RTB/CTB classification for ABC2 board
-RTB story points: 9.0
-CTB story points: 0.0
+
+
 ---------------------------------------------
 
