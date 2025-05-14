@@ -14,7 +14,7 @@ import numpy as np
 import ast
 # import ast
 
-
+NEWLINE='\n'
     
 # writing it into checkpoint file for better debugging 
 def write_to_checkpoint_file(data, file_path='./L1_architecture/checkpoint.txt'):
@@ -458,7 +458,9 @@ def get_L1_board_data(board_name, previous_data_needed_or_not, sprint,person,idx
 
     if(sprint is None):
         sprint_name = get_current_sprint()
+        write_to_checkpoint_file("current sprint name is : "+str(sprint_name))
         sprint_id = get_sprint_id(board_name, sprint_name)
+        write_to_checkpoint_file("current sprint id is : "+str(sprint_id))
     else:
         sprint_id=get_sprint_id(board_name,sprint)
 

@@ -88,7 +88,7 @@ async def main_L3_query(query:str):
         if len(boards)==0:
             boards=get_person_boards(name[0])
 
-        if(len(boards)>1):
+        if(len(boards)>=1):
             # we have to split the query into multiple queries
             queries2=query_multiplier(boards,name,query,prompt3)
         else:
@@ -110,9 +110,8 @@ async def main_L3_query(query:str):
                 output = file.read()
 
             with open("outputs/output.txt", mode="a") as file:
-                file.write(f"{j}")
+                
                 file.write(output)
-                file.write("------------------------------------------------------------------------")
 
             try:
                 create_pdf("outputs/temp.pdf",

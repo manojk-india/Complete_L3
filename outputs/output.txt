@@ -1,9 +1,18 @@
-Capacity utilization of Apoorva in ABC1 board
+Query: Capacity utilization of Apoorva in ABC1 board
+Current sprint story points: 3.0
+Average of previous sprints: 3.00
+PTO-adjusted average: 3.00
+Capacity utilization status: Utilization is on par with historical average.
+Ideal story point range: 2.70 - 3.30
 
 ---------------------------------------------
 
-------------------------------------------------------------------------Capacity utilization of Apoorva in ABC2 board
+Query: Capacity utilization of Apoorva in ABC2 board
+Current sprint story points: 2.0
+Average of previous sprints: 2.83
+PTO-adjusted average: 2.83
+Capacity utilization status: Underutilized
+Ideal story point range: 2.55 - 3.12
 
 ---------------------------------------------
 
-------------------------------------------------------------------------

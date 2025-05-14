@@ -415,3 +415,965 @@ added fte/ftc columns to current.csv file
 pandas query crew called
 sprint name(for pto data):['sprint 10']
 members:['Apoorva']
+---------------------------------------------------------------------------------------
+matched query is : RTB/CTB utilization of y board in sprint n
+2025-05-14 15:06:05.753547
+user query is : RTB/CTB classification for ABC1 board
+sim_query is : RTB/CTB utilization of y board in sprint n
+previous_needed_or_not is : False
+get_L1_board_data called with parameters board_name ABC1 sprint_name None person_name None previous_data_needed_or_not False
+api called with: sprint_id - 73 jql - None output_file - ./L1_architecture/generated_files/current.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/73/issue
+added rtb/ctb column to the current.csv file
+added fte/ftc columns to current.csv file
+pandas query crew called
+sprint name(for pto data):['sprint 10']
+members:['Alice', 'Bob', 'Rishika', 'Hari', 'Apoorva']
+---------------------------------------------------------------------------------------
+matched query is : RTB/CTB utilization of y board in sprint n
+2025-05-14 15:06:32.794759
+user query is : RTB/CTB classification for ABC2 board
+sim_query is : RTB/CTB utilization of y board in sprint n
+previous_needed_or_not is : False
+get_L1_board_data called with parameters board_name ABC2 sprint_name None person_name None previous_data_needed_or_not False
+api called with: sprint_id - 63 jql - None output_file - ./L1_architecture/generated_files/current.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/63/issue
+added rtb/ctb column to the current.csv file
+added fte/ftc columns to current.csv file
+pandas query crew called
+sprint name(for pto data):['sprint 10']
+members:['Apoorva', 'David', 'Pavithra', 'Alok', 'Peter']
+---------------------------------------------------------------------------------------
+matched query is : What is the capacity utilization of person x in y board in sprint n
+2025-05-14 15:09:58.884219
+user query is : Capacity utilization of Noor
+sim_query is : What is the capacity utilization of person x in y board in sprint n
+previous_needed_or_not is : True
+get_L1_board_data called with parameters board_name unknown sprint_name unknown person_name Noor previous_data_needed_or_not True
+api called with: sprint_id - None jql - assignee=Noor output_file - ./L1_architecture/generated_files/current.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/None/issue
+---------------------------------------------------------------------------------------
+matched query is : What is the capacity utilization of person x in y board in sprint n
+2025-05-14 15:40:59.291447
+user query is : Capacity utilization of Noor 
+sim_query is : What is the capacity utilization of person x in y board in sprint n
+previous_needed_or_not is : True
+get_L1_board_data called with parameters board_name unknown sprint_name unknown person_name Noor previous_data_needed_or_not True
+api called with: sprint_id - None jql - assignee=Noor output_file - ./L1_architecture/generated_files/current.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/None/issue
+---------------------------------------------------------------------------------------
+matched query is : What is the capacity utilization of person x in y board in sprint n
+2025-05-14 15:42:47.445013
+user query is : Capacity utilization of Noor in ABC3 board
+sim_query is : What is the capacity utilization of person x in y board in sprint n
+previous_needed_or_not is : True
+get_L1_board_data called with parameters board_name ABC3 sprint_name None person_name Noor previous_data_needed_or_not True
+api called with: sprint_id - 86 jql - assignee=Noor output_file - ./L1_architecture/generated_files/current.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/86/issue
+api called with: sprint_id - 80 jql - assignee=Noor output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/80/issue
+api called with: sprint_id - 81 jql - assignee=Noor output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/81/issue
+api called with: sprint_id - 82 jql - assignee=Noor output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/82/issue
+api called with: sprint_id - 83 jql - assignee=Noor output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/83/issue
+api called with: sprint_id - 84 jql - assignee=Noor output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/84/issue
+api called with: sprint_id - 85 jql - assignee=Noor output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/85/issue
+added rtb/ctb column to the current.csv file
+added fte/ftc columns to current.csv file
+pandas query crew called
+sprint name(for pto data):['sprint 10']
+members:['Noor']
+---------------------------------------------------------------------------------------
+matched query is : What is the capacity utilization of person x in y board in sprint n
+2025-05-14 15:45:48.256878
+user query is : Capacity utilization of Noor in ABC3 board
+sim_query is : What is the capacity utilization of person x in y board in sprint n
+previous_needed_or_not is : True
+get_L1_board_data called with parameters board_name ABC3 sprint_name None person_name Noor previous_data_needed_or_not True
+api called with: sprint_id - 86 jql - assignee=Noor output_file - ./L1_architecture/generated_files/current.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/86/issue
+api called with: sprint_id - 80 jql - assignee=Noor output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/80/issue
+api called with: sprint_id - 81 jql - assignee=Noor output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/81/issue
+api called with: sprint_id - 82 jql - assignee=Noor output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/82/issue
+api called with: sprint_id - 83 jql - assignee=Noor output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/83/issue
+api called with: sprint_id - 84 jql - assignee=Noor output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/84/issue
+api called with: sprint_id - 85 jql - assignee=Noor output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/85/issue
+added rtb/ctb column to the current.csv file
+added fte/ftc columns to current.csv file
+pandas query crew called
+sprint name(for pto data):['sprint 10']
+members:['Noor']
+---------------------------------------------------------------------------------------
+matched query is : What is the capacity utilization of person x in y board in sprint n
+2025-05-14 15:58:42.219084
+user query is : Capacity utilization of Noor in ABC3 board
+sim_query is : What is the capacity utilization of person x in y board in sprint n
+previous_needed_or_not is : True
+get_L1_board_data called with parameters board_name ABC3 sprint_name None person_name Noor previous_data_needed_or_not True
+api called with: sprint_id - 86 jql - assignee=Noor output_file - ./L1_architecture/generated_files/current.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/86/issue
+api called with: sprint_id - 80 jql - assignee=Noor output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/80/issue
+api called with: sprint_id - 81 jql - assignee=Noor output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/81/issue
+api called with: sprint_id - 82 jql - assignee=Noor output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/82/issue
+api called with: sprint_id - 83 jql - assignee=Noor output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/83/issue
+api called with: sprint_id - 84 jql - assignee=Noor output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/84/issue
+api called with: sprint_id - 85 jql - assignee=Noor output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/85/issue
+added rtb/ctb column to the current.csv file
+added fte/ftc columns to current.csv file
+pandas query crew called
+sprint name(for pto data):['sprint 10']
+members:['Noor']
+---------------------------------------------------------------------------------------
+matched query is : What is the capacity utilization of person x in y board in sprint n
+2025-05-14 16:07:34.255679
+user query is : Capacity utilization of Noor in ABC3 board
+sim_query is : What is the capacity utilization of person x in y board in sprint n
+previous_needed_or_not is : True
+get_L1_board_data called with parameters board_name ABC3 sprint_name None person_name Noor previous_data_needed_or_not True
+api called with: sprint_id - 86 jql - assignee=Noor output_file - ./L1_architecture/generated_files/current.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/86/issue
+api called with: sprint_id - 80 jql - assignee=Noor output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/80/issue
+api called with: sprint_id - 81 jql - assignee=Noor output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/81/issue
+api called with: sprint_id - 82 jql - assignee=Noor output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/82/issue
+api called with: sprint_id - 83 jql - assignee=Noor output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/83/issue
+api called with: sprint_id - 84 jql - assignee=Noor output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/84/issue
+api called with: sprint_id - 85 jql - assignee=Noor output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/85/issue
+added rtb/ctb column to the current.csv file
+added fte/ftc columns to current.csv file
+pandas query crew called
+sprint name(for pto data):['sprint 10']
+members:['Noor']
+---------------------------------------------------------------------------------------
+matched query is : What is the capacity utilization of person x in y board in sprint n
+2025-05-14 16:10:07.375896
+user query is : Capacity utlization for Apoorva in ABC1 board
+sim_query is : What is the capacity utilization of person x in y board in sprint n
+previous_needed_or_not is : True
+get_L1_board_data called with parameters board_name ABC1 sprint_name None person_name Apoorva previous_data_needed_or_not True
+api called with: sprint_id - 73 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/current.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/73/issue
+api called with: sprint_id - 67 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/67/issue
+api called with: sprint_id - 68 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/68/issue
+api called with: sprint_id - 69 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/69/issue
+api called with: sprint_id - 70 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/70/issue
+api called with: sprint_id - 71 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/71/issue
+api called with: sprint_id - 72 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/72/issue
+added rtb/ctb column to the current.csv file
+added fte/ftc columns to current.csv file
+pandas query crew called
+sprint name(for pto data):['sprint 10']
+members:['Apoorva']
+---------------------------------------------------------------------------------------
+matched query is : What is the capacity utilization of person x in y board in sprint n
+2025-05-14 16:10:37.620559
+user query is : Capacity utlization for Apoorva in ABC2 board
+sim_query is : What is the capacity utilization of person x in y board in sprint n
+previous_needed_or_not is : True
+get_L1_board_data called with parameters board_name ABC2 sprint_name None person_name Apoorva previous_data_needed_or_not True
+api called with: sprint_id - 63 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/current.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/63/issue
+api called with: sprint_id - 57 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/57/issue
+api called with: sprint_id - 58 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/58/issue
+api called with: sprint_id - 59 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/59/issue
+api called with: sprint_id - 60 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/60/issue
+api called with: sprint_id - 61 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/61/issue
+api called with: sprint_id - 62 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/62/issue
+added rtb/ctb column to the current.csv file
+added fte/ftc columns to current.csv file
+pandas query crew called
+sprint name(for pto data):['sprint 10']
+members:['Apoorva']
+---------------------------------------------------------------------------------------
+matched query is : What is the capacity utilization of person x in y board in sprint n
+2025-05-14 16:17:19.194606
+user query is : Capacity utlization for Apoorva in ABC1 board
+sim_query is : What is the capacity utilization of person x in y board in sprint n
+previous_needed_or_not is : True
+get_L1_board_data called with parameters board_name ABC1 sprint_name None person_name Apoorva previous_data_needed_or_not True
+api called with: sprint_id - 73 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/current.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/73/issue
+api called with: sprint_id - 67 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/67/issue
+api called with: sprint_id - 68 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/68/issue
+api called with: sprint_id - 69 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/69/issue
+api called with: sprint_id - 70 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/70/issue
+api called with: sprint_id - 71 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/71/issue
+api called with: sprint_id - 72 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/72/issue
+added rtb/ctb column to the current.csv file
+added fte/ftc columns to current.csv file
+pandas query crew called
+sprint name(for pto data):['sprint 10']
+members:['Apoorva']
+---------------------------------------------------------------------------------------
+matched query is : What is the capacity utilization of person x in y board in sprint n
+2025-05-14 16:17:50.364596
+user query is : Capacity utlization for Apoorva in ABC2 board
+sim_query is : What is the capacity utilization of person x in y board in sprint n
+previous_needed_or_not is : True
+get_L1_board_data called with parameters board_name ABC2 sprint_name None person_name Apoorva previous_data_needed_or_not True
+api called with: sprint_id - 63 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/current.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/63/issue
+api called with: sprint_id - 57 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/57/issue
+api called with: sprint_id - 58 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/58/issue
+api called with: sprint_id - 59 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/59/issue
+api called with: sprint_id - 60 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/60/issue
+api called with: sprint_id - 61 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/61/issue
+api called with: sprint_id - 62 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/62/issue
+added rtb/ctb column to the current.csv file
+added fte/ftc columns to current.csv file
+pandas query crew called
+sprint name(for pto data):['sprint 10']
+members:['Apoorva']
+---------------------------------------------------------------------------------------
+matched query is : What is the capacity utilization of person x in y board in sprint n
+2025-05-14 16:20:57.209252
+user query is : Capacity utilization of Apoorva in ABC1 board
+sim_query is : What is the capacity utilization of person x in y board in sprint n
+previous_needed_or_not is : True
+get_L1_board_data called with parameters board_name ABC1 sprint_name None person_name Apoorva previous_data_needed_or_not True
+api called with: sprint_id - 73 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/current.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/73/issue
+api called with: sprint_id - 67 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/67/issue
+api called with: sprint_id - 68 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/68/issue
+api called with: sprint_id - 69 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/69/issue
+api called with: sprint_id - 70 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/70/issue
+api called with: sprint_id - 71 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/71/issue
+api called with: sprint_id - 72 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/72/issue
+added rtb/ctb column to the current.csv file
+added fte/ftc columns to current.csv file
+pandas query crew called
+sprint name(for pto data):['sprint 10']
+members:['Apoorva']
+---------------------------------------------------------------------------------------
+matched query is : What is the capacity utilization of person x in y board in sprint n
+2025-05-14 16:21:29.460123
+user query is : Capacity utilization of Apoorva in ABC2 board
+sim_query is : What is the capacity utilization of person x in y board in sprint n
+previous_needed_or_not is : True
+get_L1_board_data called with parameters board_name ABC2 sprint_name None person_name Apoorva previous_data_needed_or_not True
+api called with: sprint_id - 63 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/current.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/63/issue
+api called with: sprint_id - 57 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/57/issue
+api called with: sprint_id - 58 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/58/issue
+api called with: sprint_id - 59 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/59/issue
+api called with: sprint_id - 60 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/60/issue
+api called with: sprint_id - 61 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/61/issue
+api called with: sprint_id - 62 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/62/issue
+added rtb/ctb column to the current.csv file
+added fte/ftc columns to current.csv file
+pandas query crew called
+sprint name(for pto data):['sprint 10']
+members:['Apoorva']
+---------------------------------------------------------------------------------------
+matched query is : What is the capacity utilization of person x in y board in sprint n
+2025-05-14 16:26:48.068647
+user query is : capacity utilization of Apoorva in ABC1 board
+sim_query is : What is the capacity utilization of person x in y board in sprint n
+previous_needed_or_not is : True
+get_L1_board_data called with parameters board_name ABC1 sprint_name None person_name Apoorva previous_data_needed_or_not True
+api called with: sprint_id - 73 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/current.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/73/issue
+api called with: sprint_id - 67 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/67/issue
+api called with: sprint_id - 68 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/68/issue
+api called with: sprint_id - 69 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/69/issue
+api called with: sprint_id - 70 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/70/issue
+api called with: sprint_id - 71 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/71/issue
+api called with: sprint_id - 72 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/72/issue
+added rtb/ctb column to the current.csv file
+added fte/ftc columns to current.csv file
+pandas query crew called
+sprint name(for pto data):['sprint 10']
+members:['Apoorva']
+---------------------------------------------------------------------------------------
+matched query is : What is the capacity utilization of person x in y board in sprint n
+2025-05-14 16:27:23.564107
+user query is : capacity utilization of Apoorva in ABC2 board
+sim_query is : What is the capacity utilization of person x in y board in sprint n
+previous_needed_or_not is : True
+get_L1_board_data called with parameters board_name ABC2 sprint_name None person_name Apoorva previous_data_needed_or_not True
+api called with: sprint_id - 63 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/current.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/63/issue
+api called with: sprint_id - 57 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/57/issue
+api called with: sprint_id - 58 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/58/issue
+api called with: sprint_id - 59 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/59/issue
+api called with: sprint_id - 60 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/60/issue
+api called with: sprint_id - 61 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/61/issue
+api called with: sprint_id - 62 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/62/issue
+added rtb/ctb column to the current.csv file
+added fte/ftc columns to current.csv file
+---------------------------------------------------------------------------------------
+matched query is : What is the capacity utilization of person x in y board in sprint n
+2025-05-14 16:31:48.052090
+user query is : Capacity utilization for Apoorva in ABC1 board
+sim_query is : What is the capacity utilization of person x in y board in sprint n
+previous_needed_or_not is : True
+get_L1_board_data called with parameters board_name ABC1 sprint_name None person_name Apoorva previous_data_needed_or_not True
+api called with: sprint_id - 73 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/current.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/73/issue
+api called with: sprint_id - 67 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/67/issue
+api called with: sprint_id - 68 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/68/issue
+api called with: sprint_id - 69 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/69/issue
+api called with: sprint_id - 70 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/70/issue
+api called with: sprint_id - 71 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/71/issue
+api called with: sprint_id - 72 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/72/issue
+added rtb/ctb column to the current.csv file
+added fte/ftc columns to current.csv file
+pandas query crew called
+sprint name(for pto data):['sprint 10']
+members:['Apoorva']
+---------------------------------------------------------------------------------------
+matched query is : What is the capacity utilization of person x in y board in sprint n
+2025-05-14 16:32:19.280115
+user query is : Capacity utilization for Apoorva in ABC2 board
+sim_query is : What is the capacity utilization of person x in y board in sprint n
+previous_needed_or_not is : True
+get_L1_board_data called with parameters board_name ABC2 sprint_name None person_name Apoorva previous_data_needed_or_not True
+api called with: sprint_id - 63 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/current.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/63/issue
+api called with: sprint_id - 57 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/57/issue
+api called with: sprint_id - 58 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/58/issue
+api called with: sprint_id - 59 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/59/issue
+api called with: sprint_id - 60 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/60/issue
+api called with: sprint_id - 61 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/61/issue
+api called with: sprint_id - 62 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/62/issue
+added rtb/ctb column to the current.csv file
+added fte/ftc columns to current.csv file
+pandas query crew called
+sprint name(for pto data):['sprint 10']
+members:['Apoorva']
+---------------------------------------------------------------------------------------
+matched query is : What is the capacity utilization of person x in y board in sprint n
+2025-05-14 16:42:34.707752
+user query is : Capacity utlization of Apoorva in ABC1 board
+sim_query is : What is the capacity utilization of person x in y board in sprint n
+previous_needed_or_not is : True
+get_L1_board_data called with parameters board_name ABC1 sprint_name None person_name Apoorva previous_data_needed_or_not True
+api called with: sprint_id - 73 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/current.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/73/issue
+api called with: sprint_id - 67 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/67/issue
+api called with: sprint_id - 68 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/68/issue
+api called with: sprint_id - 69 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/69/issue
+api called with: sprint_id - 70 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/70/issue
+api called with: sprint_id - 71 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/71/issue
+api called with: sprint_id - 72 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/72/issue
+added rtb/ctb column to the current.csv file
+added fte/ftc columns to current.csv file
+pandas query crew called
+sprint name(for pto data):['sprint 10']
+members:['Apoorva']
+---------------------------------------------------------------------------------------
+matched query is : What is the capacity utilization of person x in y board in sprint n
+2025-05-14 16:43:07.915254
+user query is : Capacity utlization of Apoorva in ABC2 board
+sim_query is : What is the capacity utilization of person x in y board in sprint n
+previous_needed_or_not is : True
+get_L1_board_data called with parameters board_name ABC2 sprint_name None person_name Apoorva previous_data_needed_or_not True
+api called with: sprint_id - 63 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/current.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/63/issue
+api called with: sprint_id - 57 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/57/issue
+api called with: sprint_id - 58 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/58/issue
+api called with: sprint_id - 59 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/59/issue
+api called with: sprint_id - 60 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/60/issue
+api called with: sprint_id - 61 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/61/issue
+api called with: sprint_id - 62 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/62/issue
+added rtb/ctb column to the current.csv file
+added fte/ftc columns to current.csv file
+pandas query crew called
+sprint name(for pto data):['sprint 10']
+members:['Apoorva']
+---------------------------------------------------------------------------------------
+matched query is : What is the capacity utilization of person x in y board in sprint n
+2025-05-14 16:49:28.419609
+user query is : capacity utilization of Apoorva in ABC1 board
+sim_query is : What is the capacity utilization of person x in y board in sprint n
+previous_needed_or_not is : True
+get_L1_board_data called with parameters board_name ABC1 sprint_name None person_name Apoorva previous_data_needed_or_not True
+api called with: sprint_id - 73 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/current.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/73/issue
+api called with: sprint_id - 67 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/67/issue
+api called with: sprint_id - 68 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/68/issue
+api called with: sprint_id - 69 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/69/issue
+api called with: sprint_id - 70 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/70/issue
+api called with: sprint_id - 71 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/71/issue
+api called with: sprint_id - 72 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/72/issue
+added rtb/ctb column to the current.csv file
+added fte/ftc columns to current.csv file
+pandas query crew called
+sprint name(for pto data):['sprint 10']
+members:['Apoorva']
+---------------------------------------------------------------------------------------
+matched query is : What is the capacity utilization of person x in y board in sprint n
+2025-05-14 16:49:59.628645
+user query is : capacity utilization of Apoorva in ABC2 board
+sim_query is : What is the capacity utilization of person x in y board in sprint n
+previous_needed_or_not is : True
+get_L1_board_data called with parameters board_name ABC2 sprint_name None person_name Apoorva previous_data_needed_or_not True
+api called with: sprint_id - 63 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/current.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/63/issue
+api called with: sprint_id - 57 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/57/issue
+api called with: sprint_id - 58 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/58/issue
+api called with: sprint_id - 59 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/59/issue
+api called with: sprint_id - 60 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/60/issue
+api called with: sprint_id - 61 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/61/issue
+api called with: sprint_id - 62 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/62/issue
+added rtb/ctb column to the current.csv file
+added fte/ftc columns to current.csv file
+pandas query crew called
+sprint name(for pto data):['sprint 10']
+members:['Apoorva']
+---------------------------------------------------------------------------------------
+matched query is : What is the capacity utilization of person x in y board in sprint n
+2025-05-14 16:52:24.956675
+user query is : capacity utilization of Apoorva in ABC1 board
+sim_query is : What is the capacity utilization of person x in y board in sprint n
+previous_needed_or_not is : True
+get_L1_board_data called with parameters board_name ABC1 sprint_name None person_name Apoorva previous_data_needed_or_not True
+api called with: sprint_id - 73 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/current.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/73/issue
+api called with: sprint_id - 67 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/67/issue
+api called with: sprint_id - 68 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/68/issue
+api called with: sprint_id - 69 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/69/issue
+api called with: sprint_id - 70 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/70/issue
+api called with: sprint_id - 71 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/71/issue
+api called with: sprint_id - 72 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/72/issue
+added rtb/ctb column to the current.csv file
+added fte/ftc columns to current.csv file
+pandas query crew called
+sprint name(for pto data):['sprint 10']
+members:['Apoorva']
+---------------------------------------------------------------------------------------
+matched query is : What is the capacity utilization of person x in y board in sprint n
+2025-05-14 16:52:53.038010
+user query is : capacity utilization of Apoorva in ABC2 board
+sim_query is : What is the capacity utilization of person x in y board in sprint n
+previous_needed_or_not is : True
+get_L1_board_data called with parameters board_name ABC2 sprint_name None person_name Apoorva previous_data_needed_or_not True
+api called with: sprint_id - 63 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/current.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/63/issue
+api called with: sprint_id - 57 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/57/issue
+api called with: sprint_id - 58 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/58/issue
+api called with: sprint_id - 59 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/59/issue
+api called with: sprint_id - 60 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/60/issue
+api called with: sprint_id - 61 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/61/issue
+api called with: sprint_id - 62 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/62/issue
+added rtb/ctb column to the current.csv file
+added fte/ftc columns to current.csv file
+pandas query crew called
+sprint name(for pto data):['sprint 10']
+members:['Apoorva']
+---------------------------------------------------------------------------------------
+matched query is : What is the capacity utilization of person x in y board in sprint n
+2025-05-14 16:58:38.838126
+user query is : capacity utilisation of Noor in ABC3 board
+sim_query is : What is the capacity utilization of person x in y board in sprint n
+previous_needed_or_not is : True
+get_L1_board_data called with parameters board_name ABC3 sprint_name None person_name Noor previous_data_needed_or_not True
+api called with: sprint_id - 86 jql - assignee=Noor output_file - ./L1_architecture/generated_files/current.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/86/issue
+api called with: sprint_id - 80 jql - assignee=Noor output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/80/issue
+api called with: sprint_id - 81 jql - assignee=Noor output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/81/issue
+api called with: sprint_id - 82 jql - assignee=Noor output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/82/issue
+api called with: sprint_id - 83 jql - assignee=Noor output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/83/issue
+api called with: sprint_id - 84 jql - assignee=Noor output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/84/issue
+api called with: sprint_id - 85 jql - assignee=Noor output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/85/issue
+added rtb/ctb column to the current.csv file
+added fte/ftc columns to current.csv file
+pandas query crew called
+sprint name(for pto data):['sprint 10']
+members:['Noor']
+---------------------------------------------------------------------------------------
+matched query is : What is the capacity utilization of person x in y board in sprint n
+2025-05-14 17:05:50.634898
+user query is : capacity utlization of Apoorva in board ABC1
+sim_query is : What is the capacity utilization of person x in y board in sprint n
+previous_needed_or_not is : True
+get_L1_board_data called with parameters board_name ABC1 sprint_name None person_name Apoorva previous_data_needed_or_not True
+api called with: sprint_id - 73 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/current.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/73/issue
+api called with: sprint_id - 67 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/67/issue
+api called with: sprint_id - 68 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/68/issue
+api called with: sprint_id - 69 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/69/issue
+api called with: sprint_id - 70 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/70/issue
+api called with: sprint_id - 71 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/71/issue
+api called with: sprint_id - 72 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/72/issue
+added rtb/ctb column to the current.csv file
+added fte/ftc columns to current.csv file
+pandas query crew called
+sprint name(for pto data):['sprint 10']
+members:['Apoorva']
+---------------------------------------------------------------------------------------
+matched query is : What is the capacity utilization of person x in y board in sprint n
+2025-05-14 17:06:22.198229
+user query is : capacity utlization of Apoorva in board ABC2
+sim_query is : What is the capacity utilization of person x in y board in sprint n
+previous_needed_or_not is : True
+get_L1_board_data called with parameters board_name ABC2 sprint_name None person_name Apoorva previous_data_needed_or_not True
+api called with: sprint_id - 63 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/current.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/63/issue
+api called with: sprint_id - 57 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/57/issue
+api called with: sprint_id - 58 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/58/issue
+api called with: sprint_id - 59 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/59/issue
+api called with: sprint_id - 60 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/60/issue
+api called with: sprint_id - 61 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/61/issue
+api called with: sprint_id - 62 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/62/issue
+added rtb/ctb column to the current.csv file
+added fte/ftc columns to current.csv file
+pandas query crew called
+sprint name(for pto data):['sprint 10']
+members:['Apoorva']
+---------------------------------------------------------------------------------------
+matched query is : Backlog health for y board
+2025-05-14 17:10:32.099726
+user query is : backlog health for apoorva in ABC1 board
+sim_query is : Backlog health for y board
+previous_needed_or_not is : True
+get_L1_board_data called with parameters board_name ABC1 sprint_name None person_name apoorva previous_data_needed_or_not True
+api called with: sprint_id - 166 jql - assignee=apoorva output_file - ./L1_architecture/generated_files/current.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/166/issue
+api called with: sprint_id - 199 jql - assignee=apoorva output_file - ./L1_architecture/generated_files/current.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/199/issue
+api called with: sprint_id - 67 jql - assignee=apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/67/issue
+api called with: sprint_id - 68 jql - assignee=apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/68/issue
+api called with: sprint_id - 69 jql - assignee=apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/69/issue
+api called with: sprint_id - 70 jql - assignee=apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/70/issue
+api called with: sprint_id - 71 jql - assignee=apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/71/issue
+api called with: sprint_id - 72 jql - assignee=apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/72/issue
+added rtb/ctb column to the current.csv file
+added fte/ftc columns to current.csv file
+pandas query crew called
+sprint name(for pto data):['Sprint 11', 'Sprint 12']
+members:['apoorva']
+---------------------------------------------------------------------------------------
+matched query is : Backlog health for y board
+2025-05-14 17:10:54.484414
+user query is : backlog health for apoorva in ABC2 board
+sim_query is : Backlog health for y board
+previous_needed_or_not is : True
+get_L1_board_data called with parameters board_name ABC2 sprint_name None person_name apoorva previous_data_needed_or_not True
+api called with: sprint_id - 167 jql - assignee=apoorva output_file - ./L1_architecture/generated_files/current.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/167/issue
+api called with: sprint_id - 200 jql - assignee=apoorva output_file - ./L1_architecture/generated_files/current.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/200/issue
+api called with: sprint_id - 57 jql - assignee=apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/57/issue
+api called with: sprint_id - 58 jql - assignee=apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/58/issue
+api called with: sprint_id - 59 jql - assignee=apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/59/issue
+api called with: sprint_id - 60 jql - assignee=apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/60/issue
+api called with: sprint_id - 61 jql - assignee=apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/61/issue
+api called with: sprint_id - 62 jql - assignee=apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/62/issue
+added rtb/ctb column to the current.csv file
+added fte/ftc columns to current.csv file
+pandas query crew called
+sprint name(for pto data):['Sprint 11', 'Sprint 12']
+members:['apoorva']
+---------------------------------------------------------------------------------------
+matched query is : Backlog health for y board
+2025-05-14 17:11:36.218341
+user query is : backlog health for Apoorva in ABC1 board
+sim_query is : Backlog health for y board
+previous_needed_or_not is : True
+get_L1_board_data called with parameters board_name ABC1 sprint_name None person_name Apoorva previous_data_needed_or_not True
+api called with: sprint_id - 166 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/current.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/166/issue
+api called with: sprint_id - 199 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/current.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/199/issue
+api called with: sprint_id - 67 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/67/issue
+api called with: sprint_id - 68 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/68/issue
+api called with: sprint_id - 69 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/69/issue
+api called with: sprint_id - 70 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/70/issue
+api called with: sprint_id - 71 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/71/issue
+api called with: sprint_id - 72 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/72/issue
+added rtb/ctb column to the current.csv file
+added fte/ftc columns to current.csv file
+pandas query crew called
+sprint name(for pto data):['Sprint 11', 'Sprint 12']
+members:['Apoorva']
+---------------------------------------------------------------------------------------
+matched query is : Backlog health for y board
+2025-05-14 17:12:00.975711
+user query is : backlog health for Apoorva in ABC2 board
+sim_query is : Backlog health for y board
+previous_needed_or_not is : True
+get_L1_board_data called with parameters board_name ABC2 sprint_name None person_name Apoorva previous_data_needed_or_not True
+api called with: sprint_id - 167 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/current.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/167/issue
+api called with: sprint_id - 200 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/current.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/200/issue
+api called with: sprint_id - 57 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/57/issue
+api called with: sprint_id - 58 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/58/issue
+api called with: sprint_id - 59 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/59/issue
+api called with: sprint_id - 60 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/60/issue
+api called with: sprint_id - 61 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/61/issue
+api called with: sprint_id - 62 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/62/issue
+added rtb/ctb column to the current.csv file
+added fte/ftc columns to current.csv file
+pandas query crew called
+sprint name(for pto data):['Sprint 11', 'Sprint 12']
+members:['Apoorva']
+---------------------------------------------------------------------------------------
+matched query is : What is the capacity utilization of person x in y board in sprint n
+2025-05-14 17:12:41.954861
+user query is : Capacity utilzation for Apoorva in ABC1 board
+sim_query is : What is the capacity utilization of person x in y board in sprint n
+previous_needed_or_not is : True
+get_L1_board_data called with parameters board_name ABC1 sprint_name None person_name Apoorva previous_data_needed_or_not True
+api called with: sprint_id - 73 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/current.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/73/issue
+api called with: sprint_id - 67 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/67/issue
+api called with: sprint_id - 68 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/68/issue
+api called with: sprint_id - 69 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/69/issue
+api called with: sprint_id - 70 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/70/issue
+api called with: sprint_id - 71 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/71/issue
+api called with: sprint_id - 72 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/72/issue
+added rtb/ctb column to the current.csv file
+added fte/ftc columns to current.csv file
+pandas query crew called
+sprint name(for pto data):['sprint 10']
+members:['Apoorva']
+---------------------------------------------------------------------------------------
+matched query is : What is the capacity utilization of person x in y board in sprint n
+2025-05-14 17:13:11.635236
+user query is : Capacity utilzation for Apoorva in ABC2 board
+sim_query is : What is the capacity utilization of person x in y board in sprint n
+previous_needed_or_not is : True
+get_L1_board_data called with parameters board_name ABC2 sprint_name None person_name Apoorva previous_data_needed_or_not True
+api called with: sprint_id - None jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/current.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/None/issue
+---------------------------------------------------------------------------------------
+matched query is : What is the capacity utilization of person x in y board in sprint n
+2025-05-14 17:23:54.035754
+user query is : Capacity utilzation for Apoorva in ABC1 board
+sim_query is : What is the capacity utilization of person x in y board in sprint n
+previous_needed_or_not is : True
+get_L1_board_data called with parameters board_name ABC1 sprint_name None person_name Apoorva previous_data_needed_or_not True
+current sprint name is : sprint 10
+current sprint id is : 73
+api called with: sprint_id - 73 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/current.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/73/issue
+api called with: sprint_id - 67 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/67/issue
+api called with: sprint_id - 68 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/68/issue
+api called with: sprint_id - 69 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/69/issue
+api called with: sprint_id - 70 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/70/issue
+api called with: sprint_id - 71 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/71/issue
+api called with: sprint_id - 72 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/72/issue
+added rtb/ctb column to the current.csv file
+added fte/ftc columns to current.csv file
+pandas query crew called
+current sprint name is : sprint 10
+sprint name(for pto data):['sprint 10']
+members:['Apoorva']
+---------------------------------------------------------------------------------------
+matched query is : What is the capacity utilization of person x in y board in sprint n
+2025-05-14 17:24:23.342152
+user query is : Capacity utilzation for Apoorva in ABC2 board
+sim_query is : What is the capacity utilization of person x in y board in sprint n
+previous_needed_or_not is : True
+get_L1_board_data called with parameters board_name ABC2 sprint_name None person_name Apoorva previous_data_needed_or_not True
+current sprint name is : sprint 10
+current sprint id is : 63
+api called with: sprint_id - 63 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/current.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/63/issue
+api called with: sprint_id - 57 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/57/issue
+api called with: sprint_id - 58 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/58/issue
+api called with: sprint_id - 59 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/59/issue
+api called with: sprint_id - 60 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/60/issue
+api called with: sprint_id - 61 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/61/issue
+api called with: sprint_id - 62 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/62/issue
+added rtb/ctb column to the current.csv file
+added fte/ftc columns to current.csv file
+pandas query crew called
+current sprint name is : sprint 10
+sprint name(for pto data):['sprint 10']
+members:['Apoorva']
+---------------------------------------------------------------------------------------
+matched query is : What is the capacity utilization of person x in y board in sprint n
+2025-05-14 17:33:55.847107
+user query is : Capacity utilization of Apoorva in ABC1 board
+sim_query is : What is the capacity utilization of person x in y board in sprint n
+previous_needed_or_not is : True
+get_L1_board_data called with parameters board_name ABC1 sprint_name None person_name Apoorva previous_data_needed_or_not True
+current sprint name is : sprint 10
+current sprint id is : 73
+api called with: sprint_id - 73 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/current.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/73/issue
+api called with: sprint_id - 67 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/67/issue
+api called with: sprint_id - 68 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/68/issue
+api called with: sprint_id - 69 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/69/issue
+api called with: sprint_id - 70 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/70/issue
+api called with: sprint_id - 71 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/71/issue
+api called with: sprint_id - 72 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/72/issue
+added rtb/ctb column to the current.csv file
+added fte/ftc columns to current.csv file
+pandas query crew called
+current sprint name is : sprint 10
+sprint name(for pto data):['sprint 10']
+members:['Apoorva']
+---------------------------------------------------------------------------------------
+matched query is : What is the capacity utilization of person x in y board in sprint n
+2025-05-14 17:34:24.631281
+user query is : Capacity utilization of Apoorva in ABC2 board
+sim_query is : What is the capacity utilization of person x in y board in sprint n
+previous_needed_or_not is : True
+get_L1_board_data called with parameters board_name ABC2 sprint_name None person_name Apoorva previous_data_needed_or_not True
+current sprint name is : sprint 10
+current sprint id is : 63
+api called with: sprint_id - 63 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/current.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/63/issue
+api called with: sprint_id - 57 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/57/issue
+api called with: sprint_id - 58 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/58/issue
+api called with: sprint_id - 59 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/59/issue
+api called with: sprint_id - 60 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/60/issue
+api called with: sprint_id - 61 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/61/issue
+api called with: sprint_id - 62 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/62/issue
+added rtb/ctb column to the current.csv file
+added fte/ftc columns to current.csv file
+pandas query crew called
+current sprint name is : sprint 10
+sprint name(for pto data):['sprint 10']
+members:['Apoorva']
+---------------------------------------------------------------------------------------
+matched query is : What is the capacity utilization of person x in y board in sprint n
+2025-05-14 17:46:19.840203
+user query is : Capacity utilization of Apoorva in ABC1 board
+sim_query is : What is the capacity utilization of person x in y board in sprint n
+previous_needed_or_not is : True
+get_L1_board_data called with parameters board_name ABC1 sprint_name None person_name Apoorva previous_data_needed_or_not True
+current sprint name is : sprint 10
+current sprint id is : 73
+api called with: sprint_id - 73 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/current.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/73/issue
+api called with: sprint_id - 67 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/67/issue
+api called with: sprint_id - 68 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/68/issue
+api called with: sprint_id - 69 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/69/issue
+api called with: sprint_id - 70 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/70/issue
+api called with: sprint_id - 71 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/71/issue
+api called with: sprint_id - 72 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/72/issue
+added rtb/ctb column to the current.csv file
+added fte/ftc columns to current.csv file
+pandas query crew called
+current sprint name is : sprint 10
+sprint name(for pto data):['sprint 10']
+members:['Apoorva']
+---------------------------------------------------------------------------------------
+matched query is : What is the capacity utilization of person x in y board in sprint n
+2025-05-14 17:46:46.361601
+user query is : Capacity utilization of Apoorva in ABC2 board
+sim_query is : What is the capacity utilization of person x in y board in sprint n
+previous_needed_or_not is : True
+get_L1_board_data called with parameters board_name ABC2 sprint_name None person_name Apoorva previous_data_needed_or_not True
+current sprint name is : sprint 10
+current sprint id is : 63
+api called with: sprint_id - 63 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/current.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/63/issue
+api called with: sprint_id - 57 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/57/issue
+api called with: sprint_id - 58 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/58/issue
+api called with: sprint_id - 59 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/59/issue
+api called with: sprint_id - 60 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/60/issue
+api called with: sprint_id - 61 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/61/issue
+api called with: sprint_id - 62 jql - assignee=Apoorva output_file - ./L1_architecture/generated_files/history.json
+URL is : https://wellsfargo-jira-test.atlassian.net/rest/agile/1.0/sprint/62/issue
+added rtb/ctb column to the current.csv file
+added fte/ftc columns to current.csv file
+pandas query crew called
+current sprint name is : sprint 10
+sprint name(for pto data):['sprint 10']
+members:['Apoorva']

@@ -1,6 +1,7 @@
 ```python
+#code start
 import pandas as pd
-
+from constants import NEWLINE
 # Constants
 TOTAL_WORKING_DAYS_IN_SPRINT = 10
 TOLERANCE = 0.1  # 10% tolerance for utilization
@@ -48,16 +49,15 @@ else:
     utilization_status = "Utilization status could not be determined."
 # Output
 with open("./L1_architecture/outputs/output.txt", "w") as f:
-    f.write(f"Query: Capacity utilization of Apoorva in ABC2 board
-")
-    f.write(f"Current sprint story points: {current_points}
-")
-    f.write(f"Average of previous sprints: {avg_points:.2f}
-")
-    f.write(f"PTO-adjusted average: {adjusted_avg_points:.2f}
-")
-    f.write(f"Capacity utilization status: {utilization_status}
-")
-    f.write(f"Ideal story point range: {adjusted_avg_points-adjusted_avg_points * TOLERANCE:.2f} - {adjusted_avg_points+adjusted_avg_points * TOLERANCE:.2f}
-")
+    with open("./L1_architecture/outputs/output.txt", "w") as f:
+        lines = [
+            f"Query: Capacity utilization of Apoorva in ABC2 board",
+            f"Current sprint story points: {current_points}",
+            f"Average of previous sprints: {avg_points:.2f}",
+            f"PTO-adjusted average: {adjusted_avg_points:.2f}",
+            f"Capacity utilization status: {utilization_status}",
+            f"Ideal story point range: {adjusted_avg_points-adjusted_avg_points * TOLERANCE:.2f} - {adjusted_avg_points+adjusted_avg_points * TOLERANCE:.2f}"
+        ]
+        f.write(NEWLINE.join(lines))
+#code end
 ```

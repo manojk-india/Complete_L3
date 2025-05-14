@@ -78,3 +78,177 @@ Capacity utilization of Apoorva in ABC1 board
 Capacity utilization of Apoorva in ABC2 board
 -----------------------------------
 ------------------------------------------------------------------------------------------------ Operation over 
+ Inside main L2 condition. Should we go down or not : True
+Interest boards under L2 board  : ['ABC1', 'ABC2']
+Name of the person is : []
+time period is : False
+Multiplied queries are
+RTB/CTB classification for ABC1 board
+RTB/CTB classification for ABC2 board
+-----------------------------------
+------------------------------------------------------------------------------------------------ Operation over 
+ Inside main l1 condition. boards of interest are : ['ABC3']
+name identified is : ['Noor']
+time period is : False
+Multiplied queries are : 
+Capacity utilization of Noor
+-----------------------------------
+ Inside main l1 condition. boards of interest are : ['ABC3']
+name identified is : ['Noor']
+time period is : False
+Multiplied queries are : 
+Capacity utilization of Noor 
+-----------------------------------
+ Inside main l1 condition. boards of interest are : ['ABC3']
+name identified is : ['Noor']
+time period is : False
+Multiplied queries are : 
+Capacity utilization of Noor in ABC3 board
+-----------------------------------
+------------------------------------------------------------------------------------------------ Operation over 
+ Inside main l1 condition. boards of interest are : ['ABC3']
+name identified is : ['Noor']
+time period is : False
+Multiplied queries are : 
+Capacity utilization of Noor in ABC3 board
+-----------------------------------
+------------------------------------------------------------------------------------------------ Operation over 
+ Inside main l1 condition. boards of interest are : ['ABC3']
+name identified is : ['Noor']
+time period is : False
+Multiplied queries are : 
+Capacity utilization of Noor in ABC3 board
+-----------------------------------
+------------------------------------------------------------------------------------------------ Operation over 
+ Inside main l1 condition. boards of interest are : ['ABC3']
+name identified is : ['Noor']
+time period is : False
+Multiplied queries are : 
+Capacity utilization of Noor in ABC3 board
+-----------------------------------
+------------------------------------------------------------------------------------------------ Operation over 
+ Inside main l1 condition. boards of interest are : ['ABC1', 'ABC2']
+name identified is : ['Apoorva']
+time period is : False
+Multiplied queries are : 
+Capacity utlization for Apoorva in ABC1 board
+Capacity utlization for Apoorva in ABC2 board
+-----------------------------------
+------------------------------------------------------------------------------------------------ Operation over 
+ Inside main l1 condition. boards of interest are : ['ABC1', 'ABC2']
+name identified is : ['Apoorva']
+time period is : False
+Multiplied queries are : 
+Capacity utlization for Apoorva in ABC1 board
+Capacity utlization for Apoorva in ABC2 board
+-----------------------------------
+------------------------------------------------------------------------------------------------ Operation over 
+ Inside main l1 condition. boards of interest are : ['ABC1', 'ABC2']
+name identified is : ['Apoorva']
+time period is : False
+Multiplied queries are : 
+Capacity utilization of Apoorva in ABC1 board
+Capacity utilization of Apoorva in ABC2 board
+-----------------------------------
+------------------------------------------------------------------------------------------------ Operation over 
+ Inside main l1 condition. boards of interest are : ['ABC1', 'ABC2']
+name identified is : ['Apoorva']
+time period is : False
+Multiplied queries are : 
+capacity utilization of Apoorva in ABC1 board
+capacity utilization of Apoorva in ABC2 board
+-----------------------------------
+ Inside main l1 condition. boards of interest are : ['ABC1', 'ABC2']
+name identified is : ['Apoorva']
+time period is : False
+Multiplied queries are : 
+Capacity utilization for Apoorva in ABC1 board
+Capacity utilization for Apoorva in ABC2 board
+-----------------------------------
+------------------------------------------------------------------------------------------------ Operation over 
+ Inside main l1 condition. boards of interest are : ['ABC1', 'ABC2']
+name identified is : ['Apoorva']
+time period is : False
+Multiplied queries are : 
+Capacity utlization of Apoorva in ABC1 board
+Capacity utlization of Apoorva in ABC2 board
+-----------------------------------
+------------------------------------------------------------------------------------------------ Operation over 
+ Inside main l1 condition. boards of interest are : ['ABC1', 'ABC2']
+name identified is : ['Apoorva']
+time period is : False
+Multiplied queries are : 
+capacity utilization of Apoorva in ABC1 board
+capacity utilization of Apoorva in ABC2 board
+-----------------------------------
+------------------------------------------------------------------------------------------------ Operation over 
+ Inside main l1 condition. boards of interest are : ['ABC1', 'ABC2']
+name identified is : ['Apoorva']
+time period is : False
+Multiplied queries are : 
+capacity utilization of Apoorva in ABC1 board
+capacity utilization of Apoorva in ABC2 board
+-----------------------------------
+------------------------------------------------------------------------------------------------ Operation over 
+ Inside main l1 condition. boards of interest are : ['ABC3']
+name identified is : ['Noor']
+time period is : False
+Multiplied queries are : 
+capacity utilisation of Noor in ABC3 board
+-----------------------------------
+------------------------------------------------------------------------------------------------ Operation over 
+ Inside main l1 condition. boards of interest are : ['ABC1', 'ABC2']
+name identified is : ['Apoorva']
+time period is : False
+Multiplied queries are : 
+capacity utlization of Apoorva in board ABC1
+capacity utlization of Apoorva in board ABC2
+-----------------------------------
+------------------------------------------------------------------------------------------------ Operation over 
+ Inside main l1 condition. boards of interest are : ['ABC1', 'ABC2']
+name identified is : ['apoorva']
+time period is : False
+Multiplied queries are : 
+backlog health for apoorva in ABC1 board
+backlog health for apoorva in ABC2 board
+-----------------------------------
+------------------------------------------------------------------------------------------------ Operation over 
+ Inside main l1 condition. boards of interest are : ['ABC1', 'ABC2']
+name identified is : ['Apoorva']
+time period is : False
+Multiplied queries are : 
+backlog health for Apoorva in ABC1 board
+backlog health for Apoorva in ABC2 board
+-----------------------------------
+------------------------------------------------------------------------------------------------ Operation over 
+ Inside main l1 condition. boards of interest are : ['ABC1', 'ABC2']
+name identified is : ['Apoorva']
+time period is : False
+Multiplied queries are : 
+Capacity utilzation for Apoorva in ABC1 board
+Capacity utilzation for Apoorva in ABC2 board
+-----------------------------------
+ Inside main l1 condition. boards of interest are : ['ABC1', 'ABC2']
+name identified is : ['Apoorva']
+time period is : False
+Multiplied queries are : 
+Capacity utilzation for Apoorva in ABC1 board
+Capacity utilzation for Apoorva in ABC2 board
+-----------------------------------
+------------------------------------------------------------------------------------------------ Operation over 
+ Inside main l1 condition. boards of interest are : ['ABC1', 'ABC2']
+name identified is : ['Apoorva']
+time period is : False
+Multiplied queries are : 
+Capacity utilization of Apoorva in ABC1 board
+Capacity utilization of Apoorva in ABC2 board
+-----------------------------------
+------------------------------------------------------------------------------------------------ Operation over 
+ Inside main l1 condition. boards of interest are : ['ABC1', 'ABC2']
+name identified is : ['Apoorva']
+time period is : False
+Multiplied queries are : 
+Capacity utilization of Apoorva in ABC1 board
+Capacity utilization of Apoorva in ABC2 board
+-----------------------------------
+------------------------------------------------------------------------------------------------ Operation over 

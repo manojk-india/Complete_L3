@@ -56,6 +56,7 @@ def entrypoint(Query:str) -> str:
     # get the current sprint name if not provided in the query
     if (result["sprint_name"]==None):
         current_sprint_name=get_current_sprint()
+        write_to_checkpoint_file("current sprint name is : "+str(current_sprint_name))
         if (idx==5):
             current_sprint_id=get_sprint_id(board_name,current_sprint_name)
             sprint_ids=get_future_sprint_ids(board_name, current_sprint_id)
@@ -95,7 +96,7 @@ def entrypoint(Query:str) -> str:
                         f.write(f"Name: {i} -- Leave days: {leaves} in {j} \n")
                 f.write("\n\n")
                 f.write("---------------------------------------------")
-                f.write("\n\n")
+                f.write("\n\n") 
     else:
         with open("./L1_architecture/outputs/output.txt", "w") as f:
            f.write(" Below you can find low quality acceptance crieteria report ")

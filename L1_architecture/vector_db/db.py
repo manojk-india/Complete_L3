@@ -2,9 +2,10 @@ use_case_examples = {
     1: """
 **Note: **" For capacity utilization related query, we need to check the current sprint story points from current.csv and compare it with the average of previous sprints from history.csv also considering the PTO.csv and threshold as done in the code below."
 **Example Query:** "What is the capacity utilization of Hari in CDF board in sprint 7"
+
 #code start
 import pandas as pd
-
+from constants import NEWLINE
 # Constants
 TOTAL_WORKING_DAYS_IN_SPRINT = 10
 TOLERANCE = 0.1  # 10% tolerance for utilization
@@ -52,13 +53,16 @@ else:
     utilization_status = "Utilization status could not be determined."
 # Output
 with open("./L1_architecture/outputs/output.txt", "w") as f:
-    f.write(f"Query: Story points assigned to {assignee} in CDF board in sprint {sprint}\n")
-    f.write(f"Current sprint story points: {current_points}\n")
-    f.write(f"Average of previous sprints: {avg_points:.2f}\n")
-    f.write(f"PTO-adjusted average: {adjusted_avg_points:.2f}\n")
-    f.write(f"Capacity utilization status: {utilization_status}\n")
-    f.write(f"Ideal story point range: {adjusted_avg_points-adjusted_avg_points * TOLERANCE:.2f} - {adjusted_avg_points+adjusted_avg_points * TOLERANCE:.2f}\n")
-
+    with open("./L1_architecture/outputs/output.txt", "w") as f:
+        lines = [
+            f"Query: Capacity utilization of Hari in CDF board in sprint {sprint}",
+            f"Current sprint story points: {current_points}",
+            f"Average of previous sprints: {avg_points:.2f}",
+            f"PTO-adjusted average: {adjusted_avg_points:.2f}",
+            f"Capacity utilization status: {utilization_status}",
+            f"Ideal story point range: {adjusted_avg_points-adjusted_avg_points * TOLERANCE:.2f} - {adjusted_avg_points+adjusted_avg_points * TOLERANCE:.2f}"
+        ]
+        f.write(NEWLINE.join(lines))
 #code end
 
 """,
@@ -69,6 +73,7 @@ with open("./L1_architecture/outputs/output.txt", "w") as f:
 **Correct Code:**
 #code start
 import pandas as pd
+from constants import NEWLINE
 
 # Load current sprint data
 df = pd.read_csv("./L1_architecture/generated_files/current.csv")
@@ -80,7 +85,7 @@ ctb_points = df[df['requested_by'] == 'CTB']['story_points'].fillna(0).sum()
 
 # Output
 with open("./L1_architecture/outputs/output.txt", "w") as f:
-    f.write("Query: RTB/CTB utilization of CDF board in sprint 7\n")
+    f.write("Query: RTB/CTB utilization of CDF board in sprint 7"+NEWLINE)
     f.write("RTB story points: "+str(rtb_points))
     f.write("CTB story points: "+str(ctb_points))
 #code end
@@ -104,7 +109,7 @@ ctb_points = df[df['requested_by'] == 'CTB']['story_points'].fillna(0).sum()
 
 # Output
 with open("./L1_architecture/outputs/output.txt", "w") as f:
-    f.write("Query: RTB/CTB utilization of CDF board in sprint 7\n")
+    f.write("Query: RTB/CTB utilization of CDF board in sprint 7")
     f.write("RTB story points: "+str(rtb_points))
     f.write("CTB story points: "+str(ctb_points))
 #code end
@@ -129,7 +134,7 @@ ftc_points = df[df['work_type'] == 'FTC']['story_points'].fillna(0).sum()
 
 # Output results
 with open("./L1_architecture/outputs/output.txt", "w") as f:
-    f.write("Query: FTE/FTC utilization of CDF board in sprint 3\n")
+    f.write("Query: FTE/FTC utilization of CDF board in sprint 3")
     f.write("FTE story points: "+str(fte_points))
     f.write("FTC story points: "+str(ftc_points))
 #code end
@@ -138,6 +143,7 @@ with open("./L1_architecture/outputs/output.txt", "w") as f:
 """
     ,
     5: """
+
 **Use Case: Backlog Health of a Board **
 
 **Example Query:** "Backlog health for CDF board"
@@ -145,12 +151,14 @@ with open("./L1_architecture/outputs/output.txt", "w") as f:
 
 #code start
 import pandas as pd
+from constants import NEWLINE
+
 
 # Load current sprint data (multiple sprints in current.csv)
 df = pd.read_csv("./L1_architecture/generated_files/current.csv")
 
 # Load historical data for previous sprints
-df_history = pd.read_csv("./L1_architecture/generated_files/history.csv")
+df_history = pd.read_csv("./L1_generated_files/history.csv")
 
 # Calculate average velocity from previous sprints (average of total story points completed per sprint)
 if len(df_history) > 0:
@@ -183,7 +191,7 @@ for sprint in unique_sprints:
 
 # Output results
 with open("./L1_architecture/outputs/output.txt", "w") as f:
-    f.write(f"Query: Backlog health for CDF board \n")
+    f.write(f"Query: Backlog health for CDF board "+ NEWLINE)
     f.write(f"Average velocity from previous sprints: "+str(avg_velocity:.2f))
     
     for sprint, utilization in utilization_results.items():
@@ -204,6 +212,7 @@ with open("./L1_architecture/outputs/output.txt", "w") as f:
 **Correct Code:**
 #code start
 import pandas as pd
+from constants import NEWLINE
 
 # Load data
 df = pd.read_csv("./L1_architecture/generated_files/current.csv")         # current sprint data
@@ -214,7 +223,7 @@ current_points = df['story_points'].fillna(0).sum()
 # Output
 with open("./L1_architecture/outputs/output.txt", "w") as f:
     f.write("Query: Story points assigned to Hari in CDF board in sprint 9 is "+str(current_points))
-    f.write("\n")
+    f.write(NEWLINE)
 
 #code end
 

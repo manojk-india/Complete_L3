@@ -85,6 +85,7 @@ def pandas_query_crew(query,idx):
         {df_structure_main}
         {example_code}
         **Note** : "DO NOT filter the data for the required board, person and sprint, as the data is already filtered."
+        **Note:"Have #code start before  any imports"
         **Rules:**
         1. Do not filter the data for the required board(project_key), person, and sprint, as the data is already filtered.
         2. Write code using the above rules and the example provided. Code should be executable without errors and should look like the example provided.
